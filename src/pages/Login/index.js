@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useSiteContext } from '../../contexts/SiteProvider';
 import { post } from '../../services/smartApiService';
 import { Link, useNavigate } from 'react-router-dom';
-import Captures from '../../assets/images/Capture.PNG';
 //import back from '../../assets/images/background.avif';
 import './Login.css'; // You can remove this if not needed
+import {LOGIN_lOGO} from "../../services/ImageService"
 
 const Login = () => {
   const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
@@ -174,7 +174,7 @@ const Login = () => {
       <div className="login-column pt-6 pb-6 is-6">
         <div className="login-box">
           <figure className="login-image">
-            <img src={Captures} alt="captures" />
+            <img src={LOGIN_lOGO} alt="captures" />
           </figure>
         </div>
       </div>

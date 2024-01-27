@@ -15,6 +15,12 @@ import TextBoxExample from "../pages/examples/TextBoxExample";
 import TableExample from "../pages/examples/TableExample";
 import SelectBoxExample from "../pages/examples/SelectBoxExample";
 import ModalExample from "../pages/examples/ModalExample";
+import EmailSettings from "../pages/Settings/EmailSettings";
+import FileSettings from "../pages/Settings/FileSettings";
+import LoginSettings from "../pages/Settings/LoginSettings";
+import RemoteServerSettings from "../pages/Settings/RemoteServerSettings";
+import SiteSettings from "../pages/Settings/SiteSettings";
+import SmartDriveLogin from "../pages/Login/SmartDriveLogin";
 
 const SiteRoute = () => {
   const isAuthenticated = true;
@@ -23,6 +29,8 @@ const SiteRoute = () => {
     return (
       <MainLayout>     
         <Routes>
+          
+
           <Route path="textbox" element={<TextBoxExample />} />  
           <Route path="selectbox" element={<SelectBoxExample />} />  
           <Route path="table" element={<TableExample />} />  
@@ -44,6 +52,13 @@ const SiteRoute = () => {
           <Route path="/pdfcal" element={<PdfCalendar/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/SmartLogin" element={<SmartLogin/>} />
+
+          {/* Settings */}
+          <Route  path="/email" element={<EmailSettings/>}/>
+          <Route  path="/file-settings" element={<FileSettings/>}/>
+          <Route  path="/login-settings" element={<LoginSettings/>}/>
+          <Route  path="/remote-server-settings" element={<RemoteServerSettings/>}/>
+          <Route  path="/site-settings" element={<SiteSettings/>}/>
         </Routes>
       </MainLayout>
     );
@@ -52,7 +67,8 @@ const SiteRoute = () => {
   const loginLayoutChildren = () => {
     return (
       <LoginLayout>
-        <Login />
+        {/* <Login /> */}
+        <SmartDriveLogin />
       </LoginLayout>
     );
   };
@@ -63,13 +79,14 @@ const SiteRoute = () => {
         <Routes>         
           <Route path="/" element={loginLayoutChildren()} />         
           <Route
-            path="/site/*"
-            element={<PrivateRoute> {mainRouteChildren()}</PrivateRoute>}
-          />
-            <Route
             path="/examples/*"
-            element={ exampleRoutes()}
+            element={exampleRoutes()}
           />
+           <Route
+            path="/site/*"
+            element={mainRouteChildren()}
+          />
+           
           
         </Routes>
       </Router>
@@ -81,7 +98,10 @@ const SiteRoute = () => {
 export default SiteRoute;
 
 /*
-
+ <Route
+            path="/site/*"
+            element={<PrivateRoute> {mainRouteChildren()}</PrivateRoute>}
+          />
  <Route
             path="/home"
             element={ mainRouteChildren()}

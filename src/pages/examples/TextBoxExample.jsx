@@ -55,6 +55,7 @@ const TextBoxExample = () => {
 
       const handleFormSubmit=()=>{
         setFormSubmit(true);
+        console.log(formData)
         console.log("form errors " , formErrors);
       }
 
@@ -75,10 +76,12 @@ const TextBoxExample = () => {
             type={type} 
             min={1} 
             max={5}
+          
             pattern={ALLOW_NUMERIC}
             inputProps={{ isFocussed: true }}
             onBlur={onBlur}
             leftIcon="fa-user"
+            
             rightIconFunction={()=>passwordRightIcon()}
             validations={numericValidations}  
             errorEnable={true}
@@ -106,7 +109,7 @@ const TextBoxExample = () => {
             inputProps={{ isFocussed: true }}                    
           />
 
-<SmartSoftInput key="text-4" label="Enter Employee Name testing"
+<SmartSoftInput key="text-5" label="Enter Employee Name testing"
             value={formData?.input_five||""}
             onChange={(value) => handleInputChange("input_five", value)} 
             inputType="BORDER_LABEL_FOCUS"
@@ -122,7 +125,6 @@ const TextBoxExample = () => {
           </div>
         )
     }
-
     return (
        <>
         {inputWithIconValidation()}

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Menubar.css";
-
-
+import { MANU_LOGO } from "../services/ImageService";
 
 const Menubar = () => {
   return (
@@ -13,7 +12,7 @@ const Menubar = () => {
             {/* <IoReorderThreeSharp /> */}
           </span>
           <span className="navbar-item">
-            {/* <img src={logo} alt="logo" className="mx-2 my-2" /> */}
+            <img src={MANU_LOGO} alt="logo" className="mx-2 my-2" />
             <span className="navbar-item">
               <p className="text">Smart Drive</p>
             </span>

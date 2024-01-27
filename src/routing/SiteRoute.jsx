@@ -78,9 +78,10 @@ const SiteRoute = () => {
       <Router>
         <Routes>         
           <Route path="/" element={loginLayoutChildren()} />         
-          <Route
+         
+           <Route
             path="/site/*"
-            element={<PrivateRoute> {mainRouteChildren()}</PrivateRoute>}
+            element={mainRouteChildren()}
           />
             <Route
             path="/examples/*"
@@ -97,7 +98,10 @@ const SiteRoute = () => {
 export default SiteRoute;
 
 /*
-
+ <Route
+            path="/site/*"
+            element={<PrivateRoute> {mainRouteChildren()}</PrivateRoute>}
+          />
  <Route
             path="/home"
             element={ mainRouteChildren()}

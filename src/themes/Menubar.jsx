@@ -1,12 +1,7 @@
 import React from "react";
 import "./Menubar.css";
-import logo from "../../assets/images/logo.jpg";
-import icon from "../../assets/images/icon.jpg";
-import { IoReorderThreeSharp } from "react-icons/io5";
-import { CiBellOn } from "react-icons/ci";
-import { RxGear } from "react-icons/rx";
-import { FaAngleDown } from "react-icons/fa6";
-import { CiSearch } from "react-icons/ci";
+
+
 
 const Menubar = () => {
   return (
@@ -15,10 +10,10 @@ const Menubar = () => {
         {/* Logo */}
         <div className="navbar-brand">
           <span className="navbar-item cap2">
-            <IoReorderThreeSharp />
+            {/* <IoReorderThreeSharp /> */}
           </span>
           <span className="navbar-item">
-            <img src={logo} alt="logo" className="mx-2 my-2" />
+            {/* <img src={logo} alt="logo" className="mx-2 my-2" /> */}
             <span className="navbar-item">
               <p className="text">Smart Drive</p>
             </span>
@@ -26,7 +21,7 @@ const Menubar = () => {
         </div>
         <div className="navbar-menu">
           <span className="navbar-item is-hidden-desktop">
-            <CiSearch />
+            {/* <CiSearch /> */}
           </span>
           <div className="navbar-item cap3">
             <input className="input" type="text" placeholder="Search..." />
@@ -35,10 +30,10 @@ const Menubar = () => {
         <div className="navbar-menu">
           <span className="navbar-end">
             <span className="navbar-item">
-              <CiBellOn />
-              <RxGear />
-              <img src={icon} alt="logo" className="mx-2 my-2 is-rounded img" />
-              <FaAngleDown />
+              {/* <CiBellOn />
+              <RxGear /> */}
+              {/* <img src={icon} alt="logo" className="mx-2 my-2 is-rounded img" /> */}
+              {/* <FaAngleDown /> */}
             </span>
           </span>
         </div>

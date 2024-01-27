@@ -4,6 +4,8 @@ import Header from './MainTheme/Header';
 import test from "../assets/images/sidetest.png"
 import { useSiteContext } from '../contexts/SiteProvider';
 import './MainLayoutStyle.css'
+import Menubar from './Menubar';
+import Sidenav from './Sidenav';
 
 
 const MainLayout = ({ children }) => {
@@ -13,7 +15,10 @@ const MainLayout = ({ children }) => {
   }
   return (
     <div className="container smart-pdf-container">
-      <div className="full-main">
+
+      <Menubar />
+      <Sidenav />
+      {/* <div className="full-main">
         <Header user={user} handleLogout={handleLogout} />
         <div className='value-main'>
           <h1 className='text-1'>Smart Effortless <br /> PDF Solutions</h1>
@@ -27,7 +32,9 @@ const MainLayout = ({ children }) => {
       <main className='smart-mainlayout-middle p-5'>{children}</main>
       <footer className='smart-pdf-footer' >
 
-      </footer>
+      </footer> */}
+
+
     </div>
   );
 };

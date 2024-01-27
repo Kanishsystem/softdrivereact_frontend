@@ -2,8 +2,9 @@
   background-color: #cf1bce;
 }
 
-.main-side-nave{
+.main-side-view{
   position: fixed;
   z-index: 100;
-  width: 100%;
+  margin-top:70px
+ 
 }

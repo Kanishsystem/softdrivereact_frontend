@@ -96,7 +96,7 @@ const Sidenav = () => {
     },
   ];
   return (
-    <div>
+    <div className="main-side-view">
       <Sidebar className="main-side-nave" items={sidebarItem} />
       <Sidebar  className="main-side-nave" items={sidebarItemAdmin} />
       <Sidebar  className="main-side-nave" items={sidebarItemLogout} />

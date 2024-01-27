@@ -20,6 +20,7 @@ import FileSettings from "../pages/Settings/FileSettings";
 import LoginSettings from "../pages/Settings/LoginSettings";
 import RemoteServerSettings from "../pages/Settings/RemoteServerSettings";
 import SiteSettings from "../pages/Settings/SiteSettings";
+import SmartDriveLogin from "../pages/Login/SmartDriveLogin";
 
 const SiteRoute = () => {
   const isAuthenticated = true;
@@ -64,7 +65,8 @@ const SiteRoute = () => {
   const loginLayoutChildren = () => {
     return (
       <LoginLayout>
-        <Login />
+        {/* <Login /> */}
+        <SmartDriveLogin />
       </LoginLayout>
     );
   };

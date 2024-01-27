@@ -1,15 +1,34 @@
 import React, { useState } from 'react'
-import SmartInput from "../../components/core/forms/SmartInput";
-import SmartButton from "../../components/core/forms/SmartButton";
+//import SmartInput from "../../components/core/forms/SmartInput";
+//import SmartButton from "../../components/core/forms/SmartButton";
+import { SmartSoftInput,SmartSoftButton } from 'soft_digi';
+import { post } from '../../services/smartApiService';
+import { useSiteContext } from '../../contexts/SiteProvider';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'; 
 import Login from '.';
 
 const SmartDriveLogin = () => {
-
+  const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
+  const navigate = useNavigate();
     const [formData, setFormData] = useState({});
     const [formSubmit, setFormSubmit] = useState(false);
     const [formErrors,setFormErrors] = useState(false);
     const [type, setType] = useState("password");
+
+    const handleLogin = () => {
+     // let data = { username: 'kminchelle', password: '0lelplR' };
+      setLoading(true, 'Logging in Please Wait....');
+      const subscription = post('auth/login', formData).subscribe((response) => {
+        setUser(response.data);
+        setLoading(false);
+        startSessionAct();
+        navigate('/site/all-files');
+      });
+      return () => {
+        subscription.unsubscribe();
+      };
+    };
 
     
     const handleInputChange = (name, value) => {
@@ -62,21 +81,23 @@ const SmartDriveLogin = () => {
             <h2>Login</h2>
             <div className="input-box">
               
-                <SmartInput key="username" label="User Name"
-            value={formData?.userName||""}
-            onChange={(value) => handleInputChange("userName", value)} 
+                <SmartSoftInput key="euserid" label="User Name"
+            value={formData?.euserid||""}
+            onChange={(value) => handleInputChange("euserid", value)} 
             inputType="BORDER_LESS"     
-            validations={userNameValidations}               
+            validations={userNameValidations}  
+            errorEnable={true}             
           />
                
             </div>
             <div className="input-box">
                
-                <SmartInput key="password" label="Password"
-            value={formData?.password||""}
-            onChange={(value) => handleInputChange("password", value)} 
+                <SmartSoftInput key="epassword" label="Password"
+            value={formData?.epassword||""}
+            onChange={(value) => handleInputChange("epassword", value)} 
             inputType="BORDER_LESS"    
-            validations={passwordValidations}                
+            validations={passwordValidations}  
+            type={"password"}              
           />
             </div>
             <div className="remember-forget">
@@ -84,11 +105,9 @@ const SmartDriveLogin = () => {
                 <a href="#">Forget Password</a>
             </div>
            
+           <button type="button" className='login-button'  onClick={()=>handleLogin()} > Login </button>
 
-            <SmartButton label="Login" className="login-button" classList={["login-button"]}
-            onClick={()=>handleFormSubmit()}
-          
-          />
+       
          
         </form>
     </div>

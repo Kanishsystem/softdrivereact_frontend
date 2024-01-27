@@ -1,6 +1,10 @@
 body{
     background: #000;
 }
+.smart-pdf-container{
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
 .smart-mainlayout-middle{
     min-height: 500px;
     background-color: #fff;

@@ -14,10 +14,19 @@ const MainLayout = ({ children }) => {
     setUser();
   }
   return (
-    <div className="container smart-pdf-container">
+    <div className="container is-fluid smart-pdf-container">
 
-      <Menubar />
-      <Sidenav />
+      <div className='columns is-multiline is-gapless'>
+        <div className='column is-12'>
+            <Menubar />
+        </div>
+        <div className='column is-2'>
+           <Sidenav />
+        </div>
+        <div className='column is-10'>
+        {children}
+        </div>
+      </div>
       {/* <div className="full-main">
         <Header user={user} handleLogout={handleLogout} />
         <div className='value-main'>

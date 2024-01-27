@@ -21,6 +21,7 @@ import LoginSettings from "../pages/Settings/LoginSettings";
 import RemoteServerSettings from "../pages/Settings/RemoteServerSettings";
 import SiteSettings from "../pages/Settings/SiteSettings";
 import SmartDriveLogin from "../pages/Login/SmartDriveLogin";
+import AllFiles from "../pages/AllFiles/AllFiles";
 
 const SiteRoute = () => {
   const isAuthenticated = true;
@@ -43,8 +44,7 @@ const SiteRoute = () => {
   const mainRouteChildren = () => {
     return (
       <MainLayout>
-        <Routes>
-          <Route path="/" element={<Home />} />
+        <Routes>          
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Home />} />
           <Route path="/pdftable" element={<Pdftable/>} />
@@ -52,6 +52,10 @@ const SiteRoute = () => {
           <Route path="/pdfcal" element={<PdfCalendar/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/SmartLogin" element={<SmartLogin/>} />
+
+          {/* all Files */ }
+          <Route  path="/all-files" element={<AllFiles />}/>
+
 
           {/* Settings */}
           <Route  path="/email" element={<EmailSettings/>}/>
@@ -78,15 +82,15 @@ const SiteRoute = () => {
       <Router>
         <Routes>         
           <Route path="/" element={loginLayoutChildren()} />         
-         
+          <Route
+            path="/examples/*"
+            element={exampleRoutes()}
+          />
            <Route
             path="/site/*"
             element={mainRouteChildren()}
           />
-            <Route
-            path="/examples/*"
-            element={ exampleRoutes()}
-          />
+           
           
         </Routes>
       </Router>

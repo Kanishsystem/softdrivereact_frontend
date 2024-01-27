@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SmartTable from "../../components/core/tables/SmartTable";
-//import {SmartSoftTable} from 'soft_digi';
+//import SmartTable from "../../components/core/tables/SmartTable";
+import {SmartSoftTable} from 'soft_digi';
 
 const TableExample = () => {
   const [tabData, setTabData] = useState([]);
@@ -50,7 +50,7 @@ const TableExample = () => {
        
         <p onClick={()=>addNewObject()} > Add </p>
        
-        <SmartTable data={tabData}  columns={columns} paginationProps={pagination} />
+        <SmartSoftTable data={tabData}  columns={columns} paginationProps={pagination} />
        </>
     )
 }

@@ -11,16 +11,12 @@ const Menubar = () => {
           <span className="navbar-item">
             <i class="fa fa-bars" aria-hidden="true"></i>
             <img className="image pl-5" src={MANU_LOGO} alt="Logo" />
-            <span className="pl-5 is-size-3-mobile themes-menubar-title">Smart Drive</span>
+            <span className="pl-5 is-size-4-mobile themes-menubar-title">Smart Drive</span>
           </span>
         </div>
         <div className="navbar-item">
           <span className="control has-icons-left has-icons-right">
-            <input
-              className="input themes-menubar-input"
-              type="text"
-              placeholder="Search..."
-            />
+            <input className="input  themes-menubar-input" type="text" placeholder="Search..."/>
             <span className="icon is-medium is-left has-text-grey">
               <i class="fa fa-search" aria-hidden="true"></i>
             </span>

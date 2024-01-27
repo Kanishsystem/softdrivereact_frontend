@@ -1,11 +1,12 @@
 import React from "react";
+import "./Sidenav.css";
 
 const Sidebar = ({ items }) => {
   return (
     <div>
-      <ul className="card py-5 px-5 sidenav-ul">
+      <ul className="card py-5 px-5">
         {items.map((item) => (
-          <li key={item.id} className="p-2 sidenav-li">
+          <li key={item.id} className="p-2 themes-sidenav-li">
             <span className="pr-3">{item.icon}</span>
             <span>{item.label}</span>
           </li>

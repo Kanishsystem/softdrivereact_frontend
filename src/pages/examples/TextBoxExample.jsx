@@ -79,6 +79,7 @@ const TextBoxExample = () => {
             inputProps={{ isFocussed: true }}
             onBlur={onBlur}
             leftIcon="fa-user"
+            
             rightIconFunction={()=>passwordRightIcon()}
             validations={numericValidations}  
             errorEnable={true}

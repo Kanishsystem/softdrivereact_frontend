@@ -22,6 +22,12 @@ import RemoteServerSettings from "../pages/Settings/RemoteServerSettings";
 import SiteSettings from "../pages/Settings/SiteSettings";
 import SmartDriveLogin from "../pages/Login/SmartDriveLogin";
 import AllFiles from "../pages/AllFiles/AllFiles";
+import ShareWithMe from "../pages/ShareFiles/ShareWithMe";
+import RecyleBin from "../pages/AllFiles/RecyleBin";
+import RoleTable from "../pages/Role/RoleTable";
+import RoleForm from "../pages/Role/RoleForm";
+import UserTable from "../pages/User/UserTable";
+import UserForm from "../pages/User/UserForm";
 
 const SiteRoute = () => {
   const isAuthenticated = true;
@@ -44,7 +50,16 @@ const SiteRoute = () => {
   const mainRouteChildren = () => {
     return (
       <MainLayout>
-        <Routes>          
+        <Routes>  
+       
+
+          <Route path="/" element={<AllFiles/>} />        
+          <Route path="/sharewithme" element={<ShareWithMe/>} />
+          <Route path="/recylebin" element={<RecyleBin/>} />
+          <Route path="/roletable" element={<RoleTable/>} />
+          <Route path="/roleform" element={<RoleForm />} />
+          <Route path="/usertable" element={<UserTable />} />
+          <Route path="/userform" element={<UserForm/>} />
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Home />} />
           <Route path="/pdftable" element={<Pdftable/>} />

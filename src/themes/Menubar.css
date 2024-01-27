@@ -1,28 +1,32 @@
-.cap1{
-    box-shadow: none !important; 
-    position: sticky;
+.themes-menubar-title {
+  color: #cf1bce;
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
-.text{
-    color: rgb(201, 26, 201);
-    font-weight: bold;
-    display: grid;
-    align-content: space-around;
+.themes-menubar-input {
+  background-color: rgb(241, 237, 237);
+  border: 0px;
+  border-radius: 6em;
+  width: 40em;
 }
 
-
-.cap2{
-    font-size: xx-large;
+.themes-manubar-bell {
+  background-color: rgb(241, 237, 237);
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
 }
 
-.cap3{
-    width: 800px;
+.themes-manubar-setting {
+  background-color: #cf1bce;
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+  color: #fff;
 }
 
-.cap3 .input{
-    border: none;
-    background-color: rgb(250, 246, 246);
-    border-radius: 50px;
+.themes-menubar-item {
+  justify-content: space-between;
+  display: inline-flex;
 }
-
-

@@ -1,40 +1,49 @@
 import React from "react";
 import "./Menubar.css";
 import { MANU_LOGO } from "../services/ImageService";
+import { MANU_PROFILE } from "../services/ImageService";
 
 const Menubar = () => {
   return (
-    <div className="card is-size-4-mobile cap1">
-      <nav className="navbar has-background-white">
-        {/* Logo */}
+    <div>
+      <nav className="navbar py-2 px-2">
         <div className="navbar-brand">
-          <span className="navbar-item cap2">
-            {/* <IoReorderThreeSharp /> */}
-          </span>
           <span className="navbar-item">
-            <img src={MANU_LOGO} alt="logo" className="mx-2 my-2" />
-            <span className="navbar-item">
-              <p className="text">Smart Drive</p>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <img className="image pl-5" src={MANU_LOGO} alt="Logo" />
+            <span className="pl-5 is-size-3-mobile themes-menubar-title">Smart Drive</span>
+          </span>
+        </div>
+        <div className="navbar-item">
+          <span className="control has-icons-left has-icons-right">
+            <input
+              className="input themes-menubar-input"
+              type="text"
+              placeholder="Search..."
+            />
+            <span className="icon is-medium is-left has-text-grey">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
+            <span className="icon is-medium is-right has-text-grey">
+              <i class="fa fa-filter" aria-hidden="true"></i>
             </span>
           </span>
         </div>
-        <div className="navbar-menu">
-          <span className="navbar-item is-hidden-desktop">
-            {/* <CiSearch /> */}
-          </span>
-          <div className="navbar-item cap3">
-            <input className="input" type="text" placeholder="Search..." />
+        <div className="navbar-end">
+          <div className="navbar-item themes-menubar-item">
+            <span className="pl-2 pt-1 themes-manubar-bell">
+              <i class="fa fa-bell-o" aria-hidden="true"></i>
+            </span>
+            <span className="pl-2 pt-1 themes-manubar-setting">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </span>
+            <span>
+              <img src={MANU_PROFILE} alt="profile" />
+            </span>
+            <span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
           </div>
-        </div>
-        <div className="navbar-menu">
-          <span className="navbar-end">
-            <span className="navbar-item">
-              {/* <CiBellOn />
-              <RxGear /> */}
-              {/* <img src={icon} alt="logo" className="mx-2 my-2 is-rounded img" /> */}
-              {/* <FaAngleDown /> */}
-            </span>
-          </span>
         </div>
       </nav>
     </div>

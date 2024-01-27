@@ -1,3 +1,9 @@
 .themes-sidenav-li:hover{
   background-color: #cf1bce;
 }
+
+.main-side-nave{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}

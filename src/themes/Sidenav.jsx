@@ -3,7 +3,7 @@ import "./Sidenav.css";
 
 const Sidebar = ({ items }) => {
   return (
-    <div>
+    <div  >
       <ul className="card py-5 px-5">
         {items.map((item) => (
           <li key={item.id} className="p-2 themes-sidenav-li">
@@ -97,9 +97,9 @@ const Sidenav = () => {
   ];
   return (
     <div>
-      <Sidebar items={sidebarItem} />
-      <Sidebar items={sidebarItemAdmin} />
-      <Sidebar items={sidebarItemLogout} />
+      <Sidebar className="main-side-nave" items={sidebarItem} />
+      <Sidebar  className="main-side-nave" items={sidebarItemAdmin} />
+      <Sidebar  className="main-side-nave" items={sidebarItemLogout} />
     </div>
   );
 };

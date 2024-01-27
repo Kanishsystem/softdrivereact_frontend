@@ -78,15 +78,15 @@ const SiteRoute = () => {
       <Router>
         <Routes>         
           <Route path="/" element={loginLayoutChildren()} />         
-         
+          <Route
+            path="/examples/*"
+            element={exampleRoutes()}
+          />
            <Route
             path="/site/*"
             element={mainRouteChildren()}
           />
-            <Route
-            path="/examples/*"
-            element={ exampleRoutes()}
-          />
+           
           
         </Routes>
       </Router>

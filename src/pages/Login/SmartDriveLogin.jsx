@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import SmartInput from "../../components/core/forms/SmartInput";
-import SmartButton from "../../components/core/forms/SmartButton";
+//import SmartInput from "../../components/core/forms/SmartInput";
+//import SmartButton from "../../components/core/forms/SmartButton";
+import { SmartSoftInput,SmartSoftButton } from 'soft_digi';
 import './Login.css'; 
 import Login from '.';
 
@@ -62,21 +63,23 @@ const SmartDriveLogin = () => {
             <h2>Login</h2>
             <div className="input-box">
               
-                <SmartInput key="username" label="User Name"
+                <SmartSoftInput key="username" label="User Name"
             value={formData?.userName||""}
             onChange={(value) => handleInputChange("userName", value)} 
             inputType="BORDER_LESS"     
-            validations={userNameValidations}               
+            validations={userNameValidations}  
+            errorEnable={true}             
           />
                
             </div>
             <div className="input-box">
                
-                <SmartInput key="password" label="Password"
+                <SmartSoftInput key="password" label="Password"
             value={formData?.password||""}
             onChange={(value) => handleInputChange("password", value)} 
             inputType="BORDER_LESS"    
-            validations={passwordValidations}                
+            validations={passwordValidations}  
+            type={"password"}              
           />
             </div>
             <div className="remember-forget">
@@ -85,7 +88,7 @@ const SmartDriveLogin = () => {
             </div>
            
 
-            <SmartButton label="Login" className="login-button" classList={["login-button"]}
+            <SmartSoftButton label="Login" className="login-button" classList={["login-button"]}
             onClick={()=>handleFormSubmit()}
           
           />

@@ -15,7 +15,7 @@ const MainLayout = ({ children }) => {
   }
   return (
     <div className="container smart-pdf-container">
-
+        <main className='smart-mainlayout-middle p-5'>{children}</main>
       <Menubar />
       <Sidenav />
       {/* <div className="full-main">

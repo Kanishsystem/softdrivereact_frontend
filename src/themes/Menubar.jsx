@@ -6,7 +6,7 @@ import { MANU_PROFILE } from "../services/ImageService";
 const Menubar = () => {
   return (
     <div>
-      <nav className="navbar py-2 px-2">
+      <nav className="navbar py-2 px-2 themes-menubar-navbar">
         <div className="navbar-brand">
           <span className="navbar-item">
             <i class="fa fa-bars" aria-hidden="true"></i>

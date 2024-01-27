@@ -1,10 +1,12 @@
-.themes-sidenav-li:hover{
-  background-color: #cf1bce;
+.themes-sidenav-li:hover {
+  background-color: #ff93ff;
+  color: blueviolet;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.main-side-view{
+.main-side-view {
   position: fixed;
   z-index: 100;
-  margin-top:70px
- 
+  margin-top: 70px;
 }

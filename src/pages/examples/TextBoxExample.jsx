@@ -76,6 +76,7 @@ const TextBoxExample = () => {
             type={type} 
             min={1} 
             max={5}
+          
             pattern={ALLOW_NUMERIC}
             inputProps={{ isFocussed: true }}
             onBlur={onBlur}

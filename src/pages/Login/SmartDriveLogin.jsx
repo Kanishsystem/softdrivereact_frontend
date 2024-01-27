@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import SmartInput from "../../components/core/forms/SmartInput";
+import SmartButton from "../../components/core/forms/SmartButton";
 import './Login.css'; 
+import Login from '.';
 
 const SmartDriveLogin = () => {
 
@@ -30,36 +32,63 @@ const SmartDriveLogin = () => {
             return updatedFormData;
           });
         };
+
+        const handleFormSubmit=()=>{
+            setFormSubmit(true);
+            console.log(formData)
+           
+          }
+    
+
+        const userNameValidations = [
+            {
+              type: "required", 
+              msg: "User Name is Required"
+            },
+           
+          ];
+          const passwordValidations = [
+            {
+              type: "required",
+              msg: " Password is Required"
+            },
+          
+          ];
   return (
     <div>
          <section>
-    <div class="login-box">
+    <div className="login-box">
         <form action="">
             <h2>Login</h2>
-            <div class="input-box">
+            <div className="input-box">
               
                 <SmartInput key="username" label="User Name"
             value={formData?.userName||""}
             onChange={(value) => handleInputChange("userName", value)} 
-            inputType="BORDER_LESS"                    
+            inputType="BORDER_LESS"     
+            validations={userNameValidations}               
           />
                
             </div>
-            <div class="input-box">
-                <span class="icon">
-                  
-                </span>
+            <div className="input-box">
+               
                 <SmartInput key="password" label="Password"
             value={formData?.password||""}
             onChange={(value) => handleInputChange("password", value)} 
-            inputType="BORDER_LESS"                    
+            inputType="BORDER_LESS"    
+            validations={passwordValidations}                
           />
             </div>
-            <div class="remember-forget">
+            <div className="remember-forget">
                 <label><input type="checkbox" />Remember Me</label>
                 <a href="#">Forget Password</a>
             </div>
-            <button  className ="login-button"type="submit">Login</button>
+           
+
+            <SmartButton label="Login" className="login-button" classList={["login-button"]}
+            onClick={()=>handleFormSubmit()}
+          
+          />
          
         </form>
     </div>

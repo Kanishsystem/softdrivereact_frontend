@@ -1,0 +1,14 @@
+.sidenav-ul {
+  width: 250px;
+}
+
+.sidenav-li:hover {
+  background-color: #ffc0fc;
+  color: blueviolet;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.sidenav-li {
+  font-weight: 500;
+}

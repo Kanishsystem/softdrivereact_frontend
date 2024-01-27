@@ -1,0 +1,28 @@
+.cap1{
+    box-shadow: none !important; 
+    position: sticky;
+}
+
+.text{
+    color: rgb(201, 26, 201);
+    font-weight: bold;
+    display: grid;
+    align-content: space-around;
+}
+
+
+.cap2{
+    font-size: xx-large;
+}
+
+.cap3{
+    width: 800px;
+}
+
+.cap3 .input{
+    border: none;
+    background-color: rgb(250, 246, 246);
+    border-radius: 50px;
+}
+
+

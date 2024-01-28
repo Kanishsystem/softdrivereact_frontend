@@ -29,6 +29,9 @@ import RoleForm from "../pages/Role/RoleForm";
 import UserTable from "../pages/User/UserTable";
 import UserForm from "../pages/User/UserForm";
 
+// settings
+import Settings from "../pages/Settings/index";
+
 const SiteRoute = () => {
   const isAuthenticated = true;
 
@@ -73,6 +76,7 @@ const SiteRoute = () => {
 
 
           {/* Settings */}
+          <Route  path="/settings" element={<Settings/>}/>
           <Route  path="/email" element={<EmailSettings/>}/>
           <Route  path="/file-settings" element={<FileSettings/>}/>
           <Route  path="/login-settings" element={<LoginSettings/>}/>
@@ -82,6 +86,9 @@ const SiteRoute = () => {
       </MainLayout>
     );
   };
+
+
+
 
   const loginLayoutChildren = () => {
     return (

@@ -23,6 +23,7 @@ import UserTable from "../pages/User/UserTable";
 // settings
 import Settings from "../pages/Settings/index";
 import FileViewer from "../pages/AllFiles/FileViewer";
+import ForgetPassword from "../pages/Login/ForgetPassword";
 
 const SiteRoute = () => {
   const isAuthenticated = true;
@@ -96,7 +97,10 @@ const SiteRoute = () => {
            <Route
             path="/site/*"
             element={mainRouteChildren()}
+
+
           />
+          <Route path="/forget_password" element={<ForgetPassword />} />
            
           
         </Routes>

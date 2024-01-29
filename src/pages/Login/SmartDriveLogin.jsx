@@ -104,7 +104,7 @@ const SmartDriveLogin = () => {
             </div>
             <div className="remember-forget">
                 <label><input type="checkbox" />Remember Me</label>
-                <a href="#">Forget Password</a>
+                <a onClick={()=>navigate("/forget_password")} >Forget Password</a>
             </div>
            
            <button type="button" className='login-button'  onClick={()=>handleLogin()} > Login </button>

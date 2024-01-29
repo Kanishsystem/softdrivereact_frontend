@@ -10,13 +10,21 @@ const AllFiles = () => {
         { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
         { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
         { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
-        { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
     ]
 
+    const Folder_items = [
+        { icon_one: <i className="fa fa-file-code-o  " aria-hidden="true"></i>, textFoder: " Work Documents", icon_two: <i className="fa fa-ellipsis-v  " aria-hidden="true"></i> },
+        { icon_one: <i className="fa fa-file-code-o  " aria-hidden="true"></i>, textFoder: " Work Documents", icon_two: <i className="fa fa-ellipsis-v  " aria-hidden="true"></i> },
+        { icon_one: <i className="fa fa-file-code-o  " aria-hidden="true"></i>, textFoder: " Work Documents", icon_two: <i className="fa fa-ellipsis-v  " aria-hidden="true"></i> },
+        { icon_one: <i className="fa fa-file-code-o  " aria-hidden="true"></i>, textFoder: " Work Documents", icon_two: <i className="fa fa-ellipsis-v  " aria-hidden="true"></i> },
+        { icon_one: <i className="fa fa-file-code-o  " aria-hidden="true"></i>, textFoder: " Work Documents", icon_two: <i className="fa fa-ellipsis-v  " aria-hidden="true"></i> },
+        { icon_one: <i className="fa fa-file-code-o  " aria-hidden="true"></i>, textFoder: " Work Documents", icon_two: <i className="fa fa-ellipsis-v  " aria-hidden="true"></i> },
+
+    ]
     return (
         <div className='AllFiles-Frampage'>
             <div className='columns'>
-                <div className="column is-8">
+                <div className="column is-8 ">
                     <div className="columns ">
                         <div className="column is-12 has-background-light is-flex ">
                             <div class="navbar-item has-dropdown is-hoverable">
@@ -109,122 +117,74 @@ const AllFiles = () => {
 
                         </div>
                     </div>
-
-
                     <div className="columns ">
-                        <div className="column is-12 is-size-5 p-4 box">
+                        <div className="column is-12 is-size-5 p-3 box">
                             Recommend
-                        </div>
-                    </div>
-                    <div className="columns ">
-                        <div className="column is-12 box is-flex">
-                            {items.map((item) =>
-                                <div className="column is-4 ">
-                                    <div className="card ">
-                                        <div className="card-content">
-                                            <p className="title">
-                                                <img src={MAIN_PIC} alt="" height="250" width="300" />
-                                            </p>
+
+                            <div className="columns is-multiline ">
+
+                                {items.map((item) =>
+                                    <div className="column is-4  ">
+                                        <div className="card ">
+                                            <div className="card-content">
+                                                <p className="title">
+                                                    <img src={MAIN_PIC} alt="" height="250" width="300" />
+                                                </p>
+                                            </div>
+                                            <footer className="card-footer p-3">
+                                                <i className="fa fa-address-card p-1 is-size-5" aria-hidden="true"></i>
+                                                {item.title}
+                                            </footer>
                                         </div>
-                                        <footer className="card-footer p-3">
-                                            <i className="fa fa-address-card p-1 is-size-5" aria-hidden="true"></i>
-                                            {item.title}
-                                        </footer>
                                     </div>
-                                </div>
-                            )}
+                                )}
+
+                            </div>
                         </div>
                     </div>
-
                     <div className="columns ">
-                        <div className="column is-12 is-size-5 p-4 box">
+                        <div className="column box is-12 is-size-5">
                             Folders
-                        </div>
-                    </div>
-                    <div className="columns ">
-                        <div className="column box is-12 ">
                             <div className="AllFile-Files-Document ">
-
-                                <div className="column is-4">
-                                    <div className="card p-4  is-flex is-justify-content-space-between">
-                                        <i className="fa fa-file-code-o  " aria-hidden="true"></i>
-                                        Work Documents
-                                        <i className="fa fa-ellipsis-v  " aria-hidden="true"></i>
-                                    </div>
-
-                                </div>
-
-                                <div className="column is-4">
-                                    <div className="card p-4  is-flex is-justify-content-space-between">
-                                        <i className="fa fa-file-code-o  " aria-hidden="true"></i>
-                                        Promotion Photosh
-                                        <i className="fa fa-ellipsis-v  " aria-hidden="true"></i>
-                                    </div>
-
-                                </div>
-
-                                <div className="column is-4">
-                                    <div className="card p-4  is-flex is-justify-content-space-between">
-                                        <i className="fa fa-file-code-o  " aria-hidden="true"></i>
-                                        Intemship Program
-                                        <i className="fa fa-ellipsis-v  " aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                                <div className="column is-4">
-                                    <div className="card  p-4  is-flex is-justify-content-space-between ">
-                                        <i className="fa fa-file-code-o  " aria-hidden="true"></i>
-                                        Marketing Media
-                                        <i className="fa fa-ellipsis-v  " aria-hidden="true"></i>
+                                {Folder_items.map((item) =>
+                                    <div className="column is-4">
+                                        <div className="card p-4  is-flex is-justify-content-space-between">
+                                            <i className="fa fa-file-code-o  " aria-hidden="true"></i>
+                                            {item.textFoder}
+                                            <i className="fa fa-ellipsis-v  " aria-hidden="true"></i>
+                                        </div>
 
                                     </div>
-
-                                </div>
-
-                                <div className="column is-4">
-                                    <div className="card  p-4  is-flex is-justify-content-space-between">
-                                        <i className="fa fa-file-code-o  " aria-hidden="true"></i>
-                                        Brand Guldelne
-                                        <i className="fa fa-ellipsis-v  " aria-hidden="true"></i>
-                                    </div>
-
-                                </div>
-
-                                <div className="column is-4">
-                                    <div className="card p-4  is-flex is-justify-content-space-between">
-                                        <i className="fa fa-file-code-o  " aria-hidden="true"></i>
-                                        Financial Reports
-                                        <i className="fa fa-ellipsis-v  " aria-hidden="true"></i>
-                                    </div>
-
-                                </div>
+                                )}
                             </div>
                         </div>
                     </div>
                     <div className="columns ">
                         <div className="column is-12 is-size-5 p-4 box">
                             Files
-                        </div>
-                    </div>
-                    <div className="columns ">
-                        <div className="column is-12 box is-flex">
 
-                            {items.map((item) =>
-                                <div className="column is-4 ">
-                                    <div className="card ">
-                                        <div className="card-content">
-                                            <p className="title">
-                                                <img src={MAIN_PIC} alt="" height="250" width="300" />
-                                            </p>
+                            <div className="columns is-multiline ">
+
+
+                                {items.map((item) =>
+                                    <div className="column is-4 ">
+                                        <div className="card ">
+
+                                            <div className="card-content">
+                                                <p className="title">
+                                                    <img src={MAIN_PIC} alt="" height="250" width="300" />
+                                                </p>
+                                            </div>
+                                            <footer className="card-footer p-3">
+                                                <i className="fa fa-address-card p-1 is-size-5" aria-hidden="true"></i>
+                                                {item.title}
+                                            </footer>
                                         </div>
-                                        <footer className="card-footer p-3">
-                                            <i className="fa fa-address-card p-1 is-size-5" aria-hidden="true"></i>
-                                            {item.title}
-                                        </footer>
                                     </div>
-                                </div>
-                            )}
+                                )}
 
+
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -71,7 +71,7 @@ const UserTable = () => {
     return (
        <>
         <div className="is-flex justify-content-end ">
-          <SmartSoftButton  onClick={openMyModal} className="is-danger">Add</SmartSoftButton>
+          <SmartSoftButton label="Add"  onClick={openMyModal} className="is-danger">Add</SmartSoftButton>
         </div>
        
        

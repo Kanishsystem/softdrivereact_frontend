@@ -12,7 +12,7 @@ const ForgetPassword = () => {
             <h2>Forget Password</h2>
             <div className="input-box mt-2">
               
-                <SmartSoftInput key="euserid" label="Enter Your Email "
+                <SmartSoftInput key="forget" label="Enter Your Email "
         
          
             inputType="BORDER_LESS"     

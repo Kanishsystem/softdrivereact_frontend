@@ -21,13 +21,15 @@ body{
     position: fixed;
     margin-top: 70px;
     width:200px;
-    top:0
+    top:0;
+    height: 100vh;
+    max-height: 100vh;
 }
 .smart-site-middile{
     margin-top: 70px;
     margin-left: 200px;
     max-height: calc(100vh - 70px);
      width: 100%;
-   max-width: 100%;
+     max-width: 100%;
     padding:10px;
 }

@@ -1,14 +1,20 @@
 import React from "react";
 import "./Sidenav.css";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ items }) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (link) => {
+    navigate(link);
+  };
   return (
     <div  >
-      <ul className="card py-5 px-5">
+      <ul className="card smart-side-nav-view py-1 px-5">
         {items.map((item) => (
-          <li key={item.id} className="p-2 themes-sidenav-li">
+          <li onClick={() => handleNavigation(item.link)} key={item.id} className="p-1 my-1 themes-sidenav-li">
             <span className="pr-3">{item.icon}</span>
-            <span>{item.label}</span>
+            <span >{item.label}</span>
           </li>
         ))}
       </ul>
@@ -27,6 +33,7 @@ const Sidenav = () => {
       id: 2,
       label: "All Files",
       icon: <i class="fa fa-folder-o" aria-hidden="true"></i>,
+      link:"/site/all-files"
     },
     {
       id: 3,
@@ -42,6 +49,7 @@ const Sidenav = () => {
       id: 5,
       label: "Shared with me",
       icon: <i class="fa fa-users" aria-hidden="true"></i>,
+      link:"/site/share-with-me"
     },
     {
       id: 6,
@@ -57,6 +65,7 @@ const Sidenav = () => {
       id: 8,
       label: "Bin",
       icon: <i class="fa fa-trash-o" aria-hidden="true"></i>,
+      link:"/site/recycle-bin"
     },
   ];
 
@@ -70,11 +79,13 @@ const Sidenav = () => {
       id: 2,
       label: "Users",
       icon: <i class="fa fa-user" aria-hidden="true"></i>,
+      link:"/site/users"
     },
     {
       id: 3,
       label: "Roles",
       icon: <i class="fa fa-users" aria-hidden="true"></i>,
+      link:"/site/roles"
     },
     {
       id: 4,
@@ -85,6 +96,7 @@ const Sidenav = () => {
       id: 5,
       label: "Settings",
       icon: <i class="fa fa-cog" aria-hidden="true"></i>,
+      link:"/site/settings"
     },
   ];
 

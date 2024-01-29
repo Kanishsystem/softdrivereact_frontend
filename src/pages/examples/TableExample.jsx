@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-//import SmartTable from "../../components/core/tables/SmartTable";
+
 import {SmartSoftTable} from 'soft_digi';
 
 const TableExample = () => {

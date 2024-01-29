@@ -54,7 +54,7 @@ const UserTable = () => {
     }*/
     const MyFooterContent = () => {
       return (
-        <div>
+        <div className="is-flex is-justify-content-end float-end">
           <button className="button is-success is-small">Save changes</button>
           <button className="button is-small" onClick={closeModal}>Cancel</button>
         </div>

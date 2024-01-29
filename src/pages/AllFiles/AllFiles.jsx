@@ -28,7 +28,7 @@ const AllFiles = () => {
                     <div className="columns ">
                         <div className="column is-12 has-background-light is-flex ">
                             <div class="navbar-item has-dropdown is-hoverable">
-                                <a class="navbar-link is-size-5">
+                                <a class="navbar-link is-size-4">
                                     My Drive
                                 </a>
                                 <div class="navbar-dropdown">
@@ -45,10 +45,10 @@ const AllFiles = () => {
                             </div>
                             <div className='column is-flex is-justify-content-end'>
                                 <div className='listicon p-2 '>
-                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                    <i class="fa fa-bars is-size-4" aria-hidden="true"></i>
                                 </div>
                                 <div className='alerticon p-2'>
-                                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                    <i class="fa fa-exclamation-circle is-size-4" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -57,27 +57,39 @@ const AllFiles = () => {
                     <div className="columns  ">
                         <div className="column is-12 box is-flex">
                             <div className="AllFiles-topnav  pt-2">
-                                <div className=" file is-info">
-                                    <label>
-                                        <input className="file-input" type="file" name="resume" />
-                                        <span className="file-cta">
-                                            <span className="file-icon">
-                                                <i className="fa fa-upload" aria-hidden="true"></i>
+                                <div class="dropdown is-hoverable ">
+                                    <div class="dropdown-trigger ">
+                                        <button class="Uploderbtn" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                            <i class="fa fa-cloud-upload pr-1" aria-hidden="true"></i>
+                                            <span>Uplode</span>
+                                            <span class="icon is-small">
+                                                <i class="fa fa-chevron-circle-down pl-3" aria-hidden="true"></i>
                                             </span>
-                                            <span className="file-label">
-                                                upload
-                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                        <div class="dropdown-content">
+                                            <div class="dropdown-item">
+                                                <a class="navbar-item">
+                                                    Folder
+                                                </a>
+                                                <a class="navbar-item">
+                                                    File
+                                                </a>
 
-                                            <i className="fa fa-chevron-circle-down pl-4 " aria-hidden="true"></i>
-                                        </span>
-                                    </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="dropdown is-hoverable ml-4">
                                 <div className="dropdown-trigger pt-2">
                                     <button className="buttonx  " aria-haspopup="true" aria-controls="dropdown-menu4">
-                                        <span><i className="fa fa-plus" aria-hidden="true"></i> Create now </span>
+                                        <span>
+                                            <i className="fa fa-plus pr-1" aria-hidden="true"></i>
+                                            Create now
+                                        </span>
                                         <span className="icon is-small">
                                             <i className="fa fa-chevron-circle-down pl-2" aria-hidden="true"></i>
                                         </span>

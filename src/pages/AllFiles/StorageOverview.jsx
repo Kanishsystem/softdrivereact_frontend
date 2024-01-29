@@ -2,20 +2,26 @@ import React from 'react'
 import { MAIN_PIC } from '../../services/ImageService';
 const StorageOverview = () => {
 
+  const Details_Activities = [
+    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
 
-  
+  ]
+
   return (
     <div className='StorageOverview '>
       <div className="columns ">
-        <div className="column is-flex is-justify-content-space-between box m-1 ">
-
-          <div className='column'>
+        <div className="column is-flex  box m-1 is-justify-content-space-between ">
+          <span>
             <i className="fa fa-arrow-right " aria-hidden="true"></i>
-            <i className="fa fa-arrows pl-3" aria-hidden="true"></i>
-          </div>
-          <div className='column'>
-            <i className="fa fa-ellipsis-v  " aria-hidden="true"></i>
-          </div>
+            <i className="fa fa-arrows pl-3" aria-hidden="true"></i></span>
+          <span>
+            <i className="fa fa-ellipsis-v  " aria-hidden="true"></i></span>
+
         </div>
       </div>
 
@@ -38,22 +44,18 @@ const StorageOverview = () => {
           </div>
         </div>
       </div>
-      <div className='columns'>
-        <div className='column box is-flex is-justify-content-space-between ml-1'>
-
-          <div className='column'>
-            <img className="StorageimageOverview p-2" src={MAIN_PIC} alt="" height="50" width="50" />
-            Document 223 files
+      <div className='columns is-multiline '>
+        {Details_Activities.map((item) =>
+          <div className='column is-12 card  ml-1 is-flex is-justify-content-space-between'>
+            <div className=''>
+              <i class="fa fa-file pr-4" aria-hidden="true"></i>
+              {item.document_title_name}
+            </div>
+            <div>
+              {item.documentnumbersGB}
+            </div>
           </div>
-          <span>
-            760GB
-          </span>
-        </div>
-
-
-
-
-
+        )}
       </div>
 
 

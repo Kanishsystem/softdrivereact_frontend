@@ -9,6 +9,8 @@ const TableExample = () => {
     return <p>Test</p>
   }
 
+  
+
     const columns = [
         { title: 'ID', index: 'id',isSortable:true,type:"sno" },
         { title: 'Name', index: 'name' },

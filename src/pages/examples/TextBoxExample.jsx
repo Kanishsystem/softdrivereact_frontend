@@ -61,7 +61,7 @@ const TextBoxExample = () => {
 
       const passwordRightIcon=(value)=>{
         const updateText = () => {
-            console.log("type updatioen clicked")
+            console.log("type updation clicked")
             setType("text")
         }
         return <span onClick={()=>updateText()} className="icon is-small is-right"> <i className="fa fa-lock" ></i> </span>

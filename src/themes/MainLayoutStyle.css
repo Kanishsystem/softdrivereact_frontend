@@ -13,7 +13,9 @@ body{
     position: fixed;
     height:70px;
     width:100%;
-    top:0
+    top:0;
+    z-index: 100;
+    
 }
 .smart-site-sidenav{
     position: fixed;
@@ -25,6 +27,7 @@ body{
     margin-top: 70px;
     margin-left: 200px;
     max-height: calc(100vh - 70px);
-    width:100%;
+     width: 100%;
+   max-width: 100%;
     padding:10px;
 }

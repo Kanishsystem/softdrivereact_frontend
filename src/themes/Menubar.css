@@ -30,3 +30,7 @@
   justify-content: space-between;
   display: inline-flex;
 }
+
+.themes-menubar-navbar{
+  z-index: 100;
+}

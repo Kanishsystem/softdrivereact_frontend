@@ -1,0 +1,7 @@
+.pages-fileview-button{
+    display: flex;
+}
+
+.pages-fileview-button span{
+    justify-content: space-between;
+}

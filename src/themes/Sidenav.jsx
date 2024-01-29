@@ -27,12 +27,12 @@ const Sidenav = () => {
     {
       id: 1,
       label: "MY DRIVE",
-      icon: <i class="fa fa-hdd-o" aria-hidden="true"></i>,
+      icon: <i class="fa fa-folder-open" aria-hidden="true"></i>,
     },
     {
       id: 2,
       label: "All Files",
-      icon: <i class="fa fa-folder-o" aria-hidden="true"></i>,
+      icon: <i class="fa fa-folder" aria-hidden="true"></i>,
       link:"/site/all-files"
     },
     {
@@ -59,12 +59,12 @@ const Sidenav = () => {
     {
       id: 7,
       label: "Starred",
-      icon: <i class="fa fa-star-o" aria-hidden="true"></i>,
+      icon: <i class="fa fa-star" aria-hidden="true"></i>,
     },
     {
       id: 8,
       label: "Bin",
-      icon: <i class="fa fa-trash-o" aria-hidden="true"></i>,
+      icon: <i class="fa fa-trash" aria-hidden="true"></i>,
       link:"/site/recycle-bin"
     },
   ];

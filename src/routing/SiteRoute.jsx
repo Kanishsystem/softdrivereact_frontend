@@ -22,6 +22,7 @@ import UserTable from "../pages/User/UserTable";
 
 // settings
 import Settings from "../pages/Settings/index";
+import FileViewer from "../pages/AllFiles/FileViewer";
 
 const SiteRoute = () => {
   const isAuthenticated = true;
@@ -57,10 +58,13 @@ const SiteRoute = () => {
 
           {/* Settings */}
           <Route  path="/settings" element={<Settings/>}/>
+
           {/* users and roles */}
           <Route path="/roles" element={<RoleTable/>} />
           <Route path="/users" element={<UserTable />} />
 
+          {/* Other Route */}
+          <Route path="/fileview" element={<FileViewer />} />
        
          
         </Routes>

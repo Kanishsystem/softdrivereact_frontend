@@ -286,7 +286,7 @@ h2{
 .input-box label{
     position: absolute;
     top: 50%;
-    left: 5px;
+    
     transform:translateY(-30%);
     font-size: 1em;
     color: white;
@@ -301,7 +301,7 @@ h2{
     outline: none;
     font-size: 1em;
     color: white;
-    padding: 0px 35px 5px;
+    padding: 0px 10px 5px;
 
 
 }

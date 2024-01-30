@@ -1,23 +1,40 @@
 import React, { useEffect, useState } from "react";
 
 import {SmartSoftTable} from 'soft_digi';
+import { MAIN_PIC } from "../../services/ImageService";
 
 const TableExample = () => {
   const [tabData, setTabData] = useState([]);
 
-  const titleDisplay=(handleSort,handleFilter)=>{
-    return <p>Test</p>
-  }
+  const titleDisplay = (handleSort, handleFilter) => {
+    return <p>Test</p>;
+  };
 
-  
+  const nameTags = [{ value: "John", label: "John", class: "is-link" }];
 
-    const columns = [
-        { title: 'ID', index: 'id',isSortable:true,type:"sno" },
-        { title: 'Name', index: 'name' },
-        { title: 'Age', index: 'age',isSortable:true },
-        { title: 'Age', index: 'age',titleFunction:titleDisplay },
-         {title:"Date",index:"sdate",type:"date",dateFormat:"DD-MM"}
-      ];
+  /**** the function input will be single row */
+
+  const nameFunction = (row) => {
+    return (
+      <div className="is-flex">
+        <figure className="image is-32x32 mr-2">
+          <img className="is-rounded" src={MAIN_PIC} />
+        </figure>
+        {row["name"] || ""}
+      </div>
+    );
+  };
+
+  const columns = [
+    { title: "ID", index: "id", isSortable: true, type: "sno" },
+    { title: "Name", index: "name" },
+    { title: "Age", index: "age", isSortable: true },
+    { title: "Age", index: "age", titleFunction: titleDisplay },
+    { title: "Date", index: "sdate", type: "date", dateFormat: "DD-MM" },
+    { title: "tags", index: "name", type: "tags", tags: nameTags },
+    { title: "profile", index: "name", valueFunction: nameFunction },
+    { title: "progress", index: "age", type: "progress", progressMax:100 },
+  ];
 
     const data = [
         { id: 1, name: 'John', age: 25,sdate:"2022-05-06" },

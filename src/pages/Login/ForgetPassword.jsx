@@ -6,7 +6,7 @@ import { SmartSoftInput } from 'soft_digi';
 const ForgetPassword = () => {
   return (
     <div>
-             <section>
+             <section className='login-section'>
     <div className="login-box forget-box">
         <form action="">
             <h2>Forget Password</h2>

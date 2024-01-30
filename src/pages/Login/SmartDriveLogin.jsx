@@ -75,7 +75,7 @@ const SmartDriveLogin = () => {
           ];
   return (
     <div>
-         <section>
+         <section className='login-section'>
     <div className="login-box">
         <form action="">
             <h2>Login</h2>

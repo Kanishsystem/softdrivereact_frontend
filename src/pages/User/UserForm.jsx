@@ -14,7 +14,7 @@ const UserForm = () => {
                 />
               </div>
               <div className='column is-6'>
-              <SmartSoftInput 
+              <SmartSoftInput className="smart-ii"
               label='Name'/>
               </div>
 

@@ -14,7 +14,7 @@ const SmartModal = ({ closeModal, modalOptions }) => {
         }
     }
     return (
-        <div className={"modal is-active smart-modal " + modalClass}> 
+        <div key={"text-1"} className={"modal is-active smart-modal " + modalClass}> 
             <div className="modal-background" onClick={closeModalOnBody} />
             <div className="modal-card">
                 {title && <header className="modal-card-head">

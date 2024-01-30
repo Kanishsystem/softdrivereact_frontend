@@ -85,7 +85,7 @@ const UserTable = () => {
     }*/
     const MyFooterContent = () => {
       return (
-        <div className="is-flex is-justify-content-end float-end">
+        <div className="is-flex is-justify-content-end ">
           <button className="button is-success is-small">Go back</button>
           <button className="button  is-link is-small" onClick={closeModal}>Submit</button>
         </div>
@@ -109,7 +109,7 @@ const UserTable = () => {
     return (
        <>
         <div className="is-flex is-justify-content-center ">
-          <SmartSoftButton label="Add New User"  onClick={openMyModal} className="is-danger">Add</SmartSoftButton>
+          <SmartSoftButton label="Add"  onClick={openMyModal} className="is-danger"></SmartSoftButton>
         </div>
        
        

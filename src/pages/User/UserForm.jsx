@@ -12,9 +12,9 @@ const UserForm = () => {
 };
 
 const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
+  { value: 'active', label: 'Active' },
+  { value: 'inactive', label: 'In-Active' },
+  { value: 'locked', label: 'Locked' }
 ]
 
   return (
@@ -26,16 +26,19 @@ const options = [
               <div className='column is-6'>
                 <SmartSoftInput
                 label='Employee ID' 
+                placeHolder='IC Number'
                 />
               </div>
               <div className='column is-6'>
               <SmartSoftInput className="smart-ii"
-              label='Name'/>
+              label='Name'
+              placeHolder='Enter Your Name'/>
               </div>
 
               <div className='column is-6'>
               <SmartSoftInput
               label='Mobile Number'
+              placeHolder='Mobile Number'
 
               
               />
@@ -43,7 +46,9 @@ const options = [
 
               <div className='column is-6'>
               <SmartSoftInput
-              label='Email' />
+              label='Email' 
+              placeHolder='Email'
+              />
               </div>
 
             </div>
@@ -51,30 +56,24 @@ const options = [
           <div className='column is-4 has-text-white'>Image Upload</div>
           <div className='column is-8'>
             <SmartSoftSelect
-            label='Select Role' />
+            label='Select Role'
+            placeHolder='Please Select' />
+           
           </div>
 
           <div className='column is-8'>
-          {/* <SmartSoftCheckRadioSwitch
+          <SmartSoftCheckRadioSwitch
            isMulti={true}
            options={options}
             label='Select Employee Status' 
             type={"radio"}
-            name="status"
-          value={formData?.radioone || ""}
-          onChange={(value) => handleInputChange("status", value)}
-                 
-        /> */}
-
-<SmartSoftCheckRadioSwitch
-          isMulti={true}
-          options={options}
-          type={"radio"}
-          name="radioone"
+            name="radioone"
           value={formData?.radioone || ""}
           onChange={(value) => handleInputChange("radioone", value)}
                  
         />
+
+
 
           </div>
 

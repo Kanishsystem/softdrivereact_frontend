@@ -10,6 +10,7 @@ const RoleTable = () => {
     const [tabData, setTabData] = useState([]);
  
     const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
+    
 
     
     const columns = [
@@ -63,7 +64,7 @@ const RoleTable = () => {
   };
   return(
   <>
-  <div className="is-flex justify-content-end ">
+  <div className="is-flex is-justify-content-center ">
     <SmartSoftButton label="Add" onClick={openMyModal} className="is-danger"></SmartSoftButton>
   </div>
  

@@ -66,10 +66,13 @@ const UserTable = () => {
         navigationIcon:"fa-chevron"
       }
 
+
+
       const addNewObject = () => {
         // Create a new object to be added
         const newObject =   { id: 1, name: 'John', age: 25,sdate:"2023-05-06" };
     
+        
         // Use the state updater function to add the new object to the state
         setTabData(prevData => [...prevData, newObject]);
       };

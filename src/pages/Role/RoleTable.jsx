@@ -10,13 +10,18 @@ const RoleTable = () => {
     const [tabData, setTabData] = useState([]);
  
     const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
+
+    const nameTags = [{ value: "John", label: "John", class: "is-light" },
+                     { value: "Jane", label: "Jane", class: "is-light" },
+                    { value: "Doe", label: "Doe", class: "is-light" }];
+
     
 
     
     const columns = [
       { title: 'S.No', index: 'id',isSortable:true,type:"sno" },
       { title: 'Role Name', index: 'name' },
-      { title: 'Employee', index: 'name',isSortable:true },
+      { title: 'Employee', index: 'name',type: "tags", tags: nameTags  },
        {title:"Action", index:"action",}
     ];
 

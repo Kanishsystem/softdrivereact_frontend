@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SmartSoftCheckRadioSwitch, SmartSoftInput, SmartSoftSelect } from 'soft_digi'
 
 const UserForm = () => {
+  const [formData, setFormData] = useState({});
+  const [formSubmit, setFormSubmit] = useState(false);
+  const [formErrors,setFormErrors] = useState(false);
+  const [type, setType] = useState("password");
+
+  const handleInputChange = (name, value) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+};
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+]
+
   return (
     <div>
       <div className='container'>
@@ -38,16 +53,31 @@ const UserForm = () => {
             <SmartSoftSelect
             label='Select Role' />
           </div>
+
           <div className='column is-8'>
           {/* <SmartSoftCheckRadioSwitch
+           isMulti={true}
+           options={options}
             label='Select Employee Status' 
             type={"radio"}
             name="status"
           value={formData?.radioone || ""}
-          onChange={(value) => handleInputChange("radioone", value)}
+          onChange={(value) => handleInputChange("status", value)}
                  
         /> */}
+
+<SmartSoftCheckRadioSwitch
+          isMulti={true}
+          options={options}
+          type={"radio"}
+          name="radioone"
+          value={formData?.radioone || ""}
+          onChange={(value) => handleInputChange("radioone", value)}
+                 
+        />
+
           </div>
+
         </div>
         
       </div>

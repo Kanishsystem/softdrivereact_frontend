@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import {SmartSoftButton, SmartSoftTable} from 'soft_digi';
+import {SmartSoftCheckRadioSwitch} from "soft_digi";
 import { useSiteContext } from "../../contexts/SiteProvider";
 import UserForm from "./UserForm";
 import { MAIN_PIC } from "../../services/ImageService";
@@ -8,6 +9,7 @@ import { MAIN_PIC } from "../../services/ImageService";
 
 const UserTable = () => {
   const [tabData, setTabData] = useState([]);
+  
  
     const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
   
@@ -97,6 +99,13 @@ const UserTable = () => {
       openModal(modalObject);
     };
 
+  
+
+  
+
+    
+   
+
     return (
        <>
         <div className="is-flex is-justify-content-center ">
@@ -105,7 +114,11 @@ const UserTable = () => {
        
        
         <SmartSoftTable data={tabData}  columns={columns} paginationProps={pagination} />
+
+       
        </>
+
+       
     )
 }
 

@@ -4,7 +4,8 @@ import FileSettings from "./FileSettings";
 import LoginSettings from "./LoginSettings";
 import RemoteServerSettings from "./RemoteServerSettings";
 import EmailSettings from "./EmailSettings";
-import  './style.css';
+
+
 
 
 

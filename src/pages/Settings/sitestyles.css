@@ -1,0 +1,243 @@
+/* .page-container{
+     height:85vh;
+     width:80vw;
+     background-color:white;
+     margin:-70px 0px 0px 0px;  
+}
+.page-container:hover{
+     border:2px solid;
+     border-color:blue;
+}
+.side-block{
+     margin-top:80px;
+
+}
+
+
+.Uruip{
+     margin:0px 0px 0px 10px;
+}     
+.Uruip:hover{
+     border:2px solid;
+     border-color:blue;
+} */
+.page-container{
+     height:85vh;
+     width:80vw;
+     background-color:white;
+       margin-block-start:-70px;
+       border:2px solid white;  
+  }
+   .page-container:hover{
+     border:2px solid;  
+     border-color:blue;
+  }   
+      
+.page-body{
+     margin-top:50px;
+}
+.Uruip{
+     font-size:17px;
+     margin:5px 0px 0px 10px;
+     border:2px solid white;
+}
+.Uruip:hover{
+     border:2px solid blue;
+}
+.box-model{
+     border:1px solid white;
+     margin:10px 0px 0px 40px;
+     height:30px;
+     width:250px;
+}
+
+
+.Title{
+     font-size:17px;
+     margin:5px 0px 0px 10px;
+     border:2px solid white;
+    
+    
+}
+.Title:hover{
+     border:2px solid blue;
+}
+
+.Short-Name{
+     font-size:17px;
+     margin:5px 0px 0px 10px;
+     border:2px solid white;
+}
+.Short-Name:hover{
+     border:2px solid blue;
+}
+.Theme{
+     font-size:17px;
+     margin:5px 0px 0px 10px;
+     border:2px solid white;
+}
+.Theme:hover{
+     border:2px solid blue;
+}
+.Foot{
+     height:35px;
+     font-size:17px;
+     margin:5px 0px 0px 10px;
+     border:2px solid white;
+
+}
+.Foot:hover{
+     border:2px solid blue;
+}
+
+  
+  .input-box1{
+     width:350px;
+     height:30px;
+     margin:5px 0px 0px 30px;
+     border:1px solid rgb(173, 168, 168);
+  }
+  .input-box1:hover{
+     border:2px solid blue;
+  }
+
+  .input-box2{
+     width:350px;
+     height:30px;
+     margin:5px 0px 0px 100px;
+     border:1px solid rgb(173, 168, 168);
+  }
+
+  .input-box2:hover{
+     border:2px solid blue;
+  }
+
+  
+  .input-box3{
+     width:350px;
+     height:30px;
+     margin:5px 0px 0px 43px; 
+     border:1px solid rgb(173, 168, 168);
+  }
+
+  .input-box3:hover{
+     border:2px solid blue;
+  }
+
+  .input-box4{
+     width:350px;
+     height:30px;
+     margin:5px 0px 0px 82px; 
+     border:1px solid rgb(173, 168, 168);
+  }
+
+  .input-box4:hover{
+     border:2px solid blue;
+  }
+
+  .input-box5{
+     width:350px;
+     height:70px;
+     margin:5px 0px 0px 84px; 
+     border:1px solid rgb(173, 168, 168);
+  }
+  
+  .input-box5:hover{
+     border:2px solid blue;
+  }
+
+  .Site-logo{
+     width:70px;
+     font-size:15px;
+     margin:15px 0px 0px 40px;
+     border:2px solid white;
+  }
+  
+  .Site-logo:hover{
+     border:2px solid blue;
+  }
+  .container1{
+     height:200px;
+     width:150px;
+     border:2px solid white;
+     margin:5px 0px 0px 30px;
+  }
+
+  .container1:hover{
+    
+     border:2px solid blue;
+  }
+
+
+
+
+  .sub-container1{
+     height:130px;
+     width:120px;
+    background-color:rgb(191, 191, 225);
+      margin:25px 0px 0px 13px; 
+      border:2px solid white;
+  }
+   
+  .sub-container1:hover{
+    
+     border:2px solid blue;
+  }
+
+
+  .Select-button{
+     height:30px;
+     width:70px;
+     background-color:rgb(191, 191, 225);
+     font-size:13px;
+     margin:2px 0px 0px 40px;
+     border:2px solid white;
+     border-radius:2px;
+     color:rgb(10, 10, 144);
+     font-weight:bold;
+  }
+  .Select-button:hover{
+     border:2px solid blue;
+  }
+  
+  
+  .Site-loginlogo{
+     width:110px;
+     font-size:15px;
+     margin:15px 0px 0px 55px;
+     border:2px solid white;
+  }
+
+  .Site-loginlogo:hover{
+     border:2px solid blue;
+  }
+
+  .container2{
+     height:200px;
+     width:150px;
+     border:2px solid white;
+     margin:5px 0px 0px 50px;
+  }
+
+  .container2:hover{
+     border:2px solid blue;
+  }
+
+  .sub-container2{
+     height:130px;
+     width:120px;
+    background-color:rgb(191, 191, 225);
+    border:2px solid white;
+      margin:25px 0px 0px 13px; 
+  }
+
+  .sub-container2:hover{
+     border:2px solid blue;
+  }
+
+
+
+  .smart-general-text-box{
+    width:350px;
+    margin:50px;
+  }

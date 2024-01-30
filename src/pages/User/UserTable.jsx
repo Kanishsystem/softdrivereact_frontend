@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import {SmartSoftButton, SmartSoftTable} from 'soft_digi';
+import {SmartSoftCheckRadioSwitch} from "soft_digi";
 import { useSiteContext } from "../../contexts/SiteProvider";
 import UserForm from "./UserForm";
 import { MAIN_PIC } from "../../services/ImageService";
@@ -8,6 +9,7 @@ import { MAIN_PIC } from "../../services/ImageService";
 
 const UserTable = () => {
   const [tabData, setTabData] = useState([]);
+  
  
     const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
   
@@ -83,7 +85,7 @@ const UserTable = () => {
     }*/
     const MyFooterContent = () => {
       return (
-        <div className="is-flex is-justify-content-end float-end">
+        <div className="is-flex is-justify-content-end ">
           <button className="button is-success is-small">Go back</button>
           <button className="button  is-link is-small" onClick={closeModal}>Submit</button>
         </div>
@@ -97,15 +99,26 @@ const UserTable = () => {
       openModal(modalObject);
     };
 
+  
+
+  
+
+    
+   
+
     return (
        <>
         <div className="is-flex is-justify-content-center ">
-          <SmartSoftButton label="Add New User"  onClick={openMyModal} className="is-danger">Add</SmartSoftButton>
+          <SmartSoftButton label="Add"  onClick={openMyModal} className="is-danger"></SmartSoftButton>
         </div>
        
        
         <SmartSoftTable data={tabData}  columns={columns} paginationProps={pagination} />
+
+       
        </>
+
+       
     )
 }
 

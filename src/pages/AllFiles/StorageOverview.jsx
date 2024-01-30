@@ -1,7 +1,6 @@
 import React from 'react'
 import { MAIN_PIC } from '../../services/ImageService';
 const StorageOverview = () => {
-
   const Details_Activities = [
     { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
     { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
@@ -9,9 +8,7 @@ const StorageOverview = () => {
     { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
     { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
     { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
-
   ]
-
   return (
     <div className='StorageOverview '>
       <div className="columns ">
@@ -21,11 +18,8 @@ const StorageOverview = () => {
             <i className="fa fa-arrows pl-3" aria-hidden="true"></i></span>
           <span>
             <i className="fa fa-ellipsis-v  " aria-hidden="true"></i></span>
-
         </div>
       </div>
-
-
       <div className='columns'>
         <div className='column box ml-1'>
           Storage
@@ -57,10 +51,7 @@ const StorageOverview = () => {
           </div>
         )}
       </div>
-
-
     </div >
   )
 }
-
 export default StorageOverview

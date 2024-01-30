@@ -22,6 +22,9 @@ import UserTable from "../pages/User/UserTable";
 
 // settings
 import Settings from "../pages/Settings/index";
+import FileViewer from "../pages/AllFiles/FileViewer";
+import ForgetPassword from "../pages/Login/ForgetPassword";
+import CheckRadioSwitch from "../pages/examples/CheckRadioSwitch";
 
 const SiteRoute = () => {
   const isAuthenticated = true;
@@ -36,6 +39,7 @@ const SiteRoute = () => {
           <Route path="selectbox" element={<SelectBoxExample />} />  
           <Route path="table" element={<TableExample />} />  
           <Route path="modal" element={<ModalExample />} />   
+          <Route path="checkradio" element={<CheckRadioSwitch />} />   
         </Routes>
     </MainLayout>
     )
@@ -57,10 +61,13 @@ const SiteRoute = () => {
 
           {/* Settings */}
           <Route  path="/settings" element={<Settings/>}/>
+
           {/* users and roles */}
           <Route path="/roles" element={<RoleTable/>} />
           <Route path="/users" element={<UserTable />} />
 
+          {/* Other Route */}
+          <Route path="/fileview" element={<FileViewer />} />
        
          
         </Routes>
@@ -92,7 +99,10 @@ const SiteRoute = () => {
            <Route
             path="/site/*"
             element={mainRouteChildren()}
+
+
           />
+          <Route path="/forget_password" element={<ForgetPassword />} />
            
           
         </Routes>

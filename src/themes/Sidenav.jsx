@@ -1,9 +1,10 @@
 import React from "react";
 import "./Sidenav.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = ({ items }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavigation = (link) => {
     navigate(link);
@@ -12,8 +13,8 @@ const Sidebar = ({ items }) => {
     <div  >
       <ul className="card smart-side-nav-view py-1 px-5">
         {items.map((item) => (
-          <li onClick={() => handleNavigation(item.link)} key={item.id} className="p-1 my-1 themes-sidenav-li">
-            <span className="pr-3">{item.icon}</span>
+          <li onClick={() => handleNavigation(item.link)} key={item.id}   className={location.pathname === item.link ? 'active' : 'smart-side-nav-view py-2'}>
+            <span className="pr-1">{item.icon}</span>
             <span >{item.label}</span>
           </li>
         ))}
@@ -27,12 +28,12 @@ const Sidenav = () => {
     {
       id: 1,
       label: "MY DRIVE",
-      icon: <i class="fa fa-hdd-o" aria-hidden="true"></i>,
+      icon: <i class="fa fa-folder-open" aria-hidden="true"></i>,
     },
     {
       id: 2,
       label: "All Files",
-      icon: <i class="fa fa-folder-o" aria-hidden="true"></i>,
+      icon: <i class="fa fa-folder" aria-hidden="true"></i>,
       link:"/site/all-files"
     },
     {
@@ -59,12 +60,12 @@ const Sidenav = () => {
     {
       id: 7,
       label: "Starred",
-      icon: <i class="fa fa-star-o" aria-hidden="true"></i>,
+      icon: <i class="fa fa-star" aria-hidden="true"></i>,
     },
     {
       id: 8,
       label: "Bin",
-      icon: <i class="fa fa-trash-o" aria-hidden="true"></i>,
+      icon: <i class="fa fa-trash" aria-hidden="true"></i>,
       link:"/site/recycle-bin"
     },
   ];

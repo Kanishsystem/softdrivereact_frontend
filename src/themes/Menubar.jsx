@@ -5,7 +5,7 @@ import { MANU_PROFILE } from "../services/ImageService";
 
 const Menubar = () => {
   return (
-    <div>
+    <div className="main-top-bar">
       <nav className="navbar py-2 px-2 themes-menubar-navbar">
         <div className="navbar-brand">
           <span className="navbar-item">

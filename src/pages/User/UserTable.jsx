@@ -17,7 +17,7 @@ const UserTable = () => {
 
 
     const columns = [
-        { title: 'Name', index: 'id',isSortable:true,type:"sno" },
+        { title: 'Name', index: 'name',isSortable:true },
         { title: 'User Name', index: 'name' },
         { title: 'Email', index: 'age',isSortable:true },
         { title: 'Role', index: 'age', },
@@ -26,6 +26,7 @@ const UserTable = () => {
       ];
 
     const data = [
+      
         { id: 1, name: 'John', age: 25,sdate:"2022-05-06" },
         { id: 2, name: 'Jane', age: 30,sdate:"2024-01-15" },
         { id: 3, name: 'Doe', age: 4,sdate:"2024-01-06" },
@@ -55,8 +56,8 @@ const UserTable = () => {
     const MyFooterContent = () => {
       return (
         <div className="is-flex is-justify-content-end float-end">
-          <button className="button is-success is-small">Save changes</button>
-          <button className="button is-small" onClick={closeModal}>Cancel</button>
+          <button className="button is-success is-small">Go back</button>
+          <button className="button  is-link is-small" onClick={closeModal}>Submit</button>
         </div>
       );
     };

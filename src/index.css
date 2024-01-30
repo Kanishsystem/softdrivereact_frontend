@@ -12,3 +12,49 @@ code {
     monospace;
 }
 
+:root {
+   
+  --primary-color:#7D6CE2;
+  --primary-color-side:hsl(240, 98%, 21%);
+ 
+  /* Blue */
+  --secondary-color: #f3fdfd;
+  /* Gray */
+  --accent-color: #ffc107;
+  /* Yellow */
+  --white-color:#FFFFFE;
+  /* Add more color variables as needed */
+
+  /* Text Colors */
+  --text-color: #333;
+  /* Main text color */
+  --link-color: #007bff;
+  /* Color for hyperlinks */
+  --link-hover-color: #0056b3;
+  /* Color for hyperlinks on hover */
+
+  --body-background:var( --white-color);
+  /*** header nav olors**/
+  --headnav-background:var( --white-color);
+  --headnav-textcolor:var( --text-color);
+  --sidenav-background:var(--primary-color-side);
+
+  /** buttons colors **/
+  --smart-action-button-background:var(--primary-color-side);
+  --smart-action-button-text:var(--secondary-color);
+
+  /*** pagination colors ***/
+  --smart-page-active-color:var(--primary-color-side);
+  --smart-page-disabled-color:var(--secondary-color);
+
+  /**** ****/
+  --smart-text-opacity:0.9;
+  --smart-bg-opacity:0.9;
+
+  /***/
+  --bs-popover-body-padding-y:0.4em;
+}
+
+
+
+

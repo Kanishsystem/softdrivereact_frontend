@@ -1,0 +1,38 @@
+.file.is-info .file-cta {
+    border-radius: 50em;
+    color: white;
+    background: linear-gradient(to bottom, #9900cc 0%, #9900cc 100%);
+}
+
+.buttonx {
+    background-color: silver;
+    color: black;
+    border-radius: 50px;
+    font-size: 17px;
+    padding: 0.5em 2em 0.5em 2em;
+    border-style: none;
+}
+
+.button-sort {
+    background-color: rgb(214, 213, 213);
+    color: black;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 50px;
+    font-size: 17px;
+    border-style: none;
+}
+
+.AllFile-Files-Document {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Uploderbtn {
+    padding: 0.5em 2em 0.5em 2em;
+    background-color: blueviolet;
+    border-style: none;
+    border-radius: 10em;
+    font-size: 17px;
+    color: white;
+
+}

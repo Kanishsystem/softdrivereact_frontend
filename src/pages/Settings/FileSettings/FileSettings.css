@@ -1,0 +1,9 @@
+.sub-general-label{
+    color: rgb(93, 87, 87);
+    font-style: italic;
+    font-size: .75rem;
+}
+
+.general-input{
+    width: 15%;
+}

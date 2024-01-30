@@ -4,9 +4,13 @@ import FileSettings from "./FileSettings";
 import LoginSettings from "./LoginSettings";
 import RemoteServerSettings from "./RemoteServerSettings";
 import EmailSettings from "./EmailSettings";
+import  './style.css';
+
+
 
 const Settings = () => {
   console.log("testing settings");
+
   const [tab, setTab] = useState("site");
   const tabs = [
     {

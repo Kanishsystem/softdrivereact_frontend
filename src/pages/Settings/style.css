@@ -1,0 +1,108 @@
+.page-container1{
+    height:85vh;
+    width:80vw;
+    background-color:white;
+      margin:-70px 10px 0px 0px;    
+  }
+  .page-container1:hover{
+    border:2px solid;
+    border-color:blue;
+  }   
+   
+  .logo{
+   height:130px;
+   width:400px;
+   margin-top:20px;
+  }
+  .logo:hover{
+    border:2px solid;
+    border-color:blue;
+  }
+  
+  .part-container1{
+    height:200px;
+    width:180px;
+     /* border:1px solid;  */
+     margin:80px 0px 0px 30px; 
+  }
+  .part-container1:hover{
+    
+    border:2px solid;
+    border-color:blue;
+  
+  }
+
+  .icon-container1{
+     margin:5px 0px 0px 100px; 
+     display:flex;
+     justify-content:space-evenly;
+     
+  }
+
+
+  .icon-container2{
+    margin:-10px 0px 0px 150px;
+  }
+
+
+  .icon-container3{
+    margin:50px 0px 0px 100px;
+  }
+  
+  .part-container2{
+    height:330px;
+    width:350px;
+    /* border:1px solid; */
+     margin:80px 150px 0px -30px;
+  }
+  .part-container2:hover{
+    
+    border:2px solid;
+    border-color:blue;
+  
+  }
+  
+  .Server-Url{
+       font-size:17px;
+       color:rgb(94, 90, 90);
+       margin:10px 0px 0px 20px;  
+  }
+  
+  .box-model{
+    width:40px;
+    height:30px;
+    margin:8px 0px 0px 0px;
+  }
+  .Server-Way{
+    font-size:17px;
+    color:rgb(94, 90, 90);
+    margin:15px 0px 0px 20px;  
+  }
+  .Server-File{
+    font-size:17px;
+    color:rgb(94, 90, 90);
+    margin:15px 0px 0px 20px;  
+  }
+  
+  .Next{
+    height:30px;
+    width:60px;
+    border-width:1px;
+    color:blue;
+    margin:40px 0px 0px 170px;
+    background-color:white;
+  }
+  .Added{
+    height:30px;
+    width:100px;
+    background-color:blue;
+    font-size:13px;
+    margin:2px 0px 0px 40px;
+    border-width:0px;
+    border-radius:2px;
+    color:white;
+    font-weight:bold;
+    margin:40px 0px 0px 10px;
+  }
+ 
+  

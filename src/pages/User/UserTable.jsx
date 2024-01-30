@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import {SmartSoftButton, SmartSoftTable} from 'soft_digi';
 import { useSiteContext } from "../../contexts/SiteProvider";
 import UserForm from "./UserForm";
+import { MAIN_PIC } from "../../services/ImageService";
 
 
 const UserTable = () => {
@@ -14,24 +15,51 @@ const UserTable = () => {
   // const titleDisplay=(handleSort,handleFilter)=>{
   //   return <p className="is-danger is-tag ">Test</p>
   // }
-
+  const roleTags = [{   class: "is-link" }];
+  const nameFunction = (row) => {
+    return (
+      <div className="is-flex">
+        <figure className="image is-32x32 mr-2">
+          <img className="is-rounded" src={MAIN_PIC} />
+        </figure>
+        {row["name"] || ""}
+      </div>
+    );
+  };
+  const roleFunction =(role)=>{
+    if(role==="Admin"){
+      return <span className="tag is-success">Administrator</span>;
+    }else{
+      return <span className="tag is-info">User</span>;
+    }
+  
+  }
 
     const columns = [
-        { title: 'Name', index: 'name',isSortable:true },
-        { title: 'User Name', index: 'name' },
-        { title: 'Email', index: 'age',isSortable:true },
-        { title: 'Role', index: 'age', },
-         {title:"Storage Capacity",index:"sdate",},
-         {title:"Action", index:"action",}
+      { title: "Name", index: "name", valueFunction: nameFunction, },
+        { title: 'User Name', index: 'name',isSortable:true },
+        { title: 'Email', index: 'email',isSortable:true },
+        { title: 'Role', index: 'role' ,className:"is-link",valueFunction: roleFunction,},
+        { title: "Storage Capacity", index: "age", type: "progress", progressMax:100 },
+        {title:"Action", index:"action",}
       ];
 
-    const data = [
-      
-        { id: 1, name: 'John', age: 25,sdate:"2022-05-06" },
-        { id: 2, name: 'Jane', age: 30,sdate:"2024-01-15" },
-        { id: 3, name: 'Doe', age: 4,sdate:"2024-01-06" },
-        // ... more data
-      ];
+   
+
+      const userData=[
+        { id: 1, name: 'John', age: 25,sdate:"2022-05-06",email:"test@gmail.com",role:"Admin", action:"b" },
+        { id: 2, name: 'Jane', age: 30,sdate:"2024-01-15",email:"test@gmail.com",role:"Admin", action:"b"   },
+        { id: 3, name: 'Doe', age: 4,sdate:"2024-01-06",email:"test@gmail.com",role:"Admin",  action:"b"  },
+        { id: 4, name: 'John', age: 25,sdate:"2022-05-06",email:"test@gmail.com",role:"Admin", action:"b" },
+        { id: 5, name: 'Jane', age: 30,sdate:"2024-01-15",email:"test@gmail.com",role:"Admin", action:"b"   },
+        { id: 6, name: 'Doe', age: 4,sdate:"2024-01-06",email:"test@gmail.com",role:"Admin",  action:"b"  },
+        { id: 7, name: 'John', age: 25,sdate:"2022-05-06",email:"test@gmail.com",role:"Admin", action:"b" },
+        { id: 8, name: 'Jane', age: 30,sdate:"2024-01-15",email:"test@gmail.com",role:"Admin", action:"b"   },
+        { id: 9, name: 'Doe', age: 4,sdate:"2024-01-06",email:"test@gmail.com",role:"Admin",  action:"b"  },
+        { id: 10, name: 'John', age: 25,sdate:"2022-05-06",email:"test@gmail.com",role:"Admin", action:"b" },
+        { id: 11, name: 'Jane', age: 30,sdate:"2024-01-15",email:"test@gmail.com",role:"Admin", action:"b"   },
+
+      ]
       const pagination = {
         navigationIcon:"fa-chevron"
       }
@@ -45,7 +73,7 @@ const UserTable = () => {
       };
 
       useEffect(() => {
-        setTabData(data);
+        setTabData(userData);
       }, []);
       /*
     const basicTable=()=>{
@@ -71,8 +99,8 @@ const UserTable = () => {
 
     return (
        <>
-        <div className="is-flex justify-content-end ">
-          <SmartSoftButton  onClick={openMyModal} className="is-danger">Add</SmartSoftButton>
+        <div className="is-flex is-justify-content-center ">
+          <SmartSoftButton label="Add New User"  onClick={openMyModal} className="is-danger">Add</SmartSoftButton>
         </div>
        
        

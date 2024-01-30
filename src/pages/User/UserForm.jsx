@@ -1,5 +1,5 @@
 import React from 'react'
-import { SmartSoftInput, SmartSoftSelect } from 'soft_digi'
+import { SmartSoftCheckRadioSwitch, SmartSoftInput, SmartSoftSelect } from 'soft_digi'
 
 const UserForm = () => {
   return (
@@ -37,6 +37,16 @@ const UserForm = () => {
           <div className='column is-8'>
             <SmartSoftSelect
             label='Select Role' />
+          </div>
+          <div className='column is-8'>
+          {/* <SmartSoftCheckRadioSwitch
+            label='Select Employee Status' 
+            type={"radio"}
+            name="status"
+          value={formData?.radioone || ""}
+          onChange={(value) => handleInputChange("radioone", value)}
+                 
+        /> */}
           </div>
         </div>
         

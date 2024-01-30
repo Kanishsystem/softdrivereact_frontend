@@ -104,7 +104,8 @@ const SiteRoute = () => {
           />
           <Route path="/forget_password" element={<ForgetPassword />} />
           <Route path="input-box" element={<TextBoxExample />} />  
-          <Route path="checkradio" element={<CheckRadioSwitch />} />   
+          <Route path="checkradio" element={<CheckRadioSwitch />} />  
+          <Route path="table" element={<TableExample />} />   
            
           
         </Routes>

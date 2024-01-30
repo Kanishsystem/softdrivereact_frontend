@@ -109,7 +109,7 @@ const TextBoxExample = () => {
             inputProps={{ isFocussed: true }}                    
           />
 
-<SmartSoftInput key="text-5" label="Enter Employee Name testing"
+  <SmartSoftInput key="text-5" label="Enter Employee Name testing"
             value={formData?.input_five||""}
             onChange={(value) => handleInputChange("input_five", value)} 
             inputType="BORDER_LABEL_FOCUS"

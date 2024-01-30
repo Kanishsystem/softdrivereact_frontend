@@ -24,6 +24,18 @@ const TableExample = () => {
       </div>
     );
   };
+  const buttons = [
+    {
+      label: "", leftIcon: "fa-file",type:"icon", classList: [""], onClick: (data) => {
+        console.log("data", data);
+      }
+    },
+    {
+      label: "", leftIcon: "fa-file",type:"icon", classList: [""], onClick: (data) => {
+        console.log("data", data);
+      }
+    }
+  ];
 
   const columns = [
     { title: "ID", index: "id", isSortable: true, type: "sno" },
@@ -33,8 +45,11 @@ const TableExample = () => {
     { title: "Date", index: "sdate", type: "date", dateFormat: "DD-MM" },
     { title: "tags", index: "name", type: "tags", tags: nameTags },
     { title: "profile", index: "name", valueFunction: nameFunction },
-    { title: "progress", index: "age", type: "progress", progressMax:100 },
+    { title: "progress", index: "age", type: "progress", progressMax: 100 },
+    { title: "action", index: "action", type: "buttons", buttons: buttons },
+    { title: "action", index: "action", type: "action", buttons: buttons },
   ];
+
 
     const data = [
         { id: 1, name: 'John', age: 25,sdate:"2022-05-06" },

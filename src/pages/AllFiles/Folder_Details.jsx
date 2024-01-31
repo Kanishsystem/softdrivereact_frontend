@@ -25,7 +25,7 @@ const Folder_Details = () => {
                 </div>
             </div>
             <div className='column card'>
-                <p><i className="fa fa-exclamation-circle " aria-hidden="true"></i>
+                <p><i className="fa fa-exclamation-circle p-2" aria-hidden="true"></i>
                     Key Visuals</p>
 
                 <img src={MAIN_PIC} alt="" height="250" width="300" />

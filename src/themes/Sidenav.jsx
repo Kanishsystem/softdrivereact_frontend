@@ -75,6 +75,7 @@ const Sidenav = () => {
       id: 1,
       label: "Insights",
       icon: <i class="fa fa-bar-chart" aria-hidden="true"></i>,
+      link: "/site/insights"
     },
     {
       id: 2,
@@ -106,6 +107,7 @@ const Sidenav = () => {
       id: 1,
       label: "Log out",
       icon: <i class="fa fa-sign-out" aria-hidden="true"></i>,
+      link: "/"
     },
   ];
   return (

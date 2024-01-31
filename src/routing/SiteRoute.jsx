@@ -26,6 +26,8 @@ import FileViewer from "../pages/AllFiles/FileViewer";
 import ForgetPassword from "../pages/Login/ForgetPassword";
 import CheckRadioSwitch from "../pages/examples/CheckRadioSwitch";
 import UserProfile from "../pages/UserProfile/UserProfile";
+import Insights from "../pages/Dashboard/Insights";
+
 
 const SiteRoute = () => {
   const isAuthenticated = true;
@@ -57,6 +59,9 @@ const SiteRoute = () => {
           <Route path="/all-files" element={<AllFiles />} />
           <Route path="/share-with-me" element={<ShareWithMe />} />
           <Route path="/recycle-bin" element={<RecyleBin />} />
+
+          {/* Insights */}
+          <Route path="/insights" element={<Insights />} />
 
           {/* Settings */}
           <Route path="/settings" element={<Settings />} />

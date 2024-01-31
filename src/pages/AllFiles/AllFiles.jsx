@@ -8,6 +8,7 @@ import AllFiles_Folders from './AllFiles_Folders';
 import AllFiles_Uplodes from './AllFiles_Uplodes';
 import AllFiles_Create_now from './AllFiles_Create_now';
 import Folder_Details from './Folder_Details';
+import AllFiles_Status from './AllFiles_Status';
 
 
 const AllFiles = () => {
@@ -63,12 +64,14 @@ const AllFiles = () => {
                     </div>
                     <div className="columns ">
                         <AllFiles_Files_image />
+
                     </div>
                 </div>
                 <div className='column is-3'>
                     <StorageOverview />
-                
+
                     <Folder_Details />
+                    <AllFiles_Status />
                 </div>
             </div>
         </div>

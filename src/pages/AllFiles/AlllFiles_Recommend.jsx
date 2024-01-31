@@ -27,9 +27,10 @@ const AlllFiles_Recommend = () => {
                                         <img src={MAIN_PIC} alt="" height="250" width="300" />
                                     </p>
                                 </div>
-                                <footer className="card-footer p-3">
-                                    <i className="fa fa-address-card p-1 is-size-5" aria-hidden="true"></i>
-                                    {item.title}
+                                <footer className="card-footer p-3 is-flex  ">
+                                  
+                                    <div className='has-text-warning'>  <i className="fa fa-folder p-1 is-size-5" aria-hidden="true"></i></div>
+                                   <div className='is-size-6' >{item.title} </div>  
                                 </footer>
                             </div>
                         </div>

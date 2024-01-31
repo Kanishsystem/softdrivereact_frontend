@@ -42,7 +42,7 @@ const StorageOverview = () => {
         {Details_Activities.map((item) =>
           <div className='column is-12 card  ml-1 is-flex is-justify-content-space-between'>
             <div className=''>
-              <i class="fa fa-file pr-4" aria-hidden="true"></i>
+              <i class="fa fa-file pr-4 has-text-danger" aria-hidden="true"></i>
               {item.document_title_name}
             </div>
             <div>

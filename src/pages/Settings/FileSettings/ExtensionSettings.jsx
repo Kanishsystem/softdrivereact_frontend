@@ -1,5 +1,17 @@
 import React from 'react'
+import React, { useState } from 'react'
+import { SmartSoftButton, SmartSoftCheckRadioSwitch, SmartSoftInput } from 'soft_digi'
+import './FileSettings.css'; 
 
+const GeneralSettings = () => {
+
+    const [formData, setFormData] = useState({});
+    const handleInputChange = (name, value) => {
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+    const options = [
+       {value:"1",label:""}
+      ]
 const ExtensionSettings = () => {
   return (
 
@@ -77,5 +89,5 @@ const ExtensionSettings = () => {
 
   )
 }
-
+}
 export default ExtensionSettings

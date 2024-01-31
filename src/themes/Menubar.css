@@ -1,5 +1,5 @@
 .themes-menubar-title {
-  color: #cf1bce;
+  /* color: #cf1bce; */
   font-weight: bold;
   font-size: 1.25em;
 }
@@ -27,13 +27,15 @@
 }
 
 .themes-menubar-item {
-  justify-content: space-between;
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 0.5em;
 }
-
-
 
 .main-top-bar{
   z-index: 1000;
 }
 
+.themes-menubar-dropdown{
+  border: none;
+}

@@ -41,7 +41,7 @@ const getUserSession = (index = null) => {
   let session_data = getSessionStorage(USER_STORAGE_KEY);
  // console.log("session data ", session_data);
   if (index !== null) {
-    return session_data[index] !== undefined ? session_data[index] : "";
+    return session_data && session_data[index] !== undefined ? session_data[index] : "";
   }
   return session_data;
 }

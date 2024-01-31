@@ -8,37 +8,38 @@ import AllFiles_Folders from './AllFiles_Folders';
 import AllFiles_Uplodes from './AllFiles_Uplodes';
 import AllFiles_Create_now from './AllFiles_Create_now';
 import Folder_Details from './Folder_Details';
-
+import AllFiles_Status from './AllFiles_Status';
+import Uploade_Page_fullsreen from './Uploade_Page_fullsreen';
 
 const AllFiles = () => {
     return (
         <div className='AllFiles-Frampage'>
             <div className='columns'>
-                <div className="column is-8 ">
+                <div className="column is-9 ">
                     <div className="columns ">
                         <div className="column is-12 has-background-light is-flex ">
-                            <div class="navbar-item has-dropdown is-hoverable">
-                                <a class="navbar-link is-size-4">
+                            <div className="navbar-item has-dropdown is-hoverable">
+                                <a className="navbar-link is-size-4">
                                     My Drive
                                 </a>
-                                <div class="navbar-dropdown">
-                                    <a class="navbar-item">
+                                <div className="navbar-dropdown">
+                                    <a className="navbar-item">
                                         About
                                     </a>
-                                    <a class="navbar-item">
+                                    <a className="navbar-item">
                                         Jobs
                                     </a>
-                                    <a class="navbar-item">
+                                    <a className="navbar-item">
                                         Contact
                                     </a>
                                 </div>
                             </div>
                             <div className='column is-flex is-justify-content-end'>
                                 <div className='listicon p-2 '>
-                                    <i class="fa fa-bars is-size-4" aria-hidden="true"></i>
+                                    <i className="fa fa-bars is-size-4" aria-hidden="true"></i>
                                 </div>
                                 <div className='alerticon p-2'>
-                                    <i class="fa fa-exclamation-circle is-size-4" aria-hidden="true"></i>
+                                    <i className="fa fa-exclamation-circle is-size-4" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -63,13 +64,21 @@ const AllFiles = () => {
                     </div>
                     <div className="columns ">
                         <AllFiles_Files_image />
+
+                    </div>
+                    <div className='columns'>
+                        <Uploade_Page_fullsreen />
+                    </div>
+                    <div className='columns '>
+                        <AllFiles_Status />
                     </div>
                 </div>
                 <div className='column is-3'>
                     <StorageOverview />
-                
+
                     <Folder_Details />
                 </div>
+
             </div>
         </div>
     )

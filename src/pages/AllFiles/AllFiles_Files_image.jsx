@@ -10,7 +10,7 @@ const AllFiles_Files_image = () => {
     ]
     return (
         <div className='AllFiles_Files_image'>
-            <div className="column is-12 is-size-5 p-4 box">
+            <div className="column is-12 is-size-5 p-3 box">
                 Files
 
                 <div className="columns is-multiline ">

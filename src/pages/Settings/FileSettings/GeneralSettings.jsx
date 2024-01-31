@@ -9,7 +9,7 @@ const GeneralSettings = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
     const options = [
-       {}
+       {value:"1",label:""}
       ]
    
       
@@ -71,6 +71,7 @@ const GeneralSettings = () => {
                     <SmartSoftCheckRadioSwitch
           options={options}
           name="checkboxone"
+          
           value={formData?.input_eight || null}
           onChange={(value) => handleInputChange("input_eight", value)}
         />  </div>

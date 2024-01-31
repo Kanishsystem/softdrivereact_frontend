@@ -3,6 +3,7 @@ import axios from 'axios';
 import { from,EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import config from '../config/config';
+import { getToken } from './sessionService';
 
 
 const API = axios.create({
@@ -24,7 +25,7 @@ const processError=(error)=>{
 
 
 // Default error handler
-const defaultErrorHandler = (errorMessage) => { 
+const defaultErrorHandler = (errorMessage,error) => { 
     //console.error('API Request Error:', error);
     alert(errorMessage);
     return EMPTY;
@@ -32,37 +33,35 @@ const defaultErrorHandler = (errorMessage) => {
 
 const get = (url, handleError,requiresAuthorization = true, customHeaders = {}) => {
     // Check if authorization is required and if a token is available
-  if (requiresAuthorization && config.AUTH_TOKEN) {
-    customHeaders['Authorization'] = `Bearer ${config.AUTH_TOKEN}`;
+  if (requiresAuthorization) {
+      customHeaders['Authorization'] = 'Bearer ' + getToken();
   }
+  //console.log("custom headers " , customHeaders);
     return from(API.get(url, { headers: customHeaders })).pipe(
       catchError((error) => {
+        let errorMessage = processError(error);
         // Use the provided handleError callback or a default handler
-       const errorHandler = handleError || defaultErrorHandler;
+        const errorHandler = handleError ?  handleError  : defaultErrorHandler;
        // Call the error handler with the error
-        errorHandler(error); 
+        errorHandler(errorMessage,error); 
         // Rethrow the error to propagate it down the observable chain
         //return throwError(error);
+        return EMPTY;
       })
     );
 };
 
-const post = (url, data,requiresAuthorization = true, customHeaders = {}) => {
+const post = (url, data,handleError,requiresAuthorization = true, customHeaders = {}) => {
     // Check if authorization is required and if a token is available
-  if (requiresAuthorization && config.AUTH_TOKEN) {
-    customHeaders['Authorization'] = `Bearer ${config.AUTH_TOKEN}`;
+  if (requiresAuthorization) {
+    customHeaders['Authorization'] = 'Bearer ' + getToken();
   }
     return from(API.post(url,data,{ headers: customHeaders })).pipe(
       catchError((error) => {
        // console.log("error " , error);
        let errorMessage = processError(error);
-        defaultErrorHandler(errorMessage);
-        // Use the provided handleError callback or a default handler
-     //  const errorHandler = defaultErrorHandler;
-       // Call the error handler with the error
-       // errorHandler(error); 
-        // Rethrow the error to propagate it down the observable chain
-       // return throwError(error);
+       const errorHandler = handleError ?  handleError  : defaultErrorHandler;
+       errorHandler(errorMessage,error);     
        return EMPTY;
       })
     );

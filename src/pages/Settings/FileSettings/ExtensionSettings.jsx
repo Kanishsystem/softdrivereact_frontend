@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react'
-import { SmartSoftButton, SmartSoftCheckRadioSwitch, SmartSoftInput } from 'soft_digi'
+import { SmartSoftButton, SmartSoftCheckRadioSwitch, SmartSoftInput,SmartSoftSelect } from 'soft_digi'
 import './FileSettings.css'; 
+
 
 const ExtensionSettings = () => {
 
@@ -31,45 +32,43 @@ const ExtensionSettings = () => {
                 <div className='general-label is-flex is-flex-direction-column '>
                 </div>
                 <div className='general-input'>
-                    <SmartSoftInput
-                    className="smart-general-text-box"
-                     />
+                    <SmartSoftSelect placeHolder='MicroSoft Document'>
+                        
+                    </SmartSoftSelect>
                     
                 </div>
+                
             </div>
+            
             <div key={"main-field-2"} className='is-flex is-justify-content-space-between my-4'>
                 <div className='general-label is-flex is-flex-direction-column '>
 
                 </div>
                 <div className='general-input'>
-                    <SmartSoftInput
-                    className="smart-general-text-box"
-                     />
+                <SmartSoftSelect placeHolder='Spread Sheet'>
+                        
+                        </SmartSoftSelect>
+                        
+    
                     
                 </div>
             </div>
+            <hr></hr>
+
+
+
+
             <div key={"main-field-3"} className='is-flex is-justify-content-space-between my-4'>
                 <div className='general-label is-flex is-flex-direction-column '>
+                <SmartSoftInput  label="Extension" className="box-model" id="boxmodel"/> 
                 </div>
-                <div className='general-input'>
-                <SmartSoftCheckRadioSwitch        
-                 options={options}
-                switchMode={true}
-                name="switchone2"
-                value={formData?.switchone2 || ""}
-                onChange={(value) => handleInputChange("switchone2", value)}  /></div>
+                <ul></ul>
             </div>
-            <div key={"main-field-4"} className='is-flex is-justify-content-space-between my-4'>
+            <div key={"main-field-4"} className='is-flex is-justify-content-space-between-is table-responsive-lg my-4'>
                 <div className='general-label is-flex is-flex-direction-column '>
+                <SmartSoftInput  label="Title"/> 
 
                 </div>
-                <div className='general-input'>
-                <SmartSoftCheckRadioSwitch
-      options={options}
-      name="checkboxone"
-      value={formData?.input_eight || null}
-      onChange={(value) => handleInputChange("input_eight", value)}
-    />  </div>
             </div>
             <div className='general-button is-flex is-justify-content-end'>
                 <SmartSoftButton label='Save' />

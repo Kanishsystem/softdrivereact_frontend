@@ -8,17 +8,17 @@ import { MAIN_PIC } from "../../services/ImageService";
 import { get } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
 
-// url 
+// url
 import USER_API_URLS from "../../services/ApiUrls/UsersUrls";
 
 const UserTable = () => {
-  const [tabData, setTabData] = useState([]); 
-  
+  const [tabData, setTabData] = useState([]);
+
   const { setLoading, openModal, closeModal } = useSiteContext();
   const roleTags = [{ class: "is-link" }];
 
   const nameFunction = (row) => {
-    console.log("User",row);
+   // console.log("User", row);
     return (
       <div className="is-flex">
         <figure className="image is-32x32 mr-2">
@@ -36,34 +36,50 @@ const UserTable = () => {
       return <span className="tag is-info">User</span>;
     }
   };
-  const buttons = [    
+  const buttons = [
     {
-      label: "", leftIcon: "fa-trash-o",type:"icon", classList: [""], onClick: (data) => {
-        console.log("data", data);
-      }
+      label: "",
+      leftIcon: "fa-trash-o",
+      type: "icon",
+      classList: [""],
+      onClick: (data) => {
+       // console.log("data", data);
+       openDeleteModal(data["ID"],data["ename"]);
+      },
     },
     {
-      label: "", leftIcon: "fa-lock",type:"icon", classList: ["is-primary"], onClick: (data) => {
+      label: "",
+      leftIcon: "fa-lock",
+      type: "icon",
+      classList: ["is-primary"],
+      onClick: (data) => {
         console.log("data", data);
-      }
+      },
     },
     {
-      label: "", leftIcon: "fa-pencil-square-o",type:"icon", classList: ["is-primary"], onClick: (data) => {
+      label: "",
+      leftIcon: "fa-pencil-square-o",
+      type: "icon",
+      classList: ["is-primary"],
+      onClick: (data) => {
         console.log("data", data);
-      }
+      },
     },
     {
-      label: "", leftIcon: "fa-eye",type:"icon", classList: ["is-primary"], onClick: (data) => {
+      label: "",
+      leftIcon: "fa-eye",
+      type: "icon",
+      classList: ["is-primary"],
+      onClick: (data) => {
         console.log("data", data);
-      }
+      },
     },
   ];
 
-
   const columns = [
     { title: "Name", index: "ename", valueFunction: nameFunction },
-    { title: "User Name", index: "ename", isSortable: true },
-    { title: "Email", index: "emailid", isSortable: true },
+    { title: "Employee ID", index: "euserid", isSortable: true },
+    { title: "Email", index: "email_id", isSortable: true },
     {
       title: "Role",
       index: "role",
@@ -83,51 +99,65 @@ const UserTable = () => {
     navigationIcon: "fa-chevron",
   };
 
-  const loadTableData = () => {   
-    setLoading(true, 'Logging in Please Wait....');
+  const loadTableData = () => {
+    setLoading(true, "Logging in Please Wait....");
     const handleError = (errorMessage) => {
-      showNotification("error",errorMessage); 
-      setTabData([]);    
-      setLoading(false);      
-    };
-    const subscription = get(USER_API_URLS.get_all,handleError).subscribe((response) => {    
-     
-      setTabData(response.data);
-      console.table("testing",response.data)
+      showNotification("error", errorMessage);
+      setTabData([]);
       setLoading(false);
-    });
-    return () => {   
+    };
+    const subscription = get(USER_API_URLS.get_all, handleError).subscribe(
+      (response) => {
+        setTabData(response.data);
+        console.table("testing", response.data);
+        setLoading(false);
+      }
+    );
+    return () => {
       subscription.unsubscribe();
     };
   };
 
   useEffect(() => {
-    loadTableData()
+    loadTableData();
   }, []);
- 
 
   const openMyModal = () => {
     let modalObject = {
       title: "Add New User",
-      body: <UserForm />,
-      modalClass:"smart-modal-90"
-    //  footer: <MyFooterContent />,
+      body: <UserForm loadTableData={loadTableData} />,
+      modalClass: "smart-modal-90",     
     };
     openModal(modalObject);
   };
 
+  const openDeleteModal=(id,name)=>{
+    let modelObject = {
+      title:"Do you want to Delete The Employee / User",
+      body:"Note: The user will be deleted! Action cannot be reverted",
+      okFunction:()=>{
+        console.log("of function")
+      },
+      cancelFunction:()=>{
+        closeModal();
+        console.log("cancel function")
+      }
+    }
+    openModal(modelObject);
+  }
+
   return (
     <>
-    <div className="is-flex is-justify-content-space-between mb-3">
-      <h1 className="is-size-4 is-3 ">Users</h1>
-   
-      <div className="is-flex is-justify-content-end ">
-        <SmartSoftButton
-          label="Add"
-          onClick={openMyModal}
-          className="is-danger"
-        />
-      </div>
+      <div className="is-flex is-justify-content-space-between mb-3">
+        <h1 className="is-size-4 is-3 ">Users</h1>
+
+        <div className="is-flex is-justify-content-end ">
+          <SmartSoftButton
+            label="Add"
+            onClick={openMyModal}
+            className="is-danger"
+          />
+        </div>
       </div>
       <SmartSoftTable
         data={tabData}

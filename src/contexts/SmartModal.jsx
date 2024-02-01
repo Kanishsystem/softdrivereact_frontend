@@ -6,13 +6,29 @@ const SmartModal = ({ closeModal, modalOptions }) => {
     const body = modalOptions && modalOptions.body ? modalOptions.body: null;
     const bodyclose = modalOptions && modalOptions?.bodyClose===false ? false : true;
     const modalClass = modalOptions && modalOptions?.modalClass ? modalOptions?.modalClass: "";
+    const {
+        okText = "Yes",
+        cancelText="No",
+        okFunction,
+        cancelFunction
+    } = modalOptions;
     //
-    console.log("modal class " , modalClass)
+    console.log("modal class " , okFunction)
     const closeModalOnBody=()=>{       
         if(bodyclose===true){
             closeModal();
         }
     }
+
+    const okCancelFooter = () => {
+        return (
+          <>
+            <button className="button is-success is-small" onClick={okFunction}>{okText}</button>
+            <button className="button is-danger is-small" onClick={cancelFunction}>{cancelText}</button>       
+          </>
+        );
+      };
+
     return (
         <div key={"text-1"} className={"modal is-active smart-modal " + modalClass}> 
             <div className="modal-background" onClick={closeModalOnBody} />
@@ -24,6 +40,10 @@ const SmartModal = ({ closeModal, modalOptions }) => {
                 <section className="modal-card-body">{body}</section>
                {footer &&  <footer className="modal-card-foot">
                      {footer}
+                </footer>
+               }
+                {okFunction &&  <footer className="modal-card-foot is-justify-content-flex-end">
+                     {okCancelFooter()}
                 </footer>
                }
             </div>

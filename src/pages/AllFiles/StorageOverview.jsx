@@ -2,12 +2,12 @@ import React from 'react'
 import { MAIN_PIC } from '../../services/ImageService';
 const StorageOverview = () => {
   const Details_Activities = [
-    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
-    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
-    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
-    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
-    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
-    { documentsicon: <i class="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i className="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i className="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i className="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i className="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i className="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
+    { documentsicon: <i className="fa fa-file pr-4" aria-hidden="true"></i>, document_title_name: " Document 223 files", documentnumbersGB: '760GB' },
   ]
   return (
     <div className='StorageOverview '>
@@ -42,7 +42,7 @@ const StorageOverview = () => {
         {Details_Activities.map((item) =>
           <div className='column is-12 card  ml-1 is-flex is-justify-content-space-between'>
             <div className=''>
-              <i class="fa fa-file pr-4 has-text-danger" aria-hidden="true"></i>
+              <i className="fa fa-file pr-4 has-text-danger" aria-hidden="true"></i>
               {item.document_title_name}
             </div>
             <div>

@@ -27,43 +27,38 @@ const Sidenav = () => {
   const sidebarItem = [
     {
       id: 1,
-      label: "MY DRIVE",
-      icon: <i class="fa fa-folder-open" aria-hidden="true"></i>,
-    },
-    {
-      id: 2,
       label: "All Files",
       icon: <i class="fa fa-folder" aria-hidden="true"></i>,
       link:"/site/all-files"
     },
     {
-      id: 3,
+      id: 2,
       label: "Photos",
       icon: <i class="fa fa-camera" aria-hidden="true"></i>,
     },
     {
-      id: 4,
+      id: 3,
       label: "Videos",
       icon: <i class="fa fa-video-camera" aria-hidden="true"></i>,
     },
     {
-      id: 5,
+      id: 4,
       label: "Shared with me",
       icon: <i class="fa fa-users" aria-hidden="true"></i>,
       link:"/site/share-with-me"
     },
     {
-      id: 6,
+      id: 5,
       label: "Recent",
       icon: <i class="fa fa-clock-o" aria-hidden="true"></i>,
     },
     {
-      id: 7,
+      id: 6,
       label: "Starred",
       icon: <i class="fa fa-star" aria-hidden="true"></i>,
     },
     {
-      id: 8,
+      id: 7,
       label: "Bin",
       icon: <i class="fa fa-trash" aria-hidden="true"></i>,
       link:"/site/recycle-bin"
@@ -91,11 +86,6 @@ const Sidenav = () => {
     },
     {
       id: 4,
-      label: "Storage",
-      icon: <i class="fa fa-archive" aria-hidden="true"></i>,
-    },
-    {
-      id: 5,
       label: "Settings",
       icon: <i class="fa fa-cog" aria-hidden="true"></i>,
       link:"/site/settings"

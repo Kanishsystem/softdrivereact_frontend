@@ -4,6 +4,7 @@ import {SmartSoftTable} from 'soft_digi';
 import { MAIN_PIC } from "../../services/ImageService";
 
 const TableExample = () => {
+  
   const [tabData, setTabData] = useState([]);
 
   const titleDisplay = (handleSort, handleFilter) => {

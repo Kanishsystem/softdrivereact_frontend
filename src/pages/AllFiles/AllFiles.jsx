@@ -10,6 +10,7 @@ import AllFiles_Create_now from './AllFiles_Create_now';
 import Folder_Details from './Folder_Details';
 import AllFiles_Status from './AllFiles_Status';
 import Uploade_Page_fullsreen from './Uploade_Page_fullsreen';
+import ShareFolderNotification from './ShareFolderNotification';
 
 const AllFiles = () => {
     return (
@@ -19,17 +20,17 @@ const AllFiles = () => {
                     <div className="columns ">
                         <div className="column is-12 has-background-light is-flex ">
                             <div className="navbar-item has-dropdown is-hoverable">
-                                <a className="navbar-link is-size-4">
+                                <a href='##' className="navbar-link is-size-4">
                                     My Drive
                                 </a>
                                 <div className="navbar-dropdown">
-                                    <a className="navbar-item">
+                                    <a href='##' className="navbar-item">
                                         About
                                     </a>
-                                    <a className="navbar-item">
+                                    <a href='##' className="navbar-item">
                                         Jobs
                                     </a>
-                                    <a className="navbar-item">
+                                    <a href='##' className="navbar-item">
                                         Contact
                                     </a>
                                 </div>
@@ -71,6 +72,9 @@ const AllFiles = () => {
                     </div>
                     <div className='columns '>
                         <AllFiles_Status />
+                    </div>
+                    <div className='columns'>
+                        <ShareFolderNotification />
                     </div>
                 </div>
                 <div className='column is-3'>

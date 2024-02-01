@@ -45,11 +45,11 @@ const ShareFolderNotification = () => {
                         <div className='Accesscomment pl-6 '>Only People with access can open with the link</div>
                         <div className='is-flex is-justify-content-space-between p-2'>
                             <span>
-                                <button class="button is-link is-light">Copy link</button>
+                                <button className="button is-link is-light">Copy link</button>
                             </span>
                             <span>
-                                <button class="button is-link is-light mr-3">Cancel</button>
-                                <button class="button is-link ">Create</button>
+                                <button className="button is-link is-light mr-3">Cancel</button>
+                                <button className="button is-link ">Create</button>
                             </span>
 
                         </div>

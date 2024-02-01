@@ -15,23 +15,25 @@ const RoleTable = () => {
  
     const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
 
+    const picture_display=(inputLabel)=>{
+       let firstTwoCharacters = inputLabel[0];
+       return firstTwoCharacters;
+      // return <span>{firstTwoCharacters}</span>
+    }
+
     const nameTags = [{ value: "John", label: "John", className: "is-light" },
                      { value: "Jane", label: "Jane", className: "is-light" },
                     { value: "Doe", label: "Doe", className: "is-light" }];
 
                     const OuterComponent = (row) => {
-                      console.log("testigs",row.employees)
+                     // console.log("emps " , row["employees"]);
+                      let employees = row && row["employees"] && Array.isArray(row["employees"]) ? row["employees"] : [];
+                     // console.log("testigs",employees)
                       return (
                         <div>
-                          
-                          {row?.employees?.map(outerItem => (
-                           
-                           <div key={outerItem.value}>
-                             <h3>{outerItem.label}</h3>
-                             
-                           </div>
-                         ))}
-                          
+                          {employees.map((subItem, subIndex) => (
+                          <span key={subIndex}>{picture_display(subItem.label)}</span>
+                        ))}                                                
                          
                       </div>
                    );
@@ -68,7 +70,7 @@ const RoleTable = () => {
     const columns = [
       { title: 'S.No', index: 'id',isSortable:true,type:"sno" },
       { title: 'Role Name', index: 'role_name' },
-      { title: 'Employee', index: 'employees',type: "tags",valueFunction: OuterComponent    },
+      { title: 'Employee', index: 'employees',valueFunction: OuterComponent    },
       { title: "Action", index: "action", type: "action", buttons: buttons },
     ];
 

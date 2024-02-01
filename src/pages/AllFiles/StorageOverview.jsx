@@ -12,7 +12,7 @@ const StorageOverview = () => {
   return (
     <div className='StorageOverview '>
       <div className="columns ">
-        <div className="column is-flex  box m-1 is-justify-content-space-between ">
+        <div className="column is-flex p-5 box ml-1 mb-1 is-justify-content-space-between ">
           <span>
             <i className="fa fa-arrow-right " aria-hidden="true"></i>
             <i className="fa fa-arrows pl-3" aria-hidden="true"></i></span>

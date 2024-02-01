@@ -21,9 +21,9 @@ const UserTable = () => {
     return (
       <div className="is-flex">
         <figure className="image is-32x32 mr-2">
-          <img className="is-rounded" src={MAIN_PIC} />
+          <img className="is-rounded" src={row["profile_img"]} />
         </figure>
-        {row["name"] || ""}
+        {row["ename"] || ""}
       </div>
     );
   };
@@ -35,11 +35,35 @@ const UserTable = () => {
       return <span className="tag is-info">User</span>;
     }
   };
+  const buttons = [
+    
+    {
+      label: "", leftIcon: "fa-trash-o",type:"icon", classList: [""], onClick: (data) => {
+        console.log("data", data);
+      }
+    },
+    {
+      label: "", leftIcon: "fa-lock",type:"icon", classList: ["is-primary"], onClick: (data) => {
+        console.log("data", data);
+      }
+    },
+    {
+      label: "", leftIcon: "fa-pencil-square-o",type:"icon", classList: ["is-primary"], onClick: (data) => {
+        console.log("data", data);
+      }
+    },
+    {
+      label: "", leftIcon: "fa-eye",type:"icon", classList: ["is-primary"], onClick: (data) => {
+        console.log("data", data);
+      }
+    },
+  ];
+
 
   const columns = [
-    { title: "Name", index: "name", valueFunction: nameFunction },
-    { title: "User Name", index: "name", isSortable: true },
-    { title: "Email", index: "email", isSortable: true },
+    { title: "Name", index: "ename", valueFunction: nameFunction },
+    { title: "User Name", index: "ename", isSortable: true },
+    { title: "Email", index: "emailid", isSortable: true },
     {
       title: "Role",
       index: "role",
@@ -52,7 +76,7 @@ const UserTable = () => {
       type: "progress",
       progressMax: 100,
     },
-    { title: "Action", index: "action" },
+    { title: "Action", index: "action", type: "action", buttons: buttons },
   ];
 
   const userData = [
@@ -168,7 +192,9 @@ const UserTable = () => {
       setLoading(false);      
     };
     const subscription = get(USER_API_URLS.get_all,handleError).subscribe((response) => {    
+     
       setTabData(response.data);
+      console.table("testing",response.data)
       setLoading(false);
     });
     return () => {   
@@ -192,12 +218,16 @@ const UserTable = () => {
 
   return (
     <>
-      <div className="is-flex is-justify-content-center ">
+    <div className="is-flex is-justify-content-space-between mb-3">
+      <h1 className="is-size-4 is-3 ">Users</h1>
+   
+      <div className="is-flex is-justify-content-end ">
         <SmartSoftButton
           label="Add"
           onClick={openMyModal}
           className="is-danger"
-        ></SmartSoftButton>
+        />
+      </div>
       </div>
       <SmartSoftTable
         data={tabData}

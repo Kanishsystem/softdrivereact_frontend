@@ -15,9 +15,28 @@ const RoleTable = () => {
  
     const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
 
-    const nameTags = [{ value: "John", label: "John", class: "is-light" },
-                     { value: "Jane", label: "Jane", class: "is-light" },
-                    { value: "Doe", label: "Doe", class: "is-light" }];
+    const nameTags = [{ value: "John", label: "John", className: "is-light" },
+                     { value: "Jane", label: "Jane", className: "is-light" },
+                    { value: "Doe", label: "Doe", className: "is-light" }];
+
+                    const OuterComponent = (row) => {
+                      console.log("testigs",row.employees)
+                      return (
+                        <div>
+                          
+                          {row?.employees?.map(outerItem => (
+                           
+                           <div key={outerItem.value}>
+                             <h3>{outerItem.label}</h3>
+                             
+                           </div>
+                         ))}
+                          
+                         
+                      </div>
+                   );
+                    };
+                    
 
  const buttons = [
     
@@ -49,7 +68,7 @@ const RoleTable = () => {
     const columns = [
       { title: 'S.No', index: 'id',isSortable:true,type:"sno" },
       { title: 'Role Name', index: 'role_name' },
-      { title: 'Employee', index: 'employees',type: "tags", tags: nameTags  },
+      { title: 'Employee', index: 'employees',type: "tags",valueFunction: OuterComponent    },
       { title: "Action", index: "action", type: "action", buttons: buttons },
     ];
 
@@ -73,7 +92,7 @@ const RoleTable = () => {
       const subscription = get(ROLE_API_URLS.get_all,handleError).subscribe((response) => {    
        
         setTabData(response.data);
-        console.table("testing",response.data)
+        console.log("api data",response.data)
         setLoading(false);
       });
       return () => {   
@@ -95,7 +114,7 @@ const RoleTable = () => {
     };
 
     useEffect(() => {
-      setTabData(data);
+      // setTabData(data);
     }, []);
     /*
   const basicTable=()=>{
@@ -103,14 +122,7 @@ const RoleTable = () => {
           <SmartTable data={tabData}  columns={columns} />
       )
   }*/
-  // const MyFooterContent = () => {
-  //   return (
-  //     <div className="is-flex is-justify-content-end float-end">
-  //       <button className="button is-success is-small">Go Back</button>
-  //       <button className="button  is-link is-small " onClick={closeModal}>Submit</button>
-  //     </div>
-  //   );
-  // };
+ 
 
 
 

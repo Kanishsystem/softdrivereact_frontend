@@ -76,7 +76,7 @@ const UserForm = () => {
             label="Employee ID" placeHolder="IC Number" 
             value={formData?.euserid||""}
             onChange={(value) => handleInputChange("euserid", value)} 
-            leftIcon="fa-user"
+            leftIcon="fa-solid fa-hashtag"
             validations={ numericValidations}
             inputProps={{ isFocussed: true }}   
             errorEnable={formSubmit} />
@@ -101,7 +101,7 @@ const UserForm = () => {
              placeHolder="Mobile Number"
              value={formData?.profile_img||""}
              onChange={(value) => handleInputChange("profile_img", value)} 
-             leftIcon="fa-user"
+             leftIcon="fa-solid fa-phone"
              validations={ numericValidations}
              inputProps={{ isFocussed: true }}   
               errorEnable={formSubmit} />
@@ -112,7 +112,7 @@ const UserForm = () => {
              placeHolder="Intercom  Number"
              value={formData?.intercome_number||""}
              onChange={(value) => handleInputChange("intercome_number", value)} 
-             leftIcon="fa-user"
+             leftIcon="fa-solid fa-phone"
              validations={ numericValidations}
              inputProps={{ isFocussed: true }}   
               errorEnable={formSubmit} />
@@ -123,7 +123,7 @@ const UserForm = () => {
             placeHolder="Email" 
             value={formData?.email_id||""}
             onChange={(value) => handleInputChange("email_id", value)} 
-            leftIcon="fa-user"
+            leftIcon="fa-solid fa-envelope"
             validations={ numericValidations}
             inputProps={{ isFocussed: true }} 
             errorEnable={formSubmit} />

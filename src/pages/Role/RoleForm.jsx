@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import {
   SmartSoftCheckRadioSwitch,
+  SmartSoftButton,
   SmartSoftInput,
   SmartSoftSelect,
 } from "soft_digi";
@@ -42,13 +43,24 @@ const RoleForm = () => {
   };
 
 
-  const MyFooterContent = () => {
+  const numericValidations = [
+    {
+      type: "required",
+      msg: "Please enter valid name"
+    },
+    {
+      type: "pattern",
+      msg: "Please Enter Correct Numeric Value",
+      pattern: '[0-9]+'
+    }
+  ];
+ 
+
+  const ActionBUttons = () => {
     return (
-      <div className="is-flex is-justify-content-end ">
-        <button className="button is-success is-small">Go back</button>
-        <button className="button  is-link is-small" onClick={handleSubmit}>
-          Submit
-        </button>
+      <div className="column is-12 has-text-right">
+        <SmartSoftButton key="back" label="Go Back" leftIcon="fa-arrow-left" classList={["smart-cancel-button"]} onClick={closeModal}/>
+        <SmartSoftButton key="save" label="Save" leftIcon="fa-save" classList={["smart-action-button"]} onClick={handleSubmit}/>       
       </div>
     );
   };
@@ -63,6 +75,9 @@ const RoleForm = () => {
               placeHolder='Enter Your Name'
               errorEnable={formSubmit}
               value={formData?.input_one||""}
+              leftIcon="fa-user"
+              validations={ numericValidations}
+              inputProps={{ isFocussed: true }}   
               onChange={(value) => handleInputChange("input_one", value)}
               />
             </div>
@@ -72,12 +87,16 @@ const RoleForm = () => {
           label='Select Employee' 
           errorEnable={formSubmit}
           value={formData?.input_one||""}
+          validations={ numericValidations}
+          inputProps={{ isFocussed: true }}  
           onChange={(value) => handleInputChange("input_one", value)}
           />
         </div>
        </div>
       </div>
-      {MyFooterContent()}
+   
+      <hr/>
+      {ActionBUttons()}
       
     </div>
   

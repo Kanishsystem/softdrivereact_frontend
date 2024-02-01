@@ -140,3 +140,37 @@
     top: 0;
     padding: 5px;
 }
+
+.ShareFolderNotification_menmalimages {
+    height: 6rem;
+    width: 6rch;
+    border-radius: 50px;
+
+
+}
+
+.ShareFolderNotification_name {
+    color: black;
+    position: absolute;
+    top: 0rem;
+    left: 5rem;
+}
+
+.ShareFolderNotification_mails {
+    font-size: 1rem;
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+}
+
+.ShareFolderNotification_faiders {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    padding-right: 3rem;
+
+}
+
+.ShareFolderNotification_Access_profile {
+    position: relative;
+}

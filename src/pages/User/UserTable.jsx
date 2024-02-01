@@ -18,6 +18,7 @@ const UserTable = () => {
   const roleTags = [{ class: "is-link" }];
 
   const nameFunction = (row) => {
+    console.log("User",row);
     return (
       <div className="is-flex">
         <figure className="image is-32x32 mr-2">

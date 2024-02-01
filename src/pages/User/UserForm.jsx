@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  SmartSoftButton,
   SmartSoftCheckRadioSwitch,
   SmartSoftInput,
   SmartSoftSelect,
@@ -26,9 +27,9 @@ const UserForm = () => {
       showNotification("error",errorMessage);        
       setLoading(false);      
     };
-    setLoading(true, 'Logging in Please Wait....');
+    setLoading(true, 'Details Submitting Please Wait....');
     const subscription = post(USER_API_URLS.insert, formData,handleError).subscribe((response) => {
-      console.log("response form ", response.data);
+      //console.log("response form ", response.data);
       closeModal();
      // setUser(response.data);
       setLoading(false);      
@@ -37,20 +38,6 @@ const UserForm = () => {
       subscription.unsubscribe();
     };
   };
-
-  const handleLogin = () => {
-    // let data = { username: 'kminchelle', password: '0lelplR' };
-     setLoading(true, 'Logging in Please Wait....');
-     const subscription = post(USER_API_URLS.insert, formData).subscribe((response) => {
-      //  setUser(response.data);
-       setLoading(false);
-      //  startSessionAct();
-      //  navigate('/site/all-files');
-     });
-     return () => {
-       subscription.unsubscribe();
-     };
-   };
 
   const numericValidations = [
     {
@@ -66,18 +53,16 @@ const UserForm = () => {
 
 
   const options = [
-    { value: "active", label: "Active" },
-    { value: "inactive", label: "In-Active" },
-    { value: "locked", label: "Locked" },
+    { value: "5", label: "Active" },
+    { value: "10", label: "In-Active" },
+    { value: "15", label: "Locked" },
   ];
 
-  const MyFooterContent = () => {
+  const ActionBUttons = () => {
     return (
-      <div className="is-flex is-justify-content-end ">
-        <button className="button is-success is-small">Go back</button>
-        <button className="button  is-link is-small"  onClick={()=>handleLogin()}>
-          Submit
-        </button>
+      <div className="column is-12 has-text-right">
+        <SmartSoftButton key="back" label="Go Back" leftIcon="fa-arrow-left" classList={["smart-cancel-button"]} onClick={closeModal}/>
+        <SmartSoftButton key="save" label="Save" leftIcon="fa-save" classList={["smart-action-button"]} onClick={handleSubmit}/>       
       </div>
     );
   };
@@ -89,8 +74,8 @@ const UserForm = () => {
           <div className="column is-6">
             <SmartSoftInput key="text-1"
             label="Employee ID" placeHolder="IC Number" 
-            value={formData?.input_four||""}
-            onChange={(value) => handleInputChange("input_four", value)} 
+            value={formData?.euserid||""}
+            onChange={(value) => handleInputChange("euserid", value)} 
             leftIcon="fa-user"
             validations={ numericValidations}
             inputProps={{ isFocussed: true }}   
@@ -102,8 +87,8 @@ const UserForm = () => {
               className="smart-ii"
               label="Name"
               placeHolder="Enter Your Name"
-              value={formData?.input_four||""}
-              onChange={(value) => handleInputChange("input_four", value)} 
+              value={formData?.ename||""}
+              onChange={(value) => handleInputChange("ename", value)} 
               leftIcon="fa-user"
               validations={ numericValidations}
               inputProps={{ isFocussed: true }}   
@@ -114,8 +99,19 @@ const UserForm = () => {
             <SmartSoftInput key="text-3"
             label="Mobile Number"
              placeHolder="Mobile Number"
-             value={formData?.input_four||""}
-             onChange={(value) => handleInputChange("input_four", value)} 
+             value={formData?.profile_img||""}
+             onChange={(value) => handleInputChange("profile_img", value)} 
+             leftIcon="fa-user"
+             validations={ numericValidations}
+             inputProps={{ isFocussed: true }}   
+              errorEnable={formSubmit} />
+          </div>
+          <div className="column is-6">
+            <SmartSoftInput key="text-3"
+            label="Intercom Number"
+             placeHolder="Intercom  Number"
+             value={formData?.intercome_number||""}
+             onChange={(value) => handleInputChange("intercome_number", value)} 
              leftIcon="fa-user"
              validations={ numericValidations}
              inputProps={{ isFocussed: true }}   
@@ -125,8 +121,8 @@ const UserForm = () => {
             <SmartSoftInput key="text-2"
             label="Email" 
             placeHolder="Email" 
-            value={formData?.input_four||""}
-            onChange={(value) => handleInputChange("input_four", value)} 
+            value={formData?.email_id||""}
+            onChange={(value) => handleInputChange("email_id", value)} 
             leftIcon="fa-user"
             validations={ numericValidations}
             inputProps={{ isFocussed: true }} 
@@ -134,24 +130,31 @@ const UserForm = () => {
           </div>
         </div>
       </div>
-      <div className="column is-4">Image Upload</div>
-      <div className="column is-8">
-        <SmartSoftSelect label="Select Role" placeHolder="Please Select" errorEnable={formSubmit} />
-      </div>
 
-      <div className="column is-8">
+
+      <div className="column is-4">Image Upload</div>
+
+
+      <div className="column is-12">
+        <SmartSoftSelect label="Select Role" placeHolder="Please Select"  errorEnable={formSubmit} />
+      </div>
+     
+      <div className="column is-12">
         <SmartSoftCheckRadioSwitch
+          classList={["smart-input-label-width-30"]}
           isMulti={true}
           options={options}
           label="Select Employee Status"
           type={"radio"}
-          name="radioone"
+          name="active_status"
+          isHorizontal={true}          
           errorEnable={formSubmit}
-          value={formData?.radioone || ""}
-          onChange={(value) => handleInputChange("radioone", value)}
+          value={formData?.active_status || ""}
+          onChange={(value) => handleInputChange("active_status", value)}
         />
       </div>
-      {MyFooterContent()}
+      <hr/>
+      {ActionBUttons()}
     </div>
   );
 };

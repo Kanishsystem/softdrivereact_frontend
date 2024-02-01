@@ -35,8 +35,7 @@ const UserTable = () => {
       return <span className="tag is-info">User</span>;
     }
   };
-  const buttons = [
-    
+  const buttons = [    
     {
       label: "", leftIcon: "fa-trash-o",type:"icon", classList: [""], onClick: (data) => {
         console.log("data", data);
@@ -72,114 +71,13 @@ const UserTable = () => {
     },
     {
       title: "Storage Capacity",
-      index: "age",
+      index: "active_status",
       type: "progress",
       progressMax: 100,
     },
     { title: "Action", index: "action", type: "action", buttons: buttons },
   ];
 
-  const userData = [
-    {
-      id: 1,
-      name: "John",
-      age: 25,
-      sdate: "2022-05-06",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 2,
-      name: "Jane",
-      age: 30,
-      sdate: "2024-01-15",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 3,
-      name: "Doe",
-      age: 4,
-      sdate: "2024-01-06",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 4,
-      name: "John",
-      age: 25,
-      sdate: "2022-05-06",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 5,
-      name: "Jane",
-      age: 30,
-      sdate: "2024-01-15",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 6,
-      name: "Doe",
-      age: 4,
-      sdate: "2024-01-06",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 7,
-      name: "John",
-      age: 25,
-      sdate: "2022-05-06",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 8,
-      name: "Jane",
-      age: 30,
-      sdate: "2024-01-15",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 9,
-      name: "Doe",
-      age: 4,
-      sdate: "2024-01-06",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 10,
-      name: "John",
-      age: 25,
-      sdate: "2022-05-06",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-    {
-      id: 11,
-      name: "Jane",
-      age: 30,
-      sdate: "2024-01-15",
-      email: "test@gmail.com",
-      role: "Admin",
-      action: "b",
-    },
-  ];
   const pagination = {
     navigationIcon: "fa-chevron",
   };
@@ -211,6 +109,7 @@ const UserTable = () => {
     let modalObject = {
       title: "Add New User",
       body: <UserForm />,
+      modalClass:"smart-modal-90"
     //  footer: <MyFooterContent />,
     };
     openModal(modalObject);

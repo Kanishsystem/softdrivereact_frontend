@@ -5,7 +5,6 @@ import { SmartSoftCheckRadioSwitch } from 'soft_digi';
 const AllFiles_Files_image = () => {
     const options = [
         { value: '1', label: '' },
-
     ]
     const File_items = [
         { img: { MAIN_PIC }, title: "Media report-Nov 2023" },

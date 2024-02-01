@@ -1,26 +1,43 @@
 import React from 'react'
 import "./Recyclebin.css"
-const RecyleBin = () => {
-  return (
-    <div className="card-container is-flex is-flex-direction-column">
-       <div className="trash-icon is-flex">   
-                  <i class="fa fa-trash-o"></i>
-               </div> 
+import { PDF_PIC } from '../../services/ImageService'
 
-          <div className="left-card">
-                <div className="small-card">
-                  </div>
-                    <div className="pdf-card is-flex">
-                      <h1 className="Pdf is-align-self-center">PDF</h1>
-                    </div> 
+const RecyleBin = () => {
+  const PDFPDF = [
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+    { pdfs: { PDF_PIC }, Titlename: "Nextcloud M" },
+  ]
+  return (
+    <div className='RecyleBin p-0 m-0'>
+      <div className='trash_bin '>
+        <i className="fa fa-trash" aria-hidden="true"></i>
+      </div>
+      <div className='columns is-multiline has-background-white'>
+        {PDFPDF.map((item) =>
+          <div className='column is-2'>
+
+            <div className='PDFcreation card p-5 '>
+              <img src={PDF_PIC} alt="" />
+              <span>{item.Titlename}</span>
+              <span><i className="fa fa-ellipsis-h pl-2" aria-hidden="true"></i></span>
+            </div>
           </div>
-                <div className="is-flex is-direction-row">
-                <h1 className="Next-cloud mx-5">Nextcloud M </h1>
-                   <p className="paragraph">...</p>
-                </div>
-    
+        )}
+      </div>
     </div>
   )
 }
-
 export default RecyleBin

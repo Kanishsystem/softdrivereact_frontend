@@ -11,12 +11,18 @@ const Menubar = () => {
           <span className="navbar-item">
             <i class="fa fa-bars" aria-hidden="true"></i>
             <img className="image pl-5" src={MANU_LOGO} alt="Logo" />
-            <span className="pl-5 is-size-4-mobile themes-menubar-title">Smart Drive</span>
+            <span className="pl-5 is-size-4-mobile themes-menubar-title">
+              Smart Drive
+            </span>
           </span>
         </div>
         <div className="navbar-item">
           <span className="control has-icons-left has-icons-right">
-            <input className="input  themes-menubar-input" type="text" placeholder="Search..."/>
+            <input
+              className="input  themes-menubar-input"
+              type="text"
+              placeholder="Search..."
+            />
             <span className="icon is-medium is-left has-text-grey">
               <i class="fa fa-search" aria-hidden="true"></i>
             </span>
@@ -28,16 +34,28 @@ const Menubar = () => {
         <div className="navbar-end">
           <div className="navbar-item themes-menubar-item">
             <span className="pl-2 pt-1 themes-manubar-bell">
-              <i class="fa fa-bell-o" aria-hidden="true"></i>
+              <a href="/site/notification">
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+              </a>
             </span>
             <span className="pl-2 pt-1 themes-manubar-setting">
               <i class="fa fa-cog" aria-hidden="true"></i>
             </span>
             <span>
-              <img src={MANU_PROFILE} alt="profile" />
+              <img src={MANU_PROFILE} alt="profile" className="image" />
             </span>
-            <span>
-              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            <span className="dropdown is-right is-hoverable">
+              <button className="button themes-menubar-dropdown">
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <span className="dropdown-menu">
+                <span className="dropdown-content">
+                  <a href="/site/profile" className="dropdown-item is-size-6">
+                    <i class="fa fa-user-circle-o pr-1" aria-hidden="true"></i>
+                    Profile
+                  </a>
+                </span>
+              </span>
             </span>
           </div>
         </div>

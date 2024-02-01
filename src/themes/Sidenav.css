@@ -1,5 +1,5 @@
 .smart-side-nav-view li:hover {
-  background-color: #ffd1ff;
+  /* background-color: #ffd1ff; */
   /* color: rgb(175, 67, 179); */
   color: #9900cc;
   cursor: pointer;
@@ -15,14 +15,14 @@
 
 .active {
   /* background-color: var(--primary-color); */
-  background-color: #ffd1ff;
+  /* background-color: #ffd1ff; */
   backdrop-filter: blur(5px);
   /* color: var(--white); */
   /* color: rgb(175, 67, 179); */
   color: #9900cc;
   cursor: pointer;
-  transition: 0.5s;
-  padding: 5px;
+ 
+ 
   border-radius: 5px;
   width: 100%;
 }

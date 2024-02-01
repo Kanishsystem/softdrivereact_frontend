@@ -13,8 +13,8 @@ const Folder_Details = () => {
     return (
         <div className='Folder_Details'>
             <div className='columns'>
-                <div className='column ml-1 card is-flex is-justify-content-space-between'>
-                    <span> <i class="fa fa-sign-out p-4" aria-hidden="true"></i>
+                <div className='column ml-1 card is-flex is-justify-content-space-between mt-3'>
+                    <span> <i className="fa fa-sign-out p-4" aria-hidden="true"></i>
                         <i className="fa fa-arrows-v p-4" aria-hidden="true"></i>
                     </span>
                     <span>
@@ -25,7 +25,7 @@ const Folder_Details = () => {
                 </div>
             </div>
             <div className='column card'>
-                <p><i class="fa fa-exclamation-circle p-3" aria-hidden="true"></i>
+                <p><i className="fa fa-exclamation-circle p-2" aria-hidden="true"></i>
                     Key Visuals</p>
 
                 <img src={MAIN_PIC} alt="" height="250" width="300" />
@@ -48,14 +48,12 @@ const Folder_Details = () => {
             </div>
             <div className='columns is-multiline'>
                 {folderData.map((item) =>
-                    <div className='column is-12 card is-flex ml-3 is-justify-content-space-between'>
+                    <div className='column is-11 ml-3 card is-flex is-justify-content-space-between'>
                         <span>{item.File_date} </span>
                         <span>{item.file_name}</span>
                     </div>
                 )}
             </div>
-
-
         </div>
     )
 }

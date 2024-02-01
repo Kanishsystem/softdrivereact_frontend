@@ -1,8 +1,58 @@
-import React from 'react'
-import { SmartSoftInput, SmartSoftSelect } from 'soft_digi'
+import React, { useState } from 'react'
+
+import {
+  SmartSoftCheckRadioSwitch,
+  SmartSoftInput,
+  SmartSoftSelect,
+} from "soft_digi";
+import { useSiteContext } from "../../contexts/SiteProvider";
+import ROLE_API_URLS from "../../services/ApiUrls/UsersUrls";
+import { post } from "../../services/smartApiService";
+import { showNotification } from "../../services/notifyService";
 
 
 const RoleForm = () => {
+
+  const [formData, setFormData] = useState({});
+  const [formSubmit, setFormSubmit] = useState(false);
+  const [formErrors, setFormErrors] = useState(false);
+  const { setLoading,closeModal } = useSiteContext();
+  //const [type, setType] = useState("password");
+
+  const handleInputChange = (name, value) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = () => {
+    setFormSubmit(true);
+    const handleError = (errorMessage) => {
+      showNotification("error",errorMessage);        
+      setLoading(false);      
+    };
+    setLoading(true, 'Logging in Please Wait....');
+    const subscription = post(ROLE_API_URLS.insert, formData,handleError).subscribe((response) => {
+      console.log("response form ", response.data);
+      closeModal();
+     // setUser(response.data);
+      setLoading(false);      
+    });
+    return () => {
+      subscription.unsubscribe();
+    };
+  };
+
+
+  const MyFooterContent = () => {
+    return (
+      <div className="is-flex is-justify-content-end ">
+        <button className="button is-success is-small">Go back</button>
+        <button className="button  is-link is-small" onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
+    );
+  };
+
   return (
     <div>
     <div className='container'>
@@ -11,15 +61,23 @@ const RoleForm = () => {
               <SmartSoftInput
               label='Role Name' 
               placeHolder='Enter Your Name'
+              errorEnable={formSubmit}
+              value={formData?.input_one||""}
+              onChange={(value) => handleInputChange("input_one", value)}
               />
             </div>
 
             <div className='column is-12'>
           <SmartSoftSelect
-          label='Select Employee' />
+          label='Select Employee' 
+          errorEnable={formSubmit}
+          value={formData?.input_one||""}
+          onChange={(value) => handleInputChange("input_one", value)}
+          />
         </div>
        </div>
       </div>
+      {MyFooterContent()}
       
     </div>
   

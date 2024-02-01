@@ -94,7 +94,7 @@ const TextBoxExample = () => {
             errorUpdate={(error)=>handleErrorChange("input_one",error)} 
             isClearable={true}         
           />
-
+                    
 
 
           <SmartButton label="submit" classList={["is-primary","is-small",'is-inverted']} 

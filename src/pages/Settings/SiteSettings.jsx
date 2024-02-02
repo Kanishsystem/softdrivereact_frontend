@@ -21,6 +21,11 @@ const SiteSettings = () => {
       <div className='columns'>
         <div className='column is-6'>
          <div className='card'>
+         <div className='card-header card'> 
+        <div className='card-title has-text-weight-bold p-3'>
+          Site Settings
+        </div>
+        </div>
           <div className="card-content ">
             <div className='is-flex is-justify-content-space-between mb-2'>
            

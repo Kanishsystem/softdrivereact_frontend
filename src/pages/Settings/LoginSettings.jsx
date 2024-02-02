@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { SmartSoftButton, SmartSoftCheckRadioSwitch, SmartSoftInput } from 'soft_digi'
 
 
-const GeneralSettings = () => {
+const LoginSettings = () => {
 
     const [formData, setFormData] = useState({});
     const handleInputChange = (name, value) => {
@@ -244,4 +244,4 @@ const GeneralSettings = () => {
   )
 }
 
-export default GeneralSettings
+export default LoginSettings

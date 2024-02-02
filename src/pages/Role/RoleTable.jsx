@@ -39,32 +39,46 @@ const RoleTable = () => {
                    );
                     };
                     
-
  const buttons = [
-    
                       {
-                        label: "", leftIcon: "fa-trash-o",type:"icon", classList: [""], onClick: (data) => {
-                          console.log("data", data);
-                        }
+                        label: "",
+                        leftIcon: "fa-trash-o",
+                        type: "icon",
+                        classList: ["has-text-danger"],
+                        onClick: (data) => {
+                         // console.log("data", data);
+                         openDeleteModal(data["ID"],data["ename"]);
+                        },
                       },
                       {
-                        label: "", leftIcon: "fa-lock",type:"icon", classList: ["is-primary"], onClick: (data) => {
+                        label: "",
+                        leftIcon: "fa-lock",
+                        type: "icon",
+                        classList: ["is-primary"],
+                        onClick: (data) => {
                           console.log("data", data);
-                        }
+                        },
                       },
                       {
-                        label: "", leftIcon: "fa-pencil-square-o",type:"icon", classList: ["is-primary"], onClick: (data) => {
+                        label: "",
+                        leftIcon: "fa-pencil-square-o",
+                        type: "icon",
+                        classList: ["is-primary"],
+                        onClick: (data) => {
                           console.log("data", data);
-                        }
+                        },
                       },
                       {
-                        label: "", leftIcon: "fa-eye",type:"icon", classList: ["is-primary"], onClick: (data) => {
+                        label: "",
+                        leftIcon: "fa-eye",
+                        type: "icon",
+                        classList: ["is-primary"],
+                        onClick: (data) => {
                           console.log("data", data);
-                        }
+                        },
                       },
                     ];
-
-    
+                  
 
     
     const columns = [
@@ -136,6 +150,23 @@ const RoleTable = () => {
     };
     openModal(modalObject);
   };
+
+  
+  const openDeleteModal=(id,name)=>{
+    let modelObject = {
+      title:"Do you want to Delete The Role",
+      body:"Note: The user will be deleted! Action cannot be reverted",
+      okFunction:()=>{
+        console.log("of function")
+      },
+      cancelFunction:()=>{
+        closeModal();
+        console.log("cancel function")
+      }
+    }
+    openModal(modelObject);
+  };
+
   return(
   <>
    <div className="is-flex is-justify-content-space-between mb-3">

@@ -1,11 +1,11 @@
 import React from 'react'
 import './AllFile.css';
 import StorageOverview from './StorageOverview';
-import AllFilesSort_Last_Moditiod from './AllFilesSort_Last_Moditiod';
+import AllFilesSortLastModified from './AllFilesSortLastModified';
 import AlllFiles_Recommend from './AlllFiles_Recommend';
 import AllFiles_Files_image from './AllFiles_Files_image';
 import AllFiles_Folders from './AllFiles_Folders';
-import AllFiles_Uplodes from './AllFiles_Uplodes';
+import AllFilesUploads from './AllFilesUploads';
 import AllFiles_Create_now from './AllFiles_Create_now';
 import Folder_Details from './Folder_Details';
 import AllFiles_Status from './AllFiles_Status';
@@ -47,13 +47,13 @@ const AllFiles = () => {
                     </div>
                     <div className="columns  ">
                         <div className="column is-12 box is-flex">
-                            <AllFiles_Uplodes />
+                            <AllFilesUploads />
 
                             <AllFiles_Create_now />
 
                             <span><i className="fa-solid fa-ellipsis-vertical pl-6 pt-3 is-size-4 "></i></span>
                             <div className="column is-flex is-justify-content-end">
-                                <AllFilesSort_Last_Moditiod />
+                                <AllFilesSortLastModified />
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,36 @@ import React from "react";
 import "./Insights.css";
 import { PIE_CHART } from "../../services/ImageService";
 import { CHART } from "../../services/ImageService";
+import { USER_PIC } from "../../services/ImageService";
+import { SmartSoftTable } from "soft_digi";
+
+const nameFunction = (row) => {
+  return (
+    <div className="is-flex">
+      <figure className="image is-32x32 mr-2">
+        <img className="is-rounded" src={USER_PIC} alt="profile" />
+      </figure>
+      {row["name"] || ""}
+    </div>
+  );
+};
+
+const nameTags = [
+  { value: "pending", label: "Pending", class: "is-warning" },
+  { value: "unread", label: "unread", class: "is-warning" },
+];
+
+const buttons = [
+  {
+    label: "",
+    leftIcon: "fa fa-ellipsis-h",
+    type: "icon",
+    classList: [""],
+    onClick: (data) => {
+      console.log("data", data);
+    },
+  },
+];
 
 const StorageCard = () => {
   return (
@@ -12,7 +42,7 @@ const StorageCard = () => {
           {/* main card */}
           <div className="column is-9">
             <div className="columns">
-              <div className="column">
+              <div className="column is-flex is-flex-direction-column">
                 <div className="card is-flex">
                   <div className="card-content">
                     <p className="has-text-weight-medium">Storage</p>
@@ -34,6 +64,8 @@ const StorageCard = () => {
                     <img src={PIE_CHART} alt="pie-chart" />
                   </div>
                 </div>
+                <Activity />
+                <StorageThirdCard />
               </div>
             </div>
           </div>
@@ -46,27 +78,120 @@ const StorageCard = () => {
   );
 };
 
-const StorageSecCard = () => {
+const Activity = () => {
   return (
-    <div className="columns">
-      <div className="column is-9">
-        <div className="card">
-          <div className="card-content is-flex">
-            <p className="has-text-weight-medium">
-              How Files are used?
-              <p className="has-text-weight-ligth dashboard-insights-para2">
-                How has your Porta been used for personal and collaboration?
+    <>
+      <div className="columns pt-5">
+        <div className="column">
+          <div className="card">
+            <div className="card-content is-flex is-flex is-justify-content-space-between">
+              <p className="has-text-weight-medium">
+                How Files are used?
+                <p className="has-text-weight-ligth dashboard-insights-para2">
+                  How has your Porta been used for personal and collaboration?
+                </p>
               </p>
-            </p>
-            <div className="navbar-dropdown"></div>
-          </div>
-          <div>
-            <img src={CHART} alt="chart" />
+              <div className="select is-small is-flex">
+                <select>
+                  <option>Last 7 Days</option>
+                  <option>Last 1 Month</option>
+                </select>
+                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div>
+              <img src={CHART} alt="chart" />
+            </div>
+            <hr />
+            <div className="is-flex is-justify-content-space-around">
+              <span className="has-text-primary">
+                <input type="checkbox" />
+                <label htmlFor="all">All</label>
+              </span>
+              <span className="has-text-danger">
+                <input type="checkbox" />
+                <label htmlFor="upload">Upload</label>
+              </span>
+              <span className="has-text-link">
+                <input type="checkbox" />
+                <label htmlFor="comment&edit">Comment & Edit</label>
+              </span>
+              <span className="has-text-success">
+                <input type="checkbox" />
+                <label htmlFor="download">Download</label>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
+};
+
+const StorageThirdCard = () => {
+  return (
+    <>
+      <div className="columns pt-5">
+        <div className="column">
+          <div className="card">
+            <div className="card-content is-flex is-flex is-justify-content-space-between">
+              <p className="has-text-weight-medium is-size-5">Activity</p>
+              <div className="select is-small is-flex">
+                <select>
+                  <option>Last 7 Days</option>
+                  <option>Last 1 Month</option>
+                </select>
+                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div className="navbar is-flex is-justify-content-space-around">
+              <a href="">All</a>
+              <a href="">File Request</a>
+              <a href="">Upload</a>
+              <a href="">Download</a>
+            </div>
+            <StorageTable />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const StorageTable = () => {
+  const columns = [
+    { title: "", index: "name", valueFunction: nameFunction },
+    { title: "", index: "access" },
+    { title: "", index: "msg" },
+    { title: "", index: "tags", type: "tags", tags: nameTags },
+    { title: "", index: "action", type: "action", buttons: buttons },
+  ];
+
+  const data = [
+    {
+      id: 1,
+      name: "Balaji",
+      access: "requested access for",
+      msg: "key Visual Opt.02",
+      tags: "pending",
+    },
+    {
+      id: 2,
+      name: "Yuva",
+      access: "requested access for",
+      msg: "key Visual Opt.02",
+      tags: "pending",
+    },
+    {
+      id: 3,
+      name: "Jana",
+      access: "Commented",
+      msg: "key Visual Opt.02",
+      tags: "unread",
+    },
+  ];
+
+  return <SmartSoftTable data={data} columns={columns} />;
 };
 
 const StatsCard = ({ items }) => {
@@ -76,34 +201,31 @@ const StatsCard = ({ items }) => {
     { id: 3, value: "39", label: "external views", del: "Details" },
   ];
   return (
-    <div className="columns">
-      <div className="column">
-
-        <div className="card">
-
-          <div className="card-content is-flex is-justify-content-space-between">
-            <p className="has-text-weight-medium">Stats</p>
-
-            <div className="select is-small">
-              <select>
-                <option>Last 7 Days</option>
-                <option>Last 1 Month</option>
-              </select>
+    <>
+      <div className="columns">
+        <div className="column">
+          <div className="card">
+            <div className="card-content is-flex is-justify-content-space-between">
+              <p className="has-text-weight-medium">Stats</p>
+              <div className="select is-small">
+                <select>
+                  <option>Last 7 Days</option>
+                  <option>Last 1 Month</option>
+                </select>
+              </div>
             </div>
+            {StatsCardItem.map((item) => (
+              <ul className="is-flex is-justify-content-space-between">
+                <li>{item.value}</li>
+                <li>{item.label}</li>
+                <li>{item.del}</li>
+                <hr className="dashboard-insights-hr" />
+              </ul>
+            ))}
           </div>
-          {StatsCardItem.map((item) =>
-            <ul className="is-flex is-justify-content-space-between">
-              <li>{item.value}</li>
-              <li>{item.label}</li>
-              <li>{item.del}</li>
-              <hr className="dashboard-insights-hr" />
-            </ul>
-
-          )}
         </div>
-
       </div>
-    </div>
+    </>
   );
 };
 
@@ -111,7 +233,6 @@ const Insights = () => {
   return (
     <div>
       <StorageCard />
-      <StorageSecCard />
     </div>
   );
 };

@@ -80,6 +80,7 @@ const EmailSettings = () => {
           /></div>
         </div>
         <div className='is-flex is-justify-content-end'>
+          <a className='is-info mr-5 mt-2 ' href='#'>Test Email</a>
           <SmartSoftButton label='Save' 
           classList={["smart-action-button"]} 
           

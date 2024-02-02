@@ -131,7 +131,7 @@ const RoleTable = () => {
   const openMyModal = () => {
     let modalObject = {
        title: 'Add New Role',
-     body: <RoleForm />,
+     body: <RoleForm loadTableData={loadTableData} />,
       // footer: <MyFooterContent /> 
     };
     openModal(modalObject);

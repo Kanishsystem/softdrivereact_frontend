@@ -1,7 +1,5 @@
-// LoginLayout.js
-import React from "react";
-import Header from "./MainTheme/Header";
-import test from "../assets/images/sidetest.png";
+
+
 import { useSiteContext } from "../contexts/SiteProvider";
 import "./MainLayoutStyle.css";
 import Menubar from "./Menubar";

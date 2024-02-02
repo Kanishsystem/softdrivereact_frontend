@@ -12,7 +12,7 @@ import { post } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
 
 
-const RoleForm = () => {
+const RoleForm = (loadTableData) => {
 
   const [formData, setFormData] = useState({});
   const [formSubmit, setFormSubmit] = useState(false);
@@ -27,33 +27,41 @@ const RoleForm = () => {
   const handleSubmit = () => {
     setFormSubmit(true);
     const handleError = (errorMessage) => {
-      showNotification("error",errorMessage);        
-      setLoading(false);      
+      showNotification("error", errorMessage);
+      setLoading(false);
     };
-    setLoading(true, 'Logging in Please Wait....');
-    const subscription = post(ROLE_API_URLS.insert, formData,handleError).subscribe((response) => {
-      console.log("response form ", response.data);
+    setLoading(true, "Details Submitting Please Wait....");
+    const subscription = post(
+      ROLE_API_URLS.insert,
+      formData,
+      handleError
+    ).subscribe((response) => {
+      //console.log("response form ", response.data);
+      loadTableData();
+      showNotification("success","Data Saved Successfully");
       closeModal();
-     // setUser(response.data);
-      setLoading(false);      
+      // setUser(response.data);
+      setLoading(false);
     });
     return () => {
       subscription.unsubscribe();
     };
   };
 
-
   const numericValidations = [
     {
       type: "required",
       msg: "Please enter valid name"
     },
-    {
-      type: "pattern",
-      msg: "Please Enter Correct Numeric Value",
-      pattern: '[0-9]+'
-    }
+   
   ];
+
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
+  
  
 
   const ActionBUttons = () => {
@@ -74,22 +82,23 @@ const RoleForm = () => {
               label='Role Name' 
               placeHolder='Enter Your Name'
               errorEnable={formSubmit}
-              value={formData?.input_one||""}
+              value={formData?.role_name||""}
               leftIcon="fa-user"
-              validations={ numericValidations}
+            
               inputProps={{ isFocussed: true }}   
-              onChange={(value) => handleInputChange("input_one", value)}
+              onChange={(value) => handleInputChange("role_name", value)}
               />
             </div>
 
             <div className='column is-12'>
           <SmartSoftSelect
           label='Select Employee' 
+          options={options}
           errorEnable={formSubmit}
-          value={formData?.input_one||""}
-          validations={ numericValidations}
+          value={formData?.users||""}
+         
           inputProps={{ isFocussed: true }}  
-          onChange={(value) => handleInputChange("input_one", value)}
+          onChange={(value) => handleInputChange("users", value)}
           />
         </div>
        </div>

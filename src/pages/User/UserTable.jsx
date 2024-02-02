@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
-
 import { SmartSoftButton, SmartSoftTable } from "soft_digi";
-import { SmartSoftCheckRadioSwitch } from "soft_digi";
 import { useSiteContext } from "../../contexts/SiteProvider";
 import UserForm from "./UserForm";
-import { MAIN_PIC } from "../../services/ImageService";
 import { get } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
-
 // url
 import USER_API_URLS from "../../services/ApiUrls/UsersUrls";
 
@@ -29,19 +25,13 @@ const UserTable = () => {
     );
   };
 
-  const roleFunction = (role) => {
-    if (role === "Admin") {
-      return <span className="tag is-success">Administrator</span>;
-    } else {
-      return <span className="tag is-info">User</span>;
-    }
-  };
+
   const buttons = [
     {
       label: "",
       leftIcon: "fa-trash-o",
       type: "icon",
-      classList: [""],
+      classList: ["has-text-danger"],
       onClick: (data) => {
        // console.log("data", data);
        openDeleteModal(data["ID"],data["ename"]);
@@ -83,8 +73,7 @@ const UserTable = () => {
     {
       title: "Role",
       index: "role",
-      // className: "is-link",
-      // valueFunction: roleFunction,
+    
     },
     {
       title: "Storage Capacity",

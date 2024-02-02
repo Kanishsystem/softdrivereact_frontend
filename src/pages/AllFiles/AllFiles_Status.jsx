@@ -35,9 +35,9 @@ const AllFiles_Status = () => {
               </label>
               </span>
               <span><i className="fa fa-file pl-3 has-text-danger" aria-hidden="true"></i></span>
-              <span className='AllFiles_Status_Document_text pl-3'>{item.Zip_name}</span>
-              <span className='AllFiles_Status_Document_text pl-3'>{item.Zip_size}</span>
-              <span> <button className="button is-link is-light mb-4 is-small p-1">Copy link</button></span>
+              <span className='AllFiles_Status_Document_text   pl-6'>{item.Zip_name}</span>
+              <span className='AllFiles_Status_Document_text pl-6'>{item.Zip_size}</span>
+              <span> <button className="button is-link is-light ml-6 mb-4 is-small p-0">Copy link</button></span>
               <hr />
             </div>
           )}

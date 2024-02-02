@@ -14,6 +14,7 @@ body{
     height:70px;
     width:100%;
     top:0;   
+    z-index: 100;
     
 }
 .smart-site-sidenav{

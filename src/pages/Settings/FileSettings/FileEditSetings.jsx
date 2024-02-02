@@ -30,7 +30,7 @@ const ExtensionSettings = () => {
             </div>
 
 
-            <div key={"main-field-3"} className='is-flex is-justify-content-space-between my-4'>
+            <div key={"main-field-3"} className='is-flex is-justify-content-space-between my-4 p-4'>
                 <div className='general-label is-flex is-flex-direction-column '>
                 <p key={"main=label-1"} className='main-general-label'>Allow editing progressing files </p>
                 <p  key={"sub-label-1"} className='sub-general-label'></p>
@@ -43,7 +43,7 @@ const ExtensionSettings = () => {
                 value={formData?.switchone3 || ""}
                 onChange={(value) => handleInputChange("switchone3", value)}  /></div>
             </div>
-            <div key={"main-field-3"} className='is-flex is-justify-content-space-between my-4'>
+            <div key={"main-field-3"} className='is-flex is-justify-content-space-between my-4 p-4'>
                 <div className='general-label is-flex is-flex-direction-column '>
                 <p key={"main=label-1"} className='main-general-label'>Allow editing of documents </p>
                 <p  key={"sub-label-1"} className='sub-general-label'>(Document editor URL is Required)</p>
@@ -77,7 +77,10 @@ const ExtensionSettings = () => {
 
 
                                      <div className='general-button is-flex is-justify-content-end'>
-                    <SmartSoftButton label='Save' />
+                    <SmartSoftButton 
+                    label='Save' 
+                    classList={["smart-action-button"]}
+                    />
                 </div>
                     
                 </div>

@@ -8,6 +8,11 @@ const UserProfile = () => {
       <div className='columns is-multiline'>
         <div className='column is-8'>
          <div className='card'>
+         <div className='card-header card'>
+                    <div className='card-header-title'>
+                    <div>Profile Details</div>
+                    </div>
+                </div>
           <div className="card-content ">
             
              <div className='columns is-multiline'>

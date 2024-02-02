@@ -70,17 +70,20 @@ const StorageSecCard = () => {
 };
 
 const StatsCard = ({ items }) => {
-  // const StatsCardItem = [
-  //   { id: 1, value: "+82", label: "new files uploaded", del: "Details" },
-  //   { id: 2, value: "+7", label: "active members", del: "Details" },
-  //   { id: 3, value: "39", label: "external views", del: "Details" },
-  // ];
+  const StatsCardItem = [
+    { id: 1, value: "+82", label: "new files uploaded", del: "Details" },
+    { id: 2, value: "+7", label: "active members", del: "Details" },
+    { id: 3, value: "39", label: "external views", del: "Details" },
+  ];
   return (
     <div className="columns">
       <div className="column">
+
         <div className="card">
+
           <div className="card-content is-flex is-justify-content-space-between">
             <p className="has-text-weight-medium">Stats</p>
+
             <div className="select is-small">
               <select>
                 <option>Last 7 Days</option>
@@ -88,7 +91,17 @@ const StatsCard = ({ items }) => {
               </select>
             </div>
           </div>
+          {StatsCardItem.map((item) =>
+            <ul className="is-flex is-justify-content-space-between">
+              <li>{item.value}</li>
+              <li>{item.label}</li>
+              <li>{item.del}</li>
+              <hr className="dashboard-insights-hr" />
+            </ul>
+
+          )}
         </div>
+
       </div>
     </div>
   );

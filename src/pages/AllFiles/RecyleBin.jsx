@@ -26,7 +26,8 @@ const RecyleBin = () => {
   return (
     <div className='RecyleBin p-0 m-0'>
       <div className='trash_bin '>
-        <i className="fa fa-trash" aria-hidden="true"></i>
+        <i class="fa fa-recycle p-2 " aria-hidden="true"></i>
+        <i className="fa fa-trash p-1" aria-hidden="true"></i>
       </div>
       <div className='columns is-multiline has-background-white'>
         {PDFPDF.map((item) =>

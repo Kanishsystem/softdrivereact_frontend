@@ -28,26 +28,29 @@ const ExtensionSettings = () => {
                 </div>
             </div>
             <div className='card-body p-4'>
-            <div key={"main-field-1"} className='is-flex is-justify-content-space-between'>
+            <div key={"main-field-1"} className=' is-justify-content-space-between'>
                 <div className='general-label is-flex is-flex-direction-column '>
                 </div>
-                <div className='general-input'>
-                    <SmartSoftSelect placeHolder='MicroSoft Document'>
+                <div className=' select-box'>
+                    <SmartSoftSelect
+                     placeHolder='MicroSoft Document'
+                     classList={[""]}
+                      />
                         
-                    </SmartSoftSelect>
+                   
                     
                 </div>
                 
             </div>
             
-            <div key={"main-field-2"} className='is-flex is-justify-content-space-between my-4'>
+            <div key={"main-field-2"} className=' is-justify-content-space-between my-4'>
                 <div className='general-label is-flex is-flex-direction-column '>
 
                 </div>
-                <div className='general-input'>
-                <SmartSoftSelect placeHolder='Spread Sheet'>
+                <div className='select-box'>
+                <SmartSoftSelect placeHolder='Spread Sheet' />
                         
-                        </SmartSoftSelect>
+                       
                         
     
                     
@@ -71,7 +74,10 @@ const ExtensionSettings = () => {
                 </div>
             </div>
             <div className='general-button is-flex is-justify-content-end'>
-                <SmartSoftButton label='Save' />
+                <SmartSoftButton 
+                label='Save'
+                classList={["smart-action-button"]}
+                 />
             </div>
             </div>
             

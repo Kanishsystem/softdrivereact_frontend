@@ -77,7 +77,10 @@ const GeneralSettings = () => {
         />  </div>
                 </div>
                 <div className='general-button is-flex is-justify-content-end'>
-                    <SmartSoftButton label='Save' />
+                    <SmartSoftButton 
+                    label='Save'
+                    classList={["smart-action-button"]} 
+                    />
                 </div>
                 </div>
                 

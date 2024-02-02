@@ -16,7 +16,7 @@ const RoleTable = () => {
     const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
 
     const picture_display=(inputLabel)=>{
-       let firstTwoCharacters = inputLabel[0];
+       let firstTwoCharacters = inputLabel.slice(0, 2).toUpperCase();
        return firstTwoCharacters;
       // return <span>{firstTwoCharacters}</span>
     }
@@ -32,7 +32,7 @@ const RoleTable = () => {
                       return (
                         <div>
                           {employees.map((subItem, subIndex) => (
-                          <span key={subIndex}>{picture_display(subItem.label)}</span>
+                          <span  className="tag is-rounded" key={subIndex}>{picture_display(subItem.label)}</span>
                         ))}                                                
                          
                       </div>

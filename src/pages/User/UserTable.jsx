@@ -83,8 +83,8 @@ const UserTable = () => {
     {
       title: "Role",
       index: "role",
-      className: "is-link",
-      valueFunction: roleFunction,
+      // className: "is-link",
+      // valueFunction: roleFunction,
     },
     {
       title: "Storage Capacity",

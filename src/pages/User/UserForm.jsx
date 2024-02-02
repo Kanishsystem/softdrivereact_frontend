@@ -50,11 +50,7 @@ const UserForm = ({ loadTableData }) => {
       type: "required",
       msg: "Please enter valid name",
     },
-    {
-      type: "pattern",
-      msg: "Please Enter Correct Numeric Value",
-      pattern: "[0-9]+",
-    },
+   
   ];
 
   const options = [

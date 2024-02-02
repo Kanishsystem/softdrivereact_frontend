@@ -7,8 +7,8 @@
 .buttonx {
     background-color: silver;
     color: black;
-    border-radius: 50px;
-    font-size: 17px;
+    border-radius: 3.125rem;
+    font-size: 1.0625rem;
     padding: 0.5em 2em 0.5em 2em;
     border-style: none;
 }
@@ -17,8 +17,8 @@
     background-color: rgb(214, 213, 213);
     color: black;
     padding: 0.5em 2em 0.5em 2em;
-    border-radius: 50px;
-    font-size: 17px;
+    border-radius: 3.125rem;
+    font-size: 1.0625rem;
     border-style: none;
 }
 
@@ -32,7 +32,7 @@
     background-color: blueviolet;
     border-style: none;
     border-radius: 10em;
-    font-size: 17px;
+    font-size: 1.0625rem;
     color: white;
 
 }
@@ -40,44 +40,44 @@
 .AlllFiles_Recommend_checkbox input {
     height: 1.5em;
     width: 1.5em;
-    margin: 5px;
+    margin: 0.3125rem;
 }
 
 .AlllFiles_File_checkbox input {
     height: 1.5em;
     width: 1.5em;
-    margin: 5px;
+    margin: 0.3125rem;
 }
 
 .User_pic {
-    border-radius: 50px;
-    height: 50px;
+    border-radius: 3.125rem;
+    height: 3.125rem;
     position: relative;
-    width: 50px;
+    width: 3.125rem;
 }
 
 .User_pic_two {
-    border-radius: 50px;
-    height: 50px;
+    border-radius: 3.125rem;
+    height: 3.125rem;
     position: absolute;
-    margin-left: -20px;
-    width: 50px;
+    margin-left: -1.25rem;
+    width: 3.125rem;
 }
 
 .User_pic_three {
-    border-radius: 50px;
-    height: 50px;
+    border-radius: 3.125rem;
+    height: 3.125rem;
     position: absolute;
-    margin-left: 10px;
-    width: 50px;
+    margin-left: 0.625rem;
+    width: 3.125rem;
 }
 
 .User_pic_four {
-    border-radius: 50px;
-    height: 50px;
+    border-radius: 3.125rem;
+    height: 3.125rem;
     position: absolute;
-    margin-left: 40px;
-    width: 50px;
+    margin-left: 2.5rem;
+    width: 3.125rem;
 }
 
 .YOU {
@@ -88,7 +88,7 @@
 
 .AllFiles_Status_Document_text {
     font-size: 1rem;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 .broblem_text {
@@ -108,18 +108,18 @@
 }
 
 .Uploade_Page_fullsreen .file-upload-label svg {
-    height: 50px;
+    height: 3.125rem;
     fill: rgb(82, 82, 82);
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .Uploade_Page_fullsreen .file-upload-label {
     cursor: pointer;
     background-color: #ddd;
-    padding: 50px 220px 50px 220px;
-    border-radius: 20px;
-    border: 2px dashed rgb(82, 82, 82);
-    box-shadow: 0px 0px 200px -50px rgba(0, 0, 0, 0.719);
+    padding: 3.125rem 13.75rem 3.125rem 13.75rem;
+    border-radius: 1.25rem;
+    border: 0.125rem dashed rgb(82, 82, 82);
+    box-shadow: 0rem 0rem 12.5rem -3.125rem rgba(0, 0, 0, 0.719);
 }
 
 .Uploade_Page_fullsreen .file-upload-design {
@@ -127,7 +127,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 0.3125rem;
 }
 
 .Uploade_Page_fullsreen .browse-button:hover {
@@ -138,13 +138,14 @@
     position: absolute;
     right: 0;
     top: 0;
-    padding: 5px;
+    padding: 0.3125rem;
 }
 
-.ShareFolderNotification_menmalimages {
-    height: 6rem;
+.ShareFolderNotification_menmalimages img {
+    height: 3rem;
     width: 6rch;
-    border-radius: 50px;
+    border-radius: 3.125rem;
+    margin-bottom: 0.625rem;
 
 
 }
@@ -159,7 +160,7 @@
 .ShareFolderNotification_mails {
     font-size: 1rem;
     position: absolute;
-    top: 2rem;
+    top: 1.5625rem;
     left: 5rem;
 }
 

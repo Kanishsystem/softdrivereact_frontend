@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MAIN_PIC } from '../../services/ImageService';
 import { SmartSoftCheckRadioSwitch } from 'soft_digi';
 const AlllFiles_Recommend = () => {
+
+    const [formData, setFormData] = useState({});
+    // const [formSubmit, setFormSubmit] = useState(false);
+    // const [formErrors, setFormErrors] = useState(false);
+    // const [type, setType] = useState("password");
+
+    const handleInputChange = (name, value) => {
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
     const options = [
         { value: '2', label: '' },
 
     ]
     const Recommend_items = [
-        { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
-        { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
-        { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
+        { img: { MAIN_PIC }, title: "Media report-Nov 2023", id: 1 },
+        { img: { MAIN_PIC }, title: "Media report-Nov 2023", id: 2 },
+        { img: { MAIN_PIC }, title: "Media report-Nov 2023", id: 3 },
     ]
     return (
         <div className='AlllFiles_Recommend'>
@@ -23,7 +32,11 @@ const AlllFiles_Recommend = () => {
                             <div className="card ">
                                 <label className="AlllFiles_Recommend_checkbox ">
                                     <SmartSoftCheckRadioSwitch
+                                        // key={item.id}
                                         options={options}
+                                        value={formData?.input_eight || null}
+                                        onChange={(value) => handleInputChange("input_eight", value)}
+
                                     />
 
                                 </label>

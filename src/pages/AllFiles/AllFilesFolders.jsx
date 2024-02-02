@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AllFiles_Folders = () => {
+const AllFilesFolders = () => {
     const Folder_items = [
         { icon_one: <i className="fa fa-file-code-o  " aria-hidden="true"></i>, textFoder: " Work Documents", icon_two: <i className="fa fa-ellipsis-v  " aria-hidden="true"></i> },
         { icon_one: <i className="fa fa-file-code-o  " aria-hidden="true"></i>, textFoder: " Work Documents", icon_two: <i className="fa fa-ellipsis-v  " aria-hidden="true"></i> },
@@ -31,4 +31,4 @@ const AllFiles_Folders = () => {
     )
 }
 
-export default AllFiles_Folders
+export default AllFilesFolders

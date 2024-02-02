@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Uploade_Page_fullsreen = () => {
+const UploadePageFullsreen = () => {
     return (
         <div className='Uploade_Page_fullsreen'>
             <div className='column  '>
@@ -25,4 +25,4 @@ const Uploade_Page_fullsreen = () => {
     )
 }
 
-export default Uploade_Page_fullsreen
+export default UploadePageFullsreen

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AllFiles_Create_now = () => {
+const AllFilesCreateNow = () => {
     return (
         <div className='AllFiles_Create_now'>
             <div className="dropdown is-hoverable ml-4">
@@ -26,4 +26,4 @@ const AllFiles_Create_now = () => {
         </div>
     )
 }
-export default AllFiles_Create_now
+export default AllFilesCreateNow

@@ -2,7 +2,7 @@ import React from 'react'
 import { MAIN_PIC } from '../../services/ImageService';
 import { SmartSoftCheckRadioSwitch } from 'soft_digi';
 
-const AllFiles_Files_image = () => {
+const AllFilesFilesImage = () => {
     const options = [
         { value: '1', label: '' },
     ]
@@ -48,4 +48,4 @@ const AllFiles_Files_image = () => {
     )
 }
 
-export default AllFiles_Files_image
+export default AllFilesFilesImage

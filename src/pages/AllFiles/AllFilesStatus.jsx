@@ -1,6 +1,6 @@
 import React from 'react'
 import { SmartSoftCheckRadioSwitch } from 'soft_digi';
-const AllFiles_Status = () => {
+const AllFilesStatus = () => {
   const options = [
     { value: '3', label: '' },
   ]
@@ -51,5 +51,5 @@ const AllFiles_Status = () => {
     </div>
   )
 }
-export default AllFiles_Status
+export default AllFilesStatus
 

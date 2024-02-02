@@ -62,7 +62,7 @@ const ExtensionSettings = () => {
                 <div className='general-label is-flex is-flex-direction-column '>
                 <SmartSoftInput  label="Extension" className="box-model" id="boxmodel"/> 
                 </div>
-                <ul></ul>
+                
             </div>
             <div key={"main-field-4"} className='is-flex is-justify-content-space-between-is table-responsive-lg my-4'>
                 <div className='general-label is-flex is-flex-direction-column '>

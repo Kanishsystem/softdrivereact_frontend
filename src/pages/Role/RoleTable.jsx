@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import {SmartSoftButton, SmartSoftTable} from 'soft_digi';
 import { useSiteContext } from "../../contexts/SiteProvider";
 import RoleForm from "./RoleForm";
-import { get } from "../../services/smartApiService";
+import RoleSettings from "./RoleSettings";
+import { post,get } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
 
 import ROLE_API_URLS from "../../services/ApiUrls/RoleUrls";
@@ -16,15 +17,12 @@ const RoleTable = () => {
     const { setLoading, setUser, openModal, closeModal, startSessionAct } = useSiteContext();
 
     const picture_display=(inputLabel)=>{
-       let firstTwoCharacters = inputLabel.slice(0, 2).toUpperCase();
+       let firstTwoCharacters = inputLabel ? inputLabel.slice(0, 2).toUpperCase() :"";
        return firstTwoCharacters;
       // return <span>{firstTwoCharacters}</span>
     }
 
-    const nameTags = [{ value: "John", label: "John", className: "is-light" },
-                     { value: "Jane", label: "Jane", className: "is-light" },
-                    { value: "Doe", label: "Doe", className: "is-light" }];
-
+   
                     const OuterComponent = (row) => {
                      // console.log("emps " , row["employees"]);
                       let employees = row && row["employees"] && Array.isArray(row["employees"]) ? row["employees"] : [];
@@ -38,8 +36,29 @@ const RoleTable = () => {
                       </div>
                    );
                     };
+
+                    
                     
  const buttons = [
+     {
+    label: "",
+    leftIcon: "fa-eye",
+    type: "icon",
+    classList: ["has-text-link-dark"],
+    onClick: (data) => {
+      console.log("data", data);
+    },
+  },
+                      {
+                        label: "",
+                        leftIcon: "fa-pencil-square-o",
+                        type: "icon",
+                        classList: ["has-text-info"],
+                        onClick: (data) => {
+                          console.log("data", data);
+                        },
+                      },
+                     
                       {
                         label: "",
                         leftIcon: "fa-trash-o",
@@ -50,33 +69,23 @@ const RoleTable = () => {
                          openDeleteModal(data["ID"],data["ename"]);
                         },
                       },
+
+                      
                       {
                         label: "",
-                        leftIcon: "fa-lock",
+                        leftIcon: "fa-solid fa-gear",
                         type: "icon",
-                        classList: ["is-primary"],
+                        classList: ["has-text-dark"],
                         onClick: (data) => {
-                          console.log("data", data);
+                          // console.log("data", data);
+                          openRoleSettingsModal();
+                        
                         },
                       },
-                      {
-                        label: "",
-                        leftIcon: "fa-pencil-square-o",
-                        type: "icon",
-                        classList: ["is-primary"],
-                        onClick: (data) => {
-                          console.log("data", data);
-                        },
-                      },
-                      {
-                        label: "",
-                        leftIcon: "fa-eye",
-                        type: "icon",
-                        classList: ["is-primary"],
-                        onClick: (data) => {
-                          console.log("data", data);
-                        },
-                      },
+                     
+                      
+                    
+                    
                     ];
                   
 
@@ -88,12 +97,7 @@ const RoleTable = () => {
       { title: "Action", index: "action", type: "action", buttons: buttons },
     ];
 
-  const data = [
-      { id: 1, name: 'John',sdate:"2022-05-06" },
-      { id: 2, name: 'Jane',sdate:"2024-01-15" },
-      { id: 3, name: 'Doe',sdate:"2024-01-06" },
-      // ... more data
-    ];
+  
     const pagination = {
       navigationIcon:"fa-chevron"
     }
@@ -139,6 +143,24 @@ const RoleTable = () => {
       )
   }*/
  
+  const deleteData = (id) => {
+    setLoading(true, "Please Wait....");
+    const handleError = (errorMessage) => {
+      showNotification("error", errorMessage);     
+      setLoading(false);
+    };
+    const subscription = post(ROLE_API_URLS.delete_one,{id:id}, handleError).subscribe(
+      (response) => {
+        showNotification("success","Deleted Successfully...")
+        closeModal();
+        loadTableData();       
+       // setLoading(false);
+      }
+    );
+    return () => {
+      subscription.unsubscribe();
+    };
+  };
 
 
 
@@ -152,20 +174,34 @@ const RoleTable = () => {
   };
 
   
+  
   const openDeleteModal=(id,name)=>{
     let modelObject = {
       title:"Do you want to Delete The Role",
       body:"Note: The user will be deleted! Action cannot be reverted",
       okFunction:()=>{
-        console.log("of function")
+        deleteData(id);      
       },
       cancelFunction:()=>{
         closeModal();
-        console.log("cancel function")
+       // console.log("cancel function")
       }
     }
     openModal(modelObject);
+  }
+
+  const openRoleSettingsModal = () => {
+    let modalObject = {
+       title: 'Role Settings',
+     body: <RoleSettings />,
+      
+    };
+    openModal(modalObject);
   };
+
+
+  
+
 
   return(
   <>

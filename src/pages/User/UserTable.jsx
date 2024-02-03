@@ -4,6 +4,7 @@ import { useSiteContext } from "../../contexts/SiteProvider";
 import UserForm from "./UserForm";
 import { post,get } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
+
 // url
 import USER_API_URLS from "../../services/ApiUrls/UsersUrls";
 import UserDetails from "./UserDetails";
@@ -29,6 +30,28 @@ const UserTable = () => {
   const buttons = [
     {
       label: "",
+      leftIcon: "fa-eye",
+      type: "icon",
+      classList: ["has-text-link-dark smart-icon-background"],
+      onClick: (data) => {
+        viewEditData(data["ID"],"VIEW");
+      },
+    },
+  
+  
+    {
+      label: "",
+      leftIcon: "fa-pencil-square-o",
+      type: "icon",
+      classList: ["has-text-info"],
+      onClick: (data) => {
+        // console.log("data", data);
+        
+      },
+    },
+ 
+    {
+      label: "",
       leftIcon: "fa-trash-o",
       type: "icon",
       classList: ["has-text-danger"],
@@ -41,27 +64,9 @@ const UserTable = () => {
       label: "",
       leftIcon: "fa-lock",
       type: "icon",
-      classList: ["is-primary"],
+      classList: ["has-text-warning"],
       onClick: (data) => {
-        openResetModal(data["ID"],data["ename"])
-      },
-    },
-    {
-      label: "",
-      leftIcon: "fa-pencil-square-o",
-      type: "icon",
-      classList: ["is-primary"],
-      onClick: (data) => {
-        viewEditData(data["ID"],"EDIT")
-      },
-    },
-    {
-      label: "",
-      leftIcon: "fa-eye",
-      type: "icon",
-      classList: ["is-primary"],
-      onClick: (data) => {
-        viewEditData(data["ID"],"VIEW");
+        openResetModal();
       },
     },
   ];
@@ -113,8 +118,8 @@ const UserTable = () => {
 
   const openMyModal = (dataIn={}) => {
     let modalObject = {
-      title: "Add New User",
-      body: <UserForm loadTableData={loadTableData} dataIn={dataIn} />,
+      title: 'Add New User',
+      body: <UserForm loadTableData={loadTableData} />,
       modalClass: "smart-modal-90",     
     };
     openModal(modalObject);
@@ -163,6 +168,7 @@ const UserTable = () => {
     const handleError = (errorMessage) => {
       showNotification("error", errorMessage);     
       setLoading(false);
+  
     };
     const subscription = post(USER_API_URLS.get_one,{id:id}, handleError).subscribe(
       (response) => {
@@ -221,7 +227,7 @@ const UserTable = () => {
   return (
     <>
       <div className="is-flex is-justify-content-space-between mb-3">
-        <h1 className="is-size-4 is-3 ">Users</h1>
+        <h1 className="is-size-4 is-3 ">User Management</h1>
 
         <div className="is-flex is-justify-content-end ">
           <SmartSoftButton

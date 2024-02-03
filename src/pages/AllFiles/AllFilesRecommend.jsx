@@ -9,6 +9,7 @@ const AllFilesRecommend = () => {
     // const [type, setType] = useState("password");
 
     const handleInputChange = (name, value) => {
+        console.log("name ", name , " value " , value);
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
     const options = [
@@ -28,14 +29,14 @@ const AllFilesRecommend = () => {
                 <div className="columns  is-multiline ">
 
                     {Recommend_items.map((item) =>
-                        <div className="column is-4 ">
+                        <div key={item.id} className="column is-4 ">
                             <div className="card ">
                                 <label className="AlllFiles_Recommend_checkbox ">
                                     <SmartSoftCheckRadioSwitch
                                         // key={item.id}
-                                        options={options}
-                                        value={formData?.input_eight || null}
-                                        onChange={(value) => handleInputChange("input_eight", value)}
+                                        options={[{ value: item.id, label: "" }]}
+                                        value={formData["input_eight_" + item.id] || null}
+                                        onChange={(value) => handleInputChange("input_eight_" + item.id, value)}
 
                                     />
 

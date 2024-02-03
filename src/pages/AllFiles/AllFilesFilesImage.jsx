@@ -1,16 +1,26 @@
-import React from 'react'
+
+import React, { useState } from 'react';
 import { MAIN_PIC } from '../../services/ImageService';
 import { SmartSoftCheckRadioSwitch } from 'soft_digi';
 
 const AllFilesFilesImage = () => {
+    const [formData, setFormData] = useState({});
+    // const [formSubmit, setFormSubmit] = useState(false);
+    // const [formErrors, setFormErrors] = useState(false);
+    // const [type, setType] = useState("password");
+
+    const handleInputChange = (name, value) => {
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
     const options = [
-        { value: '1', label: '' },
+        { value: '4', label: '' },
     ]
     const File_items = [
-        { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
-        { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
-        { img: { MAIN_PIC }, title: "Media report-Nov 2023" },
+        { img: { MAIN_PIC }, title: "Media report-Nov 2023", id: 1 },
+        { img: { MAIN_PIC }, title: "Media report-Nov 2023", id: 2 },
+        { img: { MAIN_PIC }, title: "Media report-Nov 2023", id: 3 },
     ]
+
     return (
         <div className='AllFiles_Files_image'>
             <div className="column is-12 is-size-6 p-3 box">
@@ -20,13 +30,19 @@ const AllFilesFilesImage = () => {
 
 
                     {File_items.map((item) =>
-                        <div className="column is-4 ">
+                        <div key={item.id} className="column is-4 ">
                             <div className="card ">
                                 <label className="AlllFiles_File_checkbox ">
-                                    <SmartSoftCheckRadioSwitch
+                                    {/* <SmartSoftCheckRadioSwitch
                                         options={options}
-                                    />
+                                    /> */}
+                                    <SmartSoftCheckRadioSwitch
+                                        // key={item.id}
+                                        options={options}
+                                        value={formData?.name1 || null}
+                                        onChange={(value) => handleInputChange("name1", value)}
 
+                                    />
                                 </label>
                                 <div className="card-content">
                                     <p className="title">

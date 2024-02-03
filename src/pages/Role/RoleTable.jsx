@@ -4,7 +4,7 @@ import {SmartSoftButton, SmartSoftTable} from 'soft_digi';
 import { useSiteContext } from "../../contexts/SiteProvider";
 import RoleForm from "./RoleForm";
 import RoleSettings from "./RoleSettings";
-import { get } from "../../services/smartApiService";
+import { post,get } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
 
 import ROLE_API_URLS from "../../services/ApiUrls/RoleUrls";
@@ -36,6 +36,8 @@ const RoleTable = () => {
                       </div>
                    );
                     };
+
+                    
                     
  const buttons = [
      {
@@ -141,6 +143,24 @@ const RoleTable = () => {
       )
   }*/
  
+  const deleteData = (id) => {
+    setLoading(true, "Please Wait....");
+    const handleError = (errorMessage) => {
+      showNotification("error", errorMessage);     
+      setLoading(false);
+    };
+    const subscription = post(ROLE_API_URLS.delete_one,{id:id}, handleError).subscribe(
+      (response) => {
+        showNotification("success","Deleted Successfully...")
+        closeModal();
+        loadTableData();       
+       // setLoading(false);
+      }
+    );
+    return () => {
+      subscription.unsubscribe();
+    };
+  };
 
 
 
@@ -154,20 +174,21 @@ const RoleTable = () => {
   };
 
   
+  
   const openDeleteModal=(id,name)=>{
     let modelObject = {
       title:"Do you want to Delete The Role",
       body:"Note: The user will be deleted! Action cannot be reverted",
       okFunction:()=>{
-        console.log("of function")
+        deleteData(id);      
       },
       cancelFunction:()=>{
         closeModal();
-        console.log("cancel function")
+       // console.log("cancel function")
       }
     }
     openModal(modelObject);
-  };
+  }
 
   const openRoleSettingsModal = () => {
     let modalObject = {

@@ -34,7 +34,7 @@ const UserTable = () => {
       type: "icon",
       classList: ["has-text-link-dark smart-icon-background"],
       onClick: (data) => {
-        console.log("data", data);
+        viewEditData(data["ID"],"VIEW");
       },
     },
   
@@ -45,7 +45,8 @@ const UserTable = () => {
       type: "icon",
       classList: ["has-text-info"],
       onClick: (data) => {
-        console.log("data", data);
+        // console.log("data", data);
+        
       },
     },
  
@@ -65,7 +66,7 @@ const UserTable = () => {
       type: "icon",
       classList: ["has-text-warning"],
       onClick: (data) => {
-        viewEditData(data["ID"],"VIEW");
+        openResetModal();
       },
     },
   ];
@@ -167,6 +168,7 @@ const UserTable = () => {
     const handleError = (errorMessage) => {
       showNotification("error", errorMessage);     
       setLoading(false);
+  
     };
     const subscription = post(USER_API_URLS.get_one,{id:id}, handleError).subscribe(
       (response) => {

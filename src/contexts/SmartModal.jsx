@@ -1,10 +1,11 @@
 import React from 'react';
+import { SmartSoftButton } from 'soft_digi';
 
 const SmartModal = ({ closeModal, modalOptions }) => {
     const title = modalOptions && modalOptions.title ? modalOptions.title : null; 
     const footer =  modalOptions && modalOptions.footer ? modalOptions.footer : null;
     const body = modalOptions && modalOptions.body ? modalOptions.body: null;
-    const bodyclose = modalOptions && modalOptions?.bodyClose===false ? false : true;
+    const bodyClose = modalOptions && modalOptions?.bodyClose===false ? false : true;
     const modalClass = modalOptions && modalOptions?.modalClass ? modalOptions?.modalClass: "";
     const {
         okText = "Yes",
@@ -15,7 +16,7 @@ const SmartModal = ({ closeModal, modalOptions }) => {
     //
     console.log("modal class " , okFunction)
     const closeModalOnBody=()=>{       
-        if(bodyclose===true){
+        if(bodyClose===true){
             closeModal();
         }
     }
@@ -23,8 +24,9 @@ const SmartModal = ({ closeModal, modalOptions }) => {
     const okCancelFooter = () => {
         return (
           <>
-            <button className="button is-success is-small" onClick={okFunction}>{okText}</button>
-            <button className="button is-danger is-small" onClick={cancelFunction}>{cancelText}</button>       
+            <SmartSoftButton label={okText} classList={["button is-success is-small"]} onClick={okFunction} leftIcon='fa-check'/>
+            <SmartSoftButton label={cancelText} classList={["button is-danger is-small"]} onClick={cancelFunction} leftIcon='fa-close'/>
+              
           </>
         );
       };

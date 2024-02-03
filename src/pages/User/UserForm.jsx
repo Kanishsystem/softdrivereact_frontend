@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   SmartSoftButton,
   SmartSoftCheckRadioSwitch,
@@ -9,12 +9,15 @@ import { useSiteContext } from "../../contexts/SiteProvider";
 import USER_API_URLS from "../../services/ApiUrls/UsersUrls";
 import { post } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
+import ROLE_API_URLS from "../../services/ApiUrls/RoleUrls";
+import { get } from "../../services/smartApiService";
 
-const UserForm = ({ loadTableData }) => {
-  const [formData, setFormData] = useState({});
+const UserForm = ({ loadTableData,dataIn }) => {
+  const [formData, setFormData] = useState(dataIn ? dataIn : {});
   const [formSubmit, setFormSubmit] = useState(false);
   const [formErrors, setFormErrors] = useState(false);
   const { setLoading, closeModal } = useSiteContext();
+  const [roles, setRoles] = useState([]);
   //const [type, setType] = useState("password");
 
   const handleInputChange = (name, value) => {
@@ -28,8 +31,14 @@ const UserForm = ({ loadTableData }) => {
       setLoading(false);
     };
     setLoading(true, "Details Submitting Please Wait....");
+    let url = USER_API_URLS.insert;
+    if(formData.ID!==undefined){
+      formData["id"] = formData.ID;
+      url = USER_API_URLS.update;
+    }
+
     const subscription = post(
-      USER_API_URLS.insert,
+      url,
       formData,
       handleError
     ).subscribe((response) => {
@@ -79,6 +88,28 @@ const UserForm = ({ loadTableData }) => {
       </div>
     );
   };
+
+  const loadRoleSelectOptions=()=>{    
+      setLoading(true, "Please Wait....");
+      const handleError = (errorMessage) => {       
+        setLoading(false);
+      };
+      const subscription = get(ROLE_API_URLS.get_all_select, handleError).subscribe(
+        (response) => {
+          setRoles(response.data);
+          setLoading(false);
+        }
+      );
+      return () => {
+        subscription.unsubscribe();
+      };
+  };
+  
+
+  
+  useEffect(() => {
+    loadRoleSelectOptions();
+  }, []);
 
   return (
     <div className="columns is-multiline">
@@ -161,6 +192,9 @@ const UserForm = ({ loadTableData }) => {
           label="Select Role"
           placeHolder="Please Select"
           errorEnable={formSubmit}
+          options={roles}
+          isMulti={true}
+          onChange={(value) => handleInputChange("role", value)}
         />
       </div>
 

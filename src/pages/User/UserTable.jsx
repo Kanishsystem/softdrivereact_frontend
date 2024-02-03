@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { SmartSoftButton, SmartSoftTable } from "soft_digi";
 import { useSiteContext } from "../../contexts/SiteProvider";
 import UserForm from "./UserForm";
-import { get } from "../../services/smartApiService";
+import { post,get } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
 // url
 import USER_API_URLS from "../../services/ApiUrls/UsersUrls";
+import UserDetails from "./UserDetails";
 
 const UserTable = () => {
   const [tabData, setTabData] = useState([]);
-
-  const { setLoading, openModal, closeModal } = useSiteContext();
+  const {setLoading, openModal, closeModal } = useSiteContext();
   const roleTags = [{ class: "is-link" }];
 
   const nameFunction = (row) => {
@@ -43,7 +43,7 @@ const UserTable = () => {
       type: "icon",
       classList: ["is-primary"],
       onClick: (data) => {
-        console.log("data", data);
+        openResetModal(data["ID"],data["ename"])
       },
     },
     {
@@ -52,7 +52,7 @@ const UserTable = () => {
       type: "icon",
       classList: ["is-primary"],
       onClick: (data) => {
-        console.log("data", data);
+        viewEditData(data["ID"],"EDIT")
       },
     },
     {
@@ -61,7 +61,7 @@ const UserTable = () => {
       type: "icon",
       classList: ["is-primary"],
       onClick: (data) => {
-        console.log("data", data);
+        viewEditData(data["ID"],"VIEW");
       },
     },
   ];
@@ -111,13 +111,72 @@ const UserTable = () => {
     loadTableData();
   }, []);
 
-  const openMyModal = () => {
+  const openMyModal = (dataIn={}) => {
     let modalObject = {
       title: "Add New User",
-      body: <UserForm loadTableData={loadTableData} />,
+      body: <UserForm loadTableData={loadTableData} dataIn={dataIn} />,
       modalClass: "smart-modal-90",     
     };
     openModal(modalObject);
+  };
+
+
+  const deleteData = (id) => {
+    setLoading(true, "Please Wait....");
+    const handleError = (errorMessage) => {
+      showNotification("error", errorMessage);     
+      setLoading(false);
+    };
+    const subscription = post(USER_API_URLS.delete_one,{id:id}, handleError).subscribe(
+      (response) => {
+        showNotification("success","Deleted Successfully...")
+        closeModal();
+        loadTableData();       
+       // setLoading(false);
+      }
+    );
+    return () => {
+      subscription.unsubscribe();
+    };
+  };
+
+  const resetPassword = (id) => {
+    setLoading(true, "Please Wait....");
+    const handleError = (errorMessage) => {
+      showNotification("error", errorMessage);     
+      setLoading(false);
+    };
+    const subscription = post(USER_API_URLS.admin_reset,{id:id}, handleError).subscribe(
+      (response) => {
+        showNotification("success","Password Reset Successfully...")
+        closeModal();
+        loadTableData();
+      }
+    );
+    return () => {
+      subscription.unsubscribe();
+    };
+  };
+
+  const viewEditData = (id,type) => {
+    setLoading(true, "Please Wait....");
+    const handleError = (errorMessage) => {
+      showNotification("error", errorMessage);     
+      setLoading(false);
+    };
+    const subscription = post(USER_API_URLS.get_one,{id:id}, handleError).subscribe(
+      (response) => {
+        if(type=="EDIT"){
+          openMyModal(response.data);
+        }else{
+          viewModal(response.data);
+        }        
+        setLoading(false);       
+      }
+    );
+    return () => {
+      subscription.unsubscribe();
+    };
   };
 
   const openDeleteModal=(id,name)=>{
@@ -125,15 +184,39 @@ const UserTable = () => {
       title:"Do you want to Delete The Employee / User",
       body:"Note: The user will be deleted! Action cannot be reverted",
       okFunction:()=>{
-        console.log("of function")
+        deleteData(id);      
       },
       cancelFunction:()=>{
         closeModal();
-        console.log("cancel function")
+       // console.log("cancel function")
       }
     }
     openModal(modelObject);
   }
+
+  const openResetModal=(id,name)=>{
+    let modelObject = {
+      title:"Do you want to Reset Password of The Employee / User",
+      body:"Note: The password will be reset to Employee ID! Action cannot be reverted",
+      okFunction:()=>{
+        resetPassword(id);      
+      },
+      cancelFunction:()=>{
+        closeModal();
+       // console.log("cancel function")
+      }
+    }
+    openModal(modelObject);
+  }
+
+  const viewModal = (data) => {
+    let modalObject = {
+      title: data?.ename,
+      body: <UserDetails data={data} />,
+      modalClass: "smart-modal-70",     
+    };
+    openModal(modalObject);
+  };
 
   return (
     <>

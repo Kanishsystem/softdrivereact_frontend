@@ -11,7 +11,7 @@ const Sidebar = ({ items }) => {
   };
   return (
     <div className="">
-      <ul className="card smart-side-nav-view p-4 is-hidden-mobile py-1 px-5">
+      <ul className="smart-side-nav-view p-4 is-hidden-mobile py-1 px-5">
         {items.map((item) => (
           <li onClick={() => handleNavigation(item.link)} key={item.id}   className={location.pathname === item.link ? 'active' : 'smart-side-nav-view py-2'}>
             <span className="pr-1">{item.icon}</span>
@@ -101,10 +101,10 @@ const Sidenav = () => {
     },
   ];
   return (
-    <div className="main-side-view">
-      <Sidebar className="main-side-nave" items={sidebarItem} />
-      <Sidebar  className="main-side-nave" items={sidebarItemAdmin} />
-      <Sidebar  className="main-side-nave" items={sidebarItemLogout} />
+    <div className="main-side-view card">
+      <Sidebar items={sidebarItem} />
+      <Sidebar items={sidebarItemAdmin} />
+      <Sidebar items={sidebarItemLogout} />
     </div>
   );
 };

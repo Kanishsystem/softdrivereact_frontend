@@ -4,6 +4,7 @@ import { useSiteContext } from "../../contexts/SiteProvider";
 import UserForm from "./UserForm";
 import { post,get } from "../../services/smartApiService";
 import { showNotification } from "../../services/notifyService";
+
 // url
 import USER_API_URLS from "../../services/ApiUrls/UsersUrls";
 import UserDetails from "./UserDetails";
@@ -62,29 +63,7 @@ const UserTable = () => {
       label: "",
       leftIcon: "fa-lock",
       type: "icon",
-<<<<<<< Updated upstream
-      classList: ["is-primary"],
-      onClick: (data) => {
-        openResetModal(data["ID"],data["ename"])
-      },
-    },
-    {
-      label: "",
-      leftIcon: "fa-pencil-square-o",
-      type: "icon",
-      classList: ["is-primary"],
-      onClick: (data) => {
-        viewEditData(data["ID"],"EDIT")
-      },
-    },
-    {
-      label: "",
-      leftIcon: "fa-eye",
-      type: "icon",
-      classList: ["is-primary"],
-=======
       classList: ["has-text-warning"],
->>>>>>> Stashed changes
       onClick: (data) => {
         viewEditData(data["ID"],"VIEW");
       },
@@ -138,13 +117,8 @@ const UserTable = () => {
 
   const openMyModal = (dataIn={}) => {
     let modalObject = {
-<<<<<<< Updated upstream
-      title: "Add New User",
-      body: <UserForm loadTableData={loadTableData} dataIn={dataIn} />,
-=======
       title: 'Add New User',
       body: <UserForm loadTableData={loadTableData} />,
->>>>>>> Stashed changes
       modalClass: "smart-modal-90",     
     };
     openModal(modalObject);

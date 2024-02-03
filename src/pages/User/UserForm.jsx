@@ -100,6 +100,7 @@ const UserForm = ({ loadTableData,dataIn }) => {
           setLoading(false);
         }
       );
+      
       return () => {
         subscription.unsubscribe();
       };

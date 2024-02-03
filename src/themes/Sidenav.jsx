@@ -10,8 +10,8 @@ const Sidebar = ({ items }) => {
     navigate(link);
   };
   return (
-    <div  >
-      <ul className="card smart-side-nav-view is-hidden-mobile py-1 px-5">
+    <div className="">
+      <ul className="card smart-side-nav-view p-4 is-hidden-mobile py-1 px-5">
         {items.map((item) => (
           <li onClick={() => handleNavigation(item.link)} key={item.id}   className={location.pathname === item.link ? 'active' : 'smart-side-nav-view py-2'}>
             <span className="pr-1">{item.icon}</span>

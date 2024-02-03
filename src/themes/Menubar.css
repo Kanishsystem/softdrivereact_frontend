@@ -40,9 +40,6 @@
   border: none;
 }
 
-.themes-manubar-search {
-  background-color: rgb(241, 237, 237);
-  border-radius: 50%;
-  height: 2em;
-  width: 2em;
+.themes-menubar-search{
+  width: 50em;
 }

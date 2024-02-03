@@ -270,8 +270,8 @@ const Insights = () => {
 
   return (
     <>
-    {StorageCard()}
-    {Activity()}
+      {StorageCard()}
+      {Activity()}
     </>
   );
 };

@@ -82,7 +82,7 @@ const TextBoxExample = () => {
             
             rightIconFunction={()=>passwordRightIcon()}
             validations={numericValidations}  
-            errorEnable={true}
+            errorEnable={true}  
             errorUpdate={(error)=>handleErrorChange("input_one",error)}          
           />
 

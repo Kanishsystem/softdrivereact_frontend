@@ -29,6 +29,27 @@ const UserTable = () => {
   const buttons = [
     {
       label: "",
+      leftIcon: "fa-eye",
+      type: "icon",
+      classList: ["has-text-link-dark smart-icon-background"],
+      onClick: (data) => {
+        console.log("data", data);
+      },
+    },
+  
+  
+    {
+      label: "",
+      leftIcon: "fa-pencil-square-o",
+      type: "icon",
+      classList: ["has-text-info"],
+      onClick: (data) => {
+        console.log("data", data);
+      },
+    },
+ 
+    {
+      label: "",
       leftIcon: "fa-trash-o",
       type: "icon",
       classList: ["has-text-danger"],
@@ -41,6 +62,7 @@ const UserTable = () => {
       label: "",
       leftIcon: "fa-lock",
       type: "icon",
+<<<<<<< Updated upstream
       classList: ["is-primary"],
       onClick: (data) => {
         openResetModal(data["ID"],data["ename"])
@@ -60,6 +82,9 @@ const UserTable = () => {
       leftIcon: "fa-eye",
       type: "icon",
       classList: ["is-primary"],
+=======
+      classList: ["has-text-warning"],
+>>>>>>> Stashed changes
       onClick: (data) => {
         viewEditData(data["ID"],"VIEW");
       },
@@ -113,8 +138,13 @@ const UserTable = () => {
 
   const openMyModal = (dataIn={}) => {
     let modalObject = {
+<<<<<<< Updated upstream
       title: "Add New User",
       body: <UserForm loadTableData={loadTableData} dataIn={dataIn} />,
+=======
+      title: 'Add New User',
+      body: <UserForm loadTableData={loadTableData} />,
+>>>>>>> Stashed changes
       modalClass: "smart-modal-90",     
     };
     openModal(modalObject);
@@ -221,7 +251,7 @@ const UserTable = () => {
   return (
     <>
       <div className="is-flex is-justify-content-space-between mb-3">
-        <h1 className="is-size-4 is-3 ">Users</h1>
+        <h1 className="is-size-4 is-3 ">User Management</h1>
 
         <div className="is-flex is-justify-content-end ">
           <SmartSoftButton

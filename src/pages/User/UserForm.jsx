@@ -148,8 +148,8 @@ const UserForm = ({ loadTableData,dataIn }) => {
               key="text-3"
               label="Mobile Number"
               placeHolder="Mobile Number"
-              value={formData?.profile_img || ""}
-              onChange={(value) => handleInputChange("profile_img", value)}
+              value={formData?.mobile_number || ""}
+              onChange={(value) => handleInputChange("mobile_number", value)}
               leftIcon="fa-solid fa-phone"
               validations={numericValidations}
               inputProps={{ isFocussed: true }}

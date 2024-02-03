@@ -1,4 +1,3 @@
-import React from "react";
 import "./Insights.css";
 import { PIE_CHART } from "../../services/ImageService";
 import { CHART } from "../../services/ImageService";
@@ -18,13 +17,14 @@ const nameFunction = (row) => {
 
 const nameTags = [
   { value: "pending", label: "Pending", class: "is-warning" },
-  { value: "unread", label: "unread", class: "is-warning" },
+  { value: "unread", label: "Unread", class: "is-warning" },
+  { value: "download", label: "Download", class: "is-success" },
 ];
 
 const buttons = [
   {
     label: "",
-    leftIcon: "fa fa-ellipsis-h",
+    leftIcon: "fa fa-download",
     type: "icon",
     classList: [""],
     onClick: (data) => {
@@ -39,7 +39,6 @@ const StorageCard = () => {
       <strong className="is-size-4">Insights</strong>
       <div className="container">
         <div className="columns">
-          {/* main card */}
           <div className="column is-9">
             <div className="columns">
               <div className="column is-flex is-flex-direction-column">
@@ -64,8 +63,7 @@ const StorageCard = () => {
                     <img src={PIE_CHART} alt="pie-chart" />
                   </div>
                 </div>
-                <Activity />
-                <StorageThirdCard />
+                <StorageSecCard />
               </div>
             </div>
           </div>
@@ -78,7 +76,7 @@ const StorageCard = () => {
   );
 };
 
-const Activity = () => {
+const StorageSecCard = () => {
   return (
     <>
       <div className="columns pt-5">
@@ -91,19 +89,17 @@ const Activity = () => {
                   How has your Porta been used for personal and collaboration?
                 </p>
               </p>
-              <div className="select is-small is-flex">
+              <div className="select is-small">
                 <select>
                   <option>Last 7 Days</option>
                   <option>Last 1 Month</option>
                 </select>
-                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
               </div>
             </div>
             <div>
               <img src={CHART} alt="chart" />
             </div>
-            <hr />
-            <div className="is-flex is-justify-content-space-around">
+            <div className="is-flex is-justify-content-space-around pt-5">
               <span className="has-text-primary">
                 <input type="checkbox" />
                 <label htmlFor="all">All</label>
@@ -128,29 +124,72 @@ const Activity = () => {
   );
 };
 
-const StorageThirdCard = () => {
+const StatsCard = ({ items }) => {
+  const StatsCardItem = [
+    { id: 1, value: "+82", label: "new files uploaded", del: "Details" },
+    { id: 2, value: "+7", label: "active members", del: "Details" },
+    { id: 3, value: "39", label: "external views", del: "Details" },
+  ];
   return (
     <>
-      <div className="columns pt-5">
+      <div className="columns">
         <div className="column">
           <div className="card">
-            <div className="card-content is-flex is-flex is-justify-content-space-between">
-              <p className="has-text-weight-medium is-size-5">Activity</p>
-              <div className="select is-small is-flex">
+            <div className="card-content is-flex is-justify-content-space-between">
+              <p className="has-text-weight-medium">Stats</p>
+              <div className="select is-small">
                 <select>
                   <option>Last 7 Days</option>
                   <option>Last 1 Month</option>
                 </select>
-                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
               </div>
             </div>
-            <div className="navbar is-flex is-justify-content-space-around">
-              <a href="">All</a>
-              <a href="">File Request</a>
-              <a href="">Upload</a>
-              <a href="">Download</a>
+            {StatsCardItem.map((item) => (
+              <ul className="is-flex is-justify-content-space-between p-2">
+                <li>{item.value}</li>
+                <li>{item.label}</li>
+                <li>{item.del}</li>
+                <hr className="dashboard-insights-hr" />
+              </ul>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const Activity = () => {
+  return (
+    <>
+      <div className="container">
+        <div className="columns">
+          <div className="column is-9">
+            <div className="columns">
+              <div className="column">
+                <div className="card">
+                  <div className="card-content is-flex is-justify-content-space-between">
+                    <p className="has-text-weight-medium">Activity</p>
+                    <div className="select is-small">
+                      <select>
+                        <option>Last 7 Days</option>
+                        <option>Last 1 Month</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div className="navbar is-flex is-justify-content-space-around">
+                  <a href="#">All</a>
+                  <a href="#">File Request</a>
+                  <a href="#">Upload</a>
+                  <a href="#">Download</a>
+                </div>
+                <StorageTable />
+              </div>
             </div>
-            <StorageTable />
+          </div>
+          <div className="column is-3">
+            <ActiveMembar />
           </div>
         </div>
       </div>
@@ -189,39 +228,28 @@ const StorageTable = () => {
       msg: "key Visual Opt.02",
       tags: "unread",
     },
+    {
+      id: 4,
+      name: "Kalki",
+      access: "requested for download",
+      msg: "key Visual Opt.02",
+      tags: "download",
+    },
   ];
-
   return <SmartSoftTable data={data} columns={columns} />;
 };
 
-const StatsCard = ({ items }) => {
-  const StatsCardItem = [
-    { id: 1, value: "+82", label: "new files uploaded", del: "Details" },
-    { id: 2, value: "+7", label: "active members", del: "Details" },
-    { id: 3, value: "39", label: "external views", del: "Details" },
-  ];
+const ActiveMembar = () => {
   return (
     <>
       <div className="columns">
         <div className="column">
           <div className="card">
             <div className="card-content is-flex is-justify-content-space-between">
-              <p className="has-text-weight-medium">Stats</p>
-              <div className="select is-small">
-                <select>
-                  <option>Last 7 Days</option>
-                  <option>Last 1 Month</option>
-                </select>
-              </div>
+              <p className="has-text-weight-medium">Active Members</p>
+              <i class="fa fa-ellipsis-h pt-1 pl-5" aria-hidden="true"></i>
+              <p></p>
             </div>
-            {StatsCardItem.map((item) => (
-              <ul className="is-flex is-justify-content-space-between">
-                <li>{item.value}</li>
-                <li>{item.label}</li>
-                <li>{item.del}</li>
-                <hr className="dashboard-insights-hr" />
-              </ul>
-            ))}
           </div>
         </div>
       </div>
@@ -233,6 +261,7 @@ const Insights = () => {
   return (
     <div>
       <StorageCard />
+      <Activity />
     </div>
   );
 };

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import SmartSelect from "../../components/core/forms/SmartSelect";
 import { ALLOW_FLOAT, ALLOW_FLOAT_DYNAMIC, ALLOW_NUMERIC } from "../../services/PatternSerivce";
-import SmartButton from "../../components/core/forms/SmartButton";
 import { isEmptyObject } from "../../services/core/CommonService";
+import { SmartSoftSelect,SmartSoftButton } from "soft_digi";
 
 const TextBoxExample = () => {
     const [formData, setFormData] = useState({});
@@ -70,7 +69,7 @@ const TextBoxExample = () => {
         return (
             <div className="card"> 
 
-            <SmartSelect key="text-1" label="test"
+            <SmartSoftSelect key="text-1" label="test"
             options={options}
             value={formData?.input_one||""}
             onChange={(value) => handleInputChange("input_one", value)} 
@@ -82,7 +81,7 @@ const TextBoxExample = () => {
           />
 
   
-          <SmartSelect key="text-2" label="test"
+          <SmartSoftSelect key="text-2" label="test"
             options={options}
             value={formData?.input_two||null}
             onChange={(value) => handleInputChange("input_two", value)} 
@@ -97,7 +96,7 @@ const TextBoxExample = () => {
                     
 
 
-          <SmartButton label="submit" classList={["is-primary","is-small",'is-inverted']} 
+          <SmartSoftButton label="submit" classList={["is-primary","is-small",'is-inverted']} 
             onClick={()=>handleFormSubmit()}
             disabled={!isEmptyObject(formErrors)}
           />

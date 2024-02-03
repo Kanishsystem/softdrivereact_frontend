@@ -1,10 +1,4 @@
 import React, { useEffect, useState } from "react";
-import SmartInput from "../../components/core/forms/SmartInput";
-import {
-  ALLOW_FLOAT,
-  ALLOW_FLOAT_DYNAMIC,
-  ALLOW_NUMERIC,
-} from "../../services/PatternSerivce";
 import SmartButton from "../../components/core/forms/SmartButton";
 import { isEmptyObject } from "../../services/core/CommonService";
 import {SmartSoftForm} from "soft_digi"

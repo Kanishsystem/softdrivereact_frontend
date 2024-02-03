@@ -113,9 +113,6 @@ const CheckRadioSwitch = () => {
           onChange={(value) => handleInputChange("radioone", value)}
 
         />
-
-
-
         <SmartSoftCheckRadioSwitch
           options={options}
           switchMode={true}

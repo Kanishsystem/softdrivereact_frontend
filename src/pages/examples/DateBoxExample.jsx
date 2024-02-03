@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SmartInput from "../../components/core/forms/SmartInput";
-import { ALLOW_FLOAT, ALLOW_FLOAT_DYNAMIC, ALLOW_NUMERIC } from "../../services/PatternSerivce";
-import SmartButton from "../../components/core/forms/SmartButton";
 import { isEmptyObject } from "../../services/core/CommonService";
-import {SmartSoftInput,SmartSoftDate} from "soft_digi"
+import {SmartSoftInput,SmartSoftDate,SmartSoftButton} from "soft_digi"
 
 const DateBoxExample = () => {
     const [formData, setFormData] = useState({});
@@ -84,7 +81,7 @@ const DateBoxExample = () => {
 
 
 
-          <SmartButton label="submit" classList={["is-primary","is-small",'is-inverted']} 
+          <SmartSoftButton label="submit" classList={["is-primary","is-small",'is-inverted']} 
             onClick={()=>handleFormSubmit()}
             disabled={!isEmptyObject(formErrors)}
           />

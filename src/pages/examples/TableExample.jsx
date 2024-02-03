@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import {SmartSoftTable} from 'soft_digi';
 import { MAIN_PIC } from "../../services/ImageService";
 

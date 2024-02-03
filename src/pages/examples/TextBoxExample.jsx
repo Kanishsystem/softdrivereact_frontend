@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import SmartInput from "../../components/core/forms/SmartInput";
 import { ALLOW_FLOAT, ALLOW_FLOAT_DYNAMIC, ALLOW_NUMERIC } from "../../services/PatternSerivce";
-import SmartButton from "../../components/core/forms/SmartButton";
 import { isEmptyObject } from "../../services/core/CommonService";
-import {SmartSoftInput} from "soft_digi";
+import {SmartSoftInput,SmartSoftButton} from "soft_digi";
 
 const TextBoxExample = () => {
     const [formData, setFormData] = useState({});
@@ -70,7 +68,7 @@ const TextBoxExample = () => {
     const inputWithIconValidation=()=>{
         return (
             <div className="card"> 
-            <SmartInput key="text-1" label="test"
+            <SmartSoftInput key="text-1" label="test"
             value={formData?.input_one||""}
             onChange={(value) => handleInputChange("input_one", value)}
             type={type} 
@@ -88,20 +86,20 @@ const TextBoxExample = () => {
             errorUpdate={(error)=>handleErrorChange("input_one",error)}          
           />
 
-          <SmartInput key="text-2" label="test"
+          <SmartSoftInput key="text-2" label="test"
             value={formData?.input_two||""}
             onChange={(value) => handleInputChange("input_two", value)} 
             inputType="BORDER_LESS"                    
           />
 
-    <SmartInput key="text-3" label="test"
+    <SmartSoftInput key="text-3" label="test"
             value={formData?.input_three||""}
             onChange={(value) => handleInputChange("input_three", value)} 
             inputType="BORDER_LABEL"
             inputProps={{ isFocussed: true }}                    
           />
 
-  <SmartInput key="text-4" label="Enter Employee Name"
+  <SmartSoftInput key="text-4" label="Enter Employee Name"
             value={formData?.input_four||""}
             onChange={(value) => handleInputChange("input_four", value)} 
             inputType="BORDER_LABEL_FOCUS"
@@ -118,7 +116,7 @@ const TextBoxExample = () => {
           />
 
 
-          <SmartButton label="submit" classList={["is-primary","is-small",'is-inverted']} 
+          <SmartSoftButton label="submit" classList={["is-primary","is-small",'is-inverted']} 
             onClick={()=>handleFormSubmit()}
             disabled={!isEmptyObject(formErrors)}
           />

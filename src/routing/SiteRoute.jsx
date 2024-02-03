@@ -29,6 +29,7 @@ import UserProfile from "../pages/UserProfile/UserProfile";
 import Insights from "../pages/Dashboard/Insights";
 import SmartFormExample from "../pages/examples/SmartFormExample";
 import DateBoxExample from "../pages/examples/DateBoxExample";
+import TestComponent from "../pages/examples/TestComponent";
 
 
 const SiteRoute = () => {
@@ -45,6 +46,7 @@ const SiteRoute = () => {
           <Route path="checkradio" element={<CheckRadioSwitch />} />
           <Route path="form" element={<SmartFormExample />} />
           <Route path="date" element={<DateBoxExample />} />
+          <Route path="test" element={<TestComponent />} />
         </Routes>
       </MainLayout>
     );

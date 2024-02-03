@@ -9,12 +9,11 @@ const AllFilesRecommend = () => {
     // const [type, setType] = useState("password");
 
     const handleInputChange = (name, value) => {
-        console.log("name ", name , " value " , value);
+        console.log("name ", name, " value ", value);
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
     const options = [
         { value: '2', label: '' },
-
     ]
     const Recommend_items = [
         { img: { MAIN_PIC }, title: "Media report-Nov 2023", id: 1 },

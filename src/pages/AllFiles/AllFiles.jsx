@@ -11,6 +11,7 @@ import FolderDetails from './FolderDetails';
 import AllFilesStatus from './AllFilesStatus';
 import UploadePageFullsreen from './UploadePageFullsreen';
 import ShareFolderNotification from './ShareFolderNotification';
+import CreatFolder from './CreatFolder';
 
 const AllFiles = () => {
     return (
@@ -76,6 +77,9 @@ const AllFiles = () => {
                     <div className='columns'>
                         <ShareFolderNotification />
                     </div>
+
+                    <CreatFolder />
+
                 </div>
                 <div className='column is-3'>
                     <StorageOverview />

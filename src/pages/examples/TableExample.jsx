@@ -40,7 +40,7 @@ const TableExample = () => {
 
   const columns = [
     { title: "ID", index: "id", isSortable: true, type: "sno" },
-    { title: "Name", index: "name" },
+    { title: "Name", index: "name",width:"40" },
     { title: "Age", index: "age", isSortable: true },
     { title: "Age", index: "age", titleFunction: titleDisplay },
     { title: "Date", index: "sdate", type: "date", dateFormat: "DD-MM" },

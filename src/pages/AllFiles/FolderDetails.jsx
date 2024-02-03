@@ -2,7 +2,7 @@ import React from 'react'
 import { MAIN_PIC } from '../../services/ImageService';
 import { USER_PIC } from '../../services/ImageService';
 
-const Folder_Details = () => {
+const FolderDetails = () => {
     const folderData = [
         { File_date: "file type", file_name: "image" },
         { File_date: "Size", file_name: "64KB" },
@@ -57,4 +57,4 @@ const Folder_Details = () => {
         </div>
     )
 }
-export default Folder_Details
+export default FolderDetails

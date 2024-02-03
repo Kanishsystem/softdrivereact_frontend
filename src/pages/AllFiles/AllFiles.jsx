@@ -2,14 +2,14 @@ import React from 'react'
 import './AllFile.css';
 import StorageOverview from './StorageOverview';
 import AllFilesSortLastModified from './AllFilesSortLastModified';
-import AlllFiles_Recommend from './AlllFiles_Recommend';
-import AllFiles_Files_image from './AllFiles_Files_image';
-import AllFiles_Folders from './AllFiles_Folders';
+import AllFilesRecommend from './AllFilesRecommend';
+import AllFilesFilesImage from './AllFilesFilesImage';
+import AllFilesFolders from './AllFilesFolders';
 import AllFilesUploads from './AllFilesUploads';
-import AllFiles_Create_now from './AllFiles_Create_now';
-import Folder_Details from './Folder_Details';
-import AllFiles_Status from './AllFiles_Status';
-import Uploade_Page_fullsreen from './Uploade_Page_fullsreen';
+import AllFilesCreateNow from './AllFilesCreateNow';
+import FolderDetails from './FolderDetails';
+import AllFilesStatus from './AllFilesStatus';
+import UploadePageFullsreen from './UploadePageFullsreen';
 import ShareFolderNotification from './ShareFolderNotification';
 
 const AllFiles = () => {
@@ -49,7 +49,7 @@ const AllFiles = () => {
                         <div className="column is-12 box is-flex">
                             <AllFilesUploads />
 
-                            <AllFiles_Create_now />
+                            <AllFilesCreateNow />
 
                             <span><i className="fa-solid fa-ellipsis-vertical pl-6 pt-3 is-size-4 "></i></span>
                             <div className="column is-flex is-justify-content-end">
@@ -58,20 +58,20 @@ const AllFiles = () => {
                         </div>
                     </div>
                     <div className="columns ">
-                        <AlllFiles_Recommend />
+                        <AllFilesRecommend />
                     </div>
                     <div className="columns ">
-                        <AllFiles_Folders />
+                        <AllFilesFolders />
                     </div>
                     <div className="columns ">
-                        <AllFiles_Files_image />
+                        <AllFilesFilesImage />
 
                     </div>
                     <div className='columns'>
-                        <Uploade_Page_fullsreen />
+                        <UploadePageFullsreen />
                     </div>
                     <div className='columns '>
-                        <AllFiles_Status />
+                        <AllFilesStatus />
                     </div>
                     <div className='columns'>
                         <ShareFolderNotification />
@@ -80,7 +80,7 @@ const AllFiles = () => {
                 <div className='column is-3'>
                     <StorageOverview />
 
-                    <Folder_Details />
+                    <FolderDetails />
                 </div>
 
             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { MAIN_PIC } from '../../services/ImageService';
 import { SmartSoftCheckRadioSwitch } from 'soft_digi';
-const AlllFiles_Recommend = () => {
+const AllFilesRecommend = () => {
 
     const [formData, setFormData] = useState({});
     // const [formSubmit, setFormSubmit] = useState(false);
@@ -60,4 +60,4 @@ const AlllFiles_Recommend = () => {
     )
 }
 
-export default AlllFiles_Recommend
+export default AllFilesRecommend

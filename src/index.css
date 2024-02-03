@@ -67,6 +67,12 @@ code {
 }
 
 .smart-icon-background{
-  border: 1px solid red;
+
   background-color: white;
+}
+
+.smart-action-buttons {
+  background-color:  transparent !important;
+  border: none !important;
+ 
 }

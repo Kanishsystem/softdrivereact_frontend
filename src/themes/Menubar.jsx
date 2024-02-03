@@ -15,11 +15,12 @@ const Menubar = () => {
               Smart Drive
             </span>
           </span>
+          {/* <a onClick={()=>show}><i class="fa fa-search is-hidden-desktop is-size-4-mobile pt-4" aria-hidden="true"></i></a> */}
         </div>
         <div className="navbar-item">
-          <span className="control has-icons-left has-icons-right">
+          <span className="control has-icons-left has-icons-right is-hidden-mobile themes-menubar-search">
             <input
-              className="input  themes-menubar-input"
+              className="input themes-menubar-input"
               type="text"
               placeholder="Search..."
             />

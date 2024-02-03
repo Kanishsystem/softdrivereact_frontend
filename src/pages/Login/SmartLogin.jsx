@@ -1,6 +1,7 @@
-import SmartInput from "../../components/core/forms/SmartInput";
 import { useState } from "react";
 import { VALID_EMAIL_DOMAIN,ALLOW_NUMERIC, VALID_PASSWORD_GENERAL } from "../../services/PatternSerivce";
+import { SmartSoftInput } from "soft_digi";
+
 const SmartLogin = () => {
 const [formData, setFormData] = useState({}); 
 
@@ -37,20 +38,20 @@ const handleInputChange = (name,value) => {
   return (
     <div className="signup-container mt-6">
        <h1 className="is-align-content-center">login form</h1>
-      <SmartInput  label="username" key="username" 
+      <SmartSoftInput  label="username" key="username" 
       value={formData?.input_one}  
       onChange={(value)=>handleInputChange("input_one",value)} 
       type="text"  min={1} max={6} 
       pattern={VALID_EMAIL_DOMAIN}
       inputProps={{isFocussed:true}}  
       leftIcon="fa-user" validations={EmailValidations}   />
-      <SmartInput  label="email"  
+      <SmartSoftInput  label="email"  
        value={formData?.input_two}  
        onChange={(value)=>handleInputChange("input_two",value)}  
        leftIcon="fa-envelope-o" key="email"
        pattern={ALLOW_NUMERIC}  
        inputProps={{isFocussed:true}} validations={minValidations} />
-      <SmartInput  label="password" leftIcon="fa-lock" 
+      <SmartSoftInput  label="password" leftIcon="fa-lock" 
        value={formData?.input_three}  
        onChange={(value)=>handleInputChange("input_three",value)} 
        key="password" inputProps={{isFocussed:true}} 

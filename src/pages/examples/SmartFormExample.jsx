@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SmartButton from "../../components/core/forms/SmartButton";
 import { isEmptyObject } from "../../services/core/CommonService";
-import {SmartSoftForm} from "soft_digi"
+import {SmartSoftForm,SmartSoftButton} from "soft_digi"
 
 const SmartFormExample = () => {
   const [formData, setFormData] = useState({});
@@ -96,7 +95,7 @@ const SmartFormExample = () => {
          formSubmit={formSubmit}
          handleErrorChange={handleErrorChange} />
 
-        <SmartButton
+        <SmartSoftButton
           label="submit"
           classList={["is-primary", "is-small", "is-inverted"]}
           onClick={() => handleFormSubmit()}

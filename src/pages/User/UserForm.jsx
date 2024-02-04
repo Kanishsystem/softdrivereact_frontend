@@ -205,6 +205,7 @@ const UserForm = ({ loadTableData,dataIn }) => {
           isMulti={true}
           options={options}
           label="Select Employee Status"
+          
           type={"radio"}
           name="active_status"
           isHorizontal={true}

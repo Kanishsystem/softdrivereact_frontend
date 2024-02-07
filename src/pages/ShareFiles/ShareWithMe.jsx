@@ -53,7 +53,6 @@ const ShareWithMe = () => {
         shared_by: "Balaji",
         shared_date: "2021-09-17",
         expiry_date: "10 Days Later",
-        action: "",
       },
       {
         no: 2,
@@ -61,7 +60,6 @@ const ShareWithMe = () => {
         shared_by: "sanjay",
         shared_date: "2021-09-19",
         expiry_date: "10 Days Later",
-        action: "",
       },
       {
         no: 3,
@@ -69,7 +67,6 @@ const ShareWithMe = () => {
         shared_by: "sudha",
         shared_date: "2021-09-21",
         expiry_date: "10 Days Later",
-        action: "",
       },
       {
         no: 4,
@@ -77,7 +74,6 @@ const ShareWithMe = () => {
         shared_by: "kalki",
         shared_date: "2021-09-29",
         expiry_date: "10 Days Later",
-        action: "",
       },
       {
         no: 5,

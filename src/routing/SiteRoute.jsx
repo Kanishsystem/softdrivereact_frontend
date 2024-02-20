@@ -108,6 +108,7 @@ const SiteRoute = () => {
           <Route path="input-box" element={<TextBoxExample />} />
           <Route path="checkradio" element={<CheckRadioSwitch />} />
           <Route path="table" element={<TableExample />} />
+          <Route path="form" element={<SmartFormExample />} />
         </Routes>
       </Router>
       <ToastContainer />
